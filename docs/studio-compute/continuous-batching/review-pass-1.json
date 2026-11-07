@@ -1,0 +1,51 @@
+{
+  "base_head": "7b24a09342d5b49b3c919c83b5c7277ea817ac0c",
+  "review_url": "https://github.com/tginart/shellsmith-dev/pull/19#pullrequestreview-5581904267",
+  "fixes": [
+    "Defer a policy reload MemoryError while another reservation can release memory.",
+    "Reject distribution parity inputs with fewer than nine first-turn target tokens before model allocation.",
+    "Start receipt timing before admission and include cached-prefix setup in the prefill phase."
+  ],
+  "cpu_http": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python -m pytest -q tests/test_studio*.py tests/test_inference_metrics.py tests/test_bf16_qualification_report.py",
+    "result": "...........................................................s............ [ 19%]\n........................................................................ [ 39%]\n........................................................................ [ 59%]\n..................................................................... [ 77%]\n........................................................................ [ 97%]\n.........                                                                [100%]\n365 passed, 3 skipped, 3 subtests passed in 38.44s",
+    "passed": 365,
+    "skipped": 3,
+    "subtests_passed": 3,
+    "seconds": 38.44,
+    "permissions": "Loopback servers and process-supervisor tests require execution outside the local sandbox."
+  },
+  "tailnet_studio": {
+    "address": "studio-host",
+    "result": "90 passed in 11.20s",
+    "gpu_lease": "exclusive during tests; released afterward",
+    "status": "passed",
+    "returncode": 0,
+    "seconds": 11.367239374900237,
+    "command": [
+      "~/.local/share/shellsmith/studio-v1/env/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/test_studio_continuous_metal.py",
+      "tests/test_studio_numerics.py",
+      "tests/test_bf16_token_decode.py",
+      "tests/test_bf16_inference_cache.py",
+      "tests/test_studio_policy_residency.py",
+      "tests/test_studio_continuous.py",
+      "tests/test_studio_continuous_benchmark.py",
+      "tests/test_studio_cache_memory.py"
+    ],
+    "source_sha256": {
+      "src/studio_compute/inference.py": "4b9bb5ce8aa84078bc35059ca7b161de2a7ffe68f4a122d6c0c2cb5957cade9d",
+      "scripts/benchmark_studio_continuous.py": "fe7cac2f69dd6e3e6c5a600fc3f359f775363ff31b1f1a08c42c2b4587900a35",
+      "tests/test_studio_continuous.py": "bf57fa2ea8490a7f694fbfefb8a9d9338d33967bbbd5d2e11ef2c330ce9288f2",
+      "tests/test_studio_continuous_benchmark.py": "4a0c4597f5d440fbc893317d37b70390f9efb53827be81d60f2ea26e4d97a935"
+    }
+  },
+  "static_checks": {
+    "ruff": "passed",
+    "git_diff_check": "passed"
+  },
+  "scope": "Native and CPU regressions only. No repeated full-model throughput, long soak, physical OOM, or resumed pilot in this pass."
+}

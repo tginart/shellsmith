@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Shellsmith Runs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">PLAYER · GAME MASTER</div>
+        <h1>Trajectory Observatory</h1>
+      </div>
+      <div class="root" title="Artifact root">{{ runs_root }}</div>
+    </header>
+
+    <main>
+      <section id="error" class="error hidden"></section>
+      <section id="metrics" class="metrics"></section>
+
+      <section class="controls panel">
+        <input id="search" type="search" placeholder="Search task, model, campaign, rollout…" autocomplete="off">
+        <select id="campaignFilter"><option value="">All campaigns</option></select>
+        <select id="runFilter"><option value="">All run directories</option></select>
+        <select id="taskFilter"><option value="">All tasks</option></select>
+        <select id="modelFilter"><option value="">All Player models</option></select>
+        <select id="groupBy" title="Group rollout cards">
+          <option value="campaign">Group by campaign</option>
+          <option value="task">Group by task</option>
+          <option value="model">Group by model</option>
+          <option value="batch">Group by batch</option>
+          <option value="run">Group by run directory</option>
+          <option value="reward">Group by reward band</option>
+        </select>
+        <select id="stateFilter">
+          <option value="">All states</option>
+          <option value="trainable">Trainable</option>
+          <option value="untrainable">Untrainable</option>
+          <option value="integrity-pass">Integrity passed</option>
+          <option value="integrity-fail">Integrity failed</option>
+          <option value="agent-terminal">Agent terminal</option>
+          <option value="dangling-final">Has dangling agent final</option>
+          <option value="never-started">Never started (provider down)</option>
+          <option value="discarded">Discarded (GM fallback)</option>
+          <option value="fallback-gm">Ran on backup GM</option>
+          <option value="world-terminal">World terminal</option>
+          <option value="budget-terminal">Budget terminal</option>
+        </select>
+        <label class="range">Min reward <output id="rewardValue">0.00</output>
+          <input id="rewardFilter" type="range" min="0" max="1" step="0.05" value="0">
+        </label>
+      </section>
+
+      <div class="layout">
+        <section class="panel catalog">
+          <div class="section-title"><h2>Rollouts</h2><span id="visibleCount"></span></div>
+          <div id="runGroups"></div>
+        </section>
+        <section id="detail" class="panel detail empty">
+          <div class="empty-state"><span>↳</span><h2>Select a rollout</h2><p>Inspect every action, response, score, and audit decision.</p></div>
+        </section>
+      </div>
+    </main>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "algorithm": "BF16 direct unit-triangular solve and chunk-state scan with explicit reverse state propagation",
+  "helpers": [
+    {
+      "source": "https://github.com/ml-explore/mlx",
+      "ref": "v0.32.3",
+      "path": "mlx/backend/metal/kernels/steel/attn/nax.h",
+      "license": "MIT"
+    },
+    {
+      "source": "https://github.com/marcogva-hub/mlx-flashattention-steel",
+      "commit": "f46a5cd7aa565fc07425fe3acf9f8194e325439d",
+      "path": "csrc/mfa/v6_nax/NAAttentionKernel.cpp",
+      "license": "MIT/BSD-3-Clause; bundled notices preserved"
+    }
+  ],
+  "state_kernels": "Repository implementation; 16 value rows, two key-dimension SIMD slices, fixed-order shared partial reductions",
+  "qualification_source_archive_sha256": "2a2a13245c673b854bc5f9f43e033153f5636ded8cd3f006bed29b39b996c9f4",
+  "tests": "46 passed, including independent sequential FP64 forward and hand derivatives, nonzero adapters, carry-only and interleaved policies"
+}

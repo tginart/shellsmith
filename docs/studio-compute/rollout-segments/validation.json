@@ -1,0 +1,67 @@
+{
+  "schema": "shellsmith.segment_validation.v1",
+  "status": "passed",
+  "base_commit": "c4f23b744e4660d2c99060cb9f1d690c1d06b22e",
+  "python": "3.12.14",
+  "packages": {
+    "pytest": "9.1.1",
+    "mlx": "0.32.3",
+    "mlx-vlm": "0.7.4",
+    "transformers": "5.17.0",
+    "numpy": "2.5.4"
+  },
+  "full_suite": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python -m pytest -q --tb=short",
+    "passed": 2843,
+    "skipped": 19,
+    "subtests_passed": 595,
+    "seconds": 376.22,
+    "log_sha256": "2de0c989af7db82e4ef2b9fef685b8a65d9e338463e766654851abdb39dc6175"
+  },
+  "final_numerics_after_contiguous_head_preservation": {
+    "passed": 17,
+    "seconds": 7.01
+  },
+  "final_compaction_and_token_contracts": {
+    "passed": 9
+  },
+  "lint": "ruff check --no-cache for new Python files; git diff --check passed",
+  "source_sha256": {
+    "src/shellsmith/credit/compaction_datums.py": "0d646ef68a49ffa0c3f9cb0570c9c6a4286e4150c20b9c8e4653c6bd169532dd",
+    "src/shellsmith/credit/grpo.py": "ddbd6aef6f6c0e86d3f6f0e406a346c576af676a7e5e8bc6b4aa8d24883a85e4",
+    "src/shellsmith/credit/to_tinker_bridge.py": "863a5b4d5e8420e5e4291e76e2366b7431f10d4ad899a103b4dc3c6291dd286c",
+    "src/shellsmith/train/backend.py": "bd65b6f149ce11d4f34f093e6d05e354aaeaf83a0484282108c3804e3c0cef69",
+    "src/shellsmith/train/segments.py": "eb1980aa83ec13681ac5677efbd023bf666096239568788d1c2c5be537543f86",
+    "src/shellsmith/train/studio.py": "b9a39c2ebdad1e06770b94158070e15b32c9e985c66fb94af8eac73e9e489997",
+    "src/shellsmith/train/tinker.py": "83fc854cdeefe93968f1f50c1d6feaeae84349c590a64ba4432472f6f00d8030",
+    "src/shellsmith/train/trainer.py": "e749423faad0231da57d28849318a577c1b652fdc46972695cb8e5d98a492330",
+    "src/studio_compute/engine.py": "593785aa55ef1baa744870c89932195083856ba29de4894246b393a504650da9",
+    "src/studio_compute/numerics/replay.py": "225b3b2716c66a669129f28e1ab64748fcdeacc9834acc1e2618059e8ab11de0",
+    "src/studio_compute/protocol.py": "f2750b1ac1fe6ce00eab3de0be4f649e75bd88af3aa070d1a27eadafbe3c59e5"
+  },
+  "full_size_studio_benchmark": {
+    "status": "passed",
+    "report": "studio-benchmark.json",
+    "execution_receipt": "studio-execution.json",
+    "source_commit": "9dbe106bcba90fef43ebb2ae829c0f8b20e07212",
+    "elapsed_seconds": 43.40350524999667,
+    "hard_timeout_seconds": 240,
+    "warmups": 0,
+    "measured_trials": 1,
+    "gpu_lease_released": true,
+    "benchmark_processes_remaining": 0,
+    "qualification": "Single cold ordered trial; steady-state and failed-batch performance remain unmeasured.",
+    "peak_memory_scope": "Sequential trial retains the first path gradient/factor snapshots during the second path; peaks are not isolated path memory comparisons."
+  },
+  "no_campaign_restarted": true,
+  "historical_model_assets_checkpoints_and_dirty_checkout_preserved": true,
+  "github_ci": {
+    "source_commit": "9dbe106bcba90fef43ebb2ae829c0f8b20e07212",
+    "run_id": 39082440856,
+    "checks": {
+      "python (3.11)": "SUCCESS",
+      "python (3.12)": "SUCCESS",
+      "vat-runner": "SUCCESS"
+    }
+  }
+}

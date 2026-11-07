@@ -1,0 +1,22 @@
+{
+  "schema": "shellsmith.gm_python_confinement.v1",
+  "as_of_utc": "2026-10-09T20:13:32.947476+00:00",
+  "frozen_source_root": "~/.local/state/shellsmith/runtime/99731988a729d07099082d09c750fcda558bb4a874741b77d9220ee36217ae90",
+  "codex": "0.159.2",
+  "python_executable": "~/.local/share/shellsmith/studio-v1/env/bin/python3.12",
+  "python_prefix": "~/.local/share/shellsmith/studio-v1/env",
+  "python_executable_sha256": "879cdad21772d29446720cec0ec8ca18e59637e7176ac5448be47ec745e3a306",
+  "source_sha256": {
+    "python_runtime": "af7eea25ea21d6c92f8cfd7a62f945665f1da83af5cdd29f008d9dc1227d4125",
+    "codex": "31b7c90d1847244d4939f725d29eab6021d4e2e38cb838d9d11b8255d9e887be"
+  },
+  "sandbox_flags": [
+    "-c",
+    "default_permissions=\"game_master\"",
+    "-c",
+    "permissions.game_master={ description=\"Episode-only Game Master\", filesystem={ \":minimal\"=\"read\", \":workspace_roots\"={ \".\"=\"write\" }, \"~/.local/share/shellsmith/studio-v1/env\"=\"read\" }, network={ enabled=true } }"
+  ],
+  "returncode": 0,
+  "stdout": "{\"base_modules\": {\"json\": true, \"sqlite3\": true, \"ssl\": true}, \"world_sqlite_state\": 42, \"venv_copies_created\": true, \"venv_modules\": {\"json\": true, \"sqlite3\": true, \"ssl\": true, \"sqlite_version\": \"3.53.4\"}, \"auth_read_denied\": true, \"runtime_write_denied\": true, \"credential_contents_read\": false}\n",
+  "stderr": ""
+}

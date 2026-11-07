@@ -1,0 +1,130 @@
+{
+  "status": "passed",
+  "reviewed_head": "4ff87f8ad01c8347b92537db57c75bf1583c0962",
+  "source_snapshot": {
+    "remote_root": "/private/tmp/shellsmith-pr17-review.3Cbo8R",
+    "archive": "/private/tmp/shellsmith-pr17-review-source-v1.tar.gz",
+    "sha256": "c03bf71c12d54c1388efe3101ad67e17bbc74368f4c6d3352f9960fff4fbd718",
+    "base_head": "4ff87f8ad01c8347b92537db57c75bf1583c0962",
+    "file_count": 373
+  },
+  "kernel_build_id": "4d07cabeddf94e1920f19b2575ea6a6ffd7dbbf9b5f0be270a6f5264c3c382f0",
+  "numerical_sources_sha256": "6546da723ac796df2ebbbd2c4da9ff5fb32789331ed6d557693d31ae03a92242",
+  "matching_source_files": 192,
+  "findings": [
+    {
+      "thread_id": "PRRT_kwDOU6izec6t12Ns",
+      "path": "src/studio_compute/engine.py",
+      "url": "https://github.com/tginart/shellsmith-dev/pull/17#discussion_r4311810394",
+      "classification": "Severe",
+      "disposition": "Fixed and regression-qualified in this source snapshot; thread resolution follows verification of the pushed head."
+    },
+    {
+      "thread_id": "PRRT_kwDOU6izec6t12N0",
+      "path": "src/studio_compute/numerics/optimizer.py",
+      "url": "https://github.com/tginart/shellsmith-dev/pull/17#discussion_r4311810403",
+      "classification": "Significant",
+      "disposition": "Fixed and regression-qualified in this source snapshot; thread resolution follows verification of the pushed head."
+    },
+    {
+      "thread_id": "PRRT_kwDOU6izec6t12N7",
+      "path": "src/studio_compute/model.py",
+      "url": "https://github.com/tginart/shellsmith-dev/pull/17#discussion_r4311810413",
+      "classification": "Significant",
+      "disposition": "Fixed and regression-qualified in this source snapshot; thread resolution follows verification of the pushed head."
+    }
+  ],
+  "native": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "80",
+    "time": "11.072",
+    "timestamp": "2026-10-19T09:44:34.634012-07:00",
+    "hostname": "studio-host.local"
+  },
+  "portable": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "94",
+    "time": "3.151",
+    "timestamp": "2026-10-19T09:45:54.828977-07:00",
+    "hostname": "Mac.local"
+  },
+  "memorization": {
+    "learning_rate": 0.0003,
+    "fixture_sha256": "8e3d034a41c07ded4d978e5da04dec8ddff932ec9aca2f7686798edfe3d22a25",
+    "attempts": [
+      {
+        "seed": 23,
+        "status": "passed",
+        "initial_mean_nll": 5.10625,
+        "final_mean_nll": -0.0,
+        "exact_answer": true,
+        "restore_exact": true
+      },
+      {
+        "seed": 91,
+        "status": "passed",
+        "initial_mean_nll": 5.10625,
+        "final_mean_nll": -0.0,
+        "exact_answer": true,
+        "restore_exact": true
+      }
+    ],
+    "zero_rate_control": true,
+    "frozen_base_unchanged": true
+  },
+  "dtype": {
+    "status": "passed",
+    "detects_explicit_fp32_promotion": true,
+    "stages": [
+      "layer_0_forward",
+      "layer_0_backward",
+      "layer_3_forward",
+      "layer_3_backward",
+      "head_loss_and_backward",
+      "optimizer",
+      "balanced_accumulation",
+      "inference_token"
+    ]
+  },
+  "performance_scope": "Previously published matched performance and legacy diagnostics qualify the original source snapshot. No matched full-batch or longest-path timing was repeated after this Adam bias-correction fix.",
+  "artifacts": {
+    "evidence/review-native-report.json.gz": {
+      "sha256": "4cb51387bdda3228cc46429129409c8c3f3a85e93ec75cc18a9916ef7ef51ae4",
+      "uncompressed_sha256": "54818c3d63a31c093e9a0e97b783f488730f5cdc9294fc96dc8f407c632412b0"
+    },
+    "evidence/review-native-execution.json.gz": {
+      "sha256": "8b45d65c2af4af3b96d7f0c8a8538c4d80e2d01b10e99e19f829523f1d76c704",
+      "uncompressed_sha256": "ce1c41ea289f4e1cb14990219466a21b9cbc21bcd608b32bee2debd6368ea859"
+    },
+    "evidence/review-native-tests.xml.gz": {
+      "sha256": "4371f3700a098d7c1b8742b8596f92c88801e91a10fe8d7b123a03b6d06c9b80",
+      "uncompressed_sha256": "16216b5363011afb1b6c95f910de904a312190fa2be59c0465e02a926a50474f"
+    },
+    "evidence/review-memorization-report.json.gz": {
+      "sha256": "c8687e98e7e322fd9cff3d6422d324c15ee2238de5c5ca6950e50c6887f7d108",
+      "uncompressed_sha256": "c200b80eb824f52f7ffdf9cffaf1bfc9ba588403c0066f8a95bffd53b809e727"
+    },
+    "evidence/review-memorization-execution.json.gz": {
+      "sha256": "ab3cd6edc17326f4bcd440dbd85afe15a122174de05260f27d61713a218e8e61",
+      "uncompressed_sha256": "80ddd8bc692271accb0c12c0bd6dafdea534933f91618df3327c3edb27d9f2df"
+    },
+    "evidence/review-dtype-report.json.gz": {
+      "sha256": "f7d686ecb3d28f6c52caf080946b5ae1e604c43d00627d156d2bac9434603309",
+      "uncompressed_sha256": "94894df82c57812115113a6c97faba844a9ef8be77bd365d3c2dd21a758d3ce4"
+    },
+    "evidence/review-dtype-execution.json.gz": {
+      "sha256": "25b42251f7822567a34e043280bd18b5a05b64dd745bfe54328e5bf1cb16153b",
+      "uncompressed_sha256": "083804348eb4bd452047e4916a2283e2a6a07c0854d895ba4f2ff5008c05c3b1"
+    },
+    "evidence/review-portable-tests.xml.gz": {
+      "sha256": "7c02b6a9d4f97056bd7c02eb46376b739b3d9f8a07e29547ad807885ca327b53",
+      "uncompressed_sha256": "519766dfb44052b7c339b43cadf838550a5a966f0b7c994e3941b696873c045b"
+    }
+  }
+}

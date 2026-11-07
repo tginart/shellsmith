@@ -1,0 +1,34 @@
+[
+  {
+    "source": "mlx_group_ops.py",
+    "revision": "342d63392cd3cb55e4473e02a3a19328233ca5bd",
+    "source_sha256": "8ecfe373de4d2e5d599d5ae782623916dd073368b568cf57ccb56ff3adca29b1",
+    "destination": "ops.py",
+    "changes": "Preserve selectable legacy layer math, compiled GDN VJPs, and the exact-qualified removal of inner attention replay. Add BF16 GDN dispatch and derivative-preserving gate boundaries; repository-owned kernels require their independent qualification."
+  },
+  {
+    "source": "mlx_group_replay.py",
+    "revision": "342d63392cd3cb55e4473e02a3a19328233ca5bd",
+    "source_sha256": "6fd85cb5b704c37543eedc157824c0a50f4a6b30638cde08133de880e960686f",
+    "destination": "replay.py",
+    "changes": "Preserve masks, sum-loss CISPO semantics, producer identities, full-context carry gradients, and the legacy FP32 path. Add BF16 balanced adjoints, explicit saved-layer backward, memory-budgeted retention, and logical reconstruction counters."
+  },
+  {
+    "source": "shellsmith/mlx/optimizer.py",
+    "source_sha256": "f625529702bccce7fd3e2f0ba73d88b0e7d17df2e95e5953af5bf280b95fd6b4",
+    "destination": "optimizer.py",
+    "changes": "Preserve selectable legacy FP32 master Adam. Add BF16 parameters and moments, balanced gradient sums, dedicated checkpointed stochastic-rounding seed, and profile-compatible restore validation."
+  },
+  {
+    "source": "shellsmith/mlx/cispo.py",
+    "source_sha256": "ac61bc1b27b0a7ff4b63ec7629436663af5c8216597e6758eda4d7275ae823ba",
+    "destination": "cispo.py",
+    "changes": "Preserve the objective and clipping semantics. Permit the execution profile to select the arithmetic dtype."
+  },
+  {
+    "source": "shellsmith/mlx/adapter.py",
+    "source_sha256": "684ab86a782e1053171e3d0554ee902f426e1a9a121ce594a619f7490ab35665",
+    "destination": "adapter.py",
+    "changes": "Remove readiness/application dependency"
+  }
+]

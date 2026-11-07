@@ -1,0 +1,42 @@
+name: ci
+
+on:
+  workflow_dispatch:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.22.0"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        run: pip install -e ".[dev,wandb]"
+      - name: Import check
+        run: python -c "import shellsmith, shellsmith.paths; print(shellsmith.paths.PROJECT_ROOT)"
+      - name: Test
+        run: pytest -q
+
+  vat-runner:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/shellsmith/episode/vat_runner
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.22.0"
+      - name: Install (from lockfile)
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Syntax check
+        run: npm run check
+      - name: Test
+        run: npm test

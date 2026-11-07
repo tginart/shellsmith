@@ -1,0 +1,2212 @@
+{
+  "schema": "shellsmith.seed_roster.v1",
+  "as_of_date": "2026-10-06",
+  "metadata_collection": {
+    "started_at_utc": "2026-10-06T23:17:29.714647+00:00",
+    "completed_at_utc": "2026-10-06T23:18:10.010293+00:00",
+    "method": "GitHub REST API via gh api; public repository metadata, latest default-branch commit, and latest published non-prerelease GitHub Release",
+    "recency_definition": "UTC committer date of latest default-branch commit; not updated_at, dataset vintage, or latest push across all branches",
+    "github_size_definition": "GitHub repository size in kilobytes, not measured handwritten source LOC",
+    "license_definition": "GitHub SPDX detection hint only; manual code/data/asset license review is pending"
+  },
+  "runtime_admission": "None: this authoring roster is not consumed by runtime discovery or worlds/manifest.json",
+  "curation_note": "World ideas and structural improvements are proposals, not confirmed upstream defects. Inspect the selected code before authoring; do not degrade healthy source to manufacture a task.",
+  "categories": [
+    {
+      "id": "C01",
+      "slug": "construction",
+      "name": "0→1 construction and feature development",
+      "objective": "Deliver a useful bounded product or capability from a public contract; permit independent architecture.",
+      "coverage_note": "Available behavioral references; construction contracts and acceptance cases still need authoring.",
+      "recommended_seed_ids": [
+        "envconfig",
+        "hexyl",
+        "fastapi_template"
+      ]
+    },
+    {
+      "id": "C02",
+      "slug": "refactoring",
+      "name": "Refactoring and code quality",
+      "objective": "Preserve behavior while achieving a concrete structural improvement, not generic cleanup.",
+      "coverage_note": "Available working-tree references; baseline behavior and structural acceptance need qualification.",
+      "recommended_seed_ids": [
+        "schedule",
+        "tablib",
+        "gitpython"
+      ]
+    },
+    {
+      "id": "C03",
+      "slug": "build_release",
+      "name": "Environment, build, and release",
+      "objective": "Produce reproducible artifacts that install and work in a clean environment.",
+      "coverage_note": "Available packaging/build anchors; native fixtures and offline dependency caches need selection.",
+      "recommended_seed_ids": [
+        "scikit_build_core",
+        "sampleproject",
+        "just"
+      ]
+    },
+    {
+      "id": "C04",
+      "slug": "performance",
+      "name": "Performance and resource optimization",
+      "objective": "Improve an actual target workload under correctness and resource constraints.",
+      "coverage_note": "Workload pairing required: a benchmark instrument alone is not an optimization task.",
+      "recommended_seed_ids": [
+        "duckdb",
+        "hyperfine",
+        "sqlite_utils"
+      ]
+    },
+    {
+      "id": "C05",
+      "slug": "data_analysis",
+      "name": "Applied data analysis and decision support",
+      "objective": "Answer a stakeholder question with correct transformations, defensible inference, and uncertainty.",
+      "coverage_note": "Real data sources exist; individual datasets, questions, and reference calculations are not yet selected.",
+      "recommended_seed_ids": [
+        "nycflights13",
+        "tidytuesday",
+        "fivethirtyeight_data"
+      ]
+    },
+    {
+      "id": "C06",
+      "slug": "ml_experiments",
+      "name": "ML experimentation",
+      "objective": "Establish, improve, and honestly evaluate a leakage-safe model under an experiment budget.",
+      "coverage_note": "Pair a bounded pipeline with a frozen dataset and sealed evaluation split.",
+      "recommended_seed_ids": [
+        "scikit_learn",
+        "nycflights13"
+      ]
+    },
+    {
+      "id": "C07",
+      "slug": "science_algorithms",
+      "name": "Constructive science and algorithms",
+      "objective": "Construct and validate a numerical model, algorithm, or optimization solution.",
+      "coverage_note": "Solver/model anchors exist; independently checkable problem instances need qualification.",
+      "recommended_seed_ids": [
+        "or_tools",
+        "lmfit"
+      ]
+    },
+    {
+      "id": "C08",
+      "slug": "professional_artifacts",
+      "name": "Professional artifact production",
+      "objective": "Deliver an audience-specific report or other useful artifact with reproducible substantive content.",
+      "coverage_note": "Report authoring plus data pairing required; converting a notebook alone is not sufficient.",
+      "recommended_seed_ids": [
+        "nbconvert",
+        "tidytuesday",
+        "nycflights13"
+      ]
+    },
+    {
+      "id": "C09",
+      "slug": "evolving_operations",
+      "name": "Evolving operational workflows",
+      "objective": "Complete authorized actions, monitor effects, respond to changes, and recover with persisted state.",
+      "coverage_note": "Authored evolving labs required; static services and deployment examples are not complete workflows.",
+      "recommended_seed_ids": [
+        "podinfo",
+        "mailpit",
+        "gitpython"
+      ]
+    },
+    {
+      "id": "C10",
+      "slug": "adversarial_information",
+      "name": "Adversarial information handling",
+      "objective": "Complete the legitimate task without granting untrusted content authority over protected actions or disclosures.",
+      "coverage_note": "Overlay-only coverage: no dedicated adversarial-source repository is claimed in this roster.",
+      "recommended_seed_ids": [
+        "mailpit",
+        "nbconvert",
+        "gitpython"
+      ]
+    }
+  ],
+  "seeds": [
+    {
+      "id": "envconfig",
+      "repository": "kelseyhightower/envconfig",
+      "kind": "library",
+      "selection_priority": "pilot",
+      "bounded_scope": "A typed configuration loader: documented field types, defaults, required values, prefixes, and decoder hooks; not a service platform.",
+      "roles": [
+        {
+          "category": "C01",
+          "fit": "primary",
+          "player_start": "empty_workspace",
+          "support": "direct",
+          "world_idea": "Build a configuration loader from an explicit public API contract in an empty workspace.",
+          "acceptance": "Independent tests cover absent/empty values, defaults, malformed types, prefixes, nested fields, and declared custom decoders.",
+          "requires": []
+        },
+        {
+          "category": "C02",
+          "fit": "primary",
+          "player_start": "existing_checkout",
+          "support": "direct",
+          "world_idea": "Separate value lookup, conversion, and validation; inject the environment source while preserving public behavior.",
+          "acceptance": "Run characterization tests before/after; a fake value source works without global environment mutation and public callers remain compatible.",
+          "requires": []
+        }
+      ],
+      "pair_with": [],
+      "caveats": [
+        "Mature, infrequently updated library; recent CI changes do not imply recent feature development."
+      ],
+      "github_metadata": {
+        "repository": "kelseyhightower/envconfig",
+        "repository_url": "https://github.com/kelseyhightower/envconfig",
+        "description": "Golang library for managing configuration data from environment variables",
+        "stars": 5468,
+        "archived": false,
+        "github_language": "Go",
+        "github_size_kb": 101,
+        "github_license_spdx_hint": "MIT",
+        "default_branch": "master",
+        "created_at": "2013-11-06T17:01:55Z",
+        "last_push_at": "2025-06-28T02:01:37Z",
+        "latest_default_branch_commit": {
+          "sha": "7834011875d613aec60c606b52c2b0fe8949fe91",
+          "author_date": "2025-06-28T00:56:05Z",
+          "committer_date": "2025-06-28T02:01:37Z",
+          "subject": "migrate to github actions",
+          "url": "https://github.com/kelseyhightower/envconfig/commit/7834011875d613aec60c606b52c2b0fe8949fe91"
+        },
+        "latest_github_release": {
+          "tag": "v1.4.0",
+          "published_at": "2019-05-24T22:21:50Z",
+          "target_commitish": "master",
+          "prerelease": false,
+          "url": "https://github.com/kelseyhightower/envconfig/releases/tag/v1.4.0"
+        },
+        "sources": {
+          "repository_api": "https://api.github.com/repos/kelseyhightower/envconfig",
+          "commit_api": "https://api.github.com/repos/kelseyhightower/envconfig/commits/7834011875d613aec60c606b52c2b0fe8949fe91",
+          "latest_release_api": "https://api.github.com/repos/kelseyhightower/envconfig/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "7834011875d613aec60c606b52c2b0fe8949fe91",
+        "commit_url": "https://github.com/kelseyhightower/envconfig/commit/7834011875d613aec60c606b52c2b0fe8949fe91",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "schedule",
+      "repository": "dbader/schedule",
+      "kind": "library",
+      "selection_priority": "pilot",
+      "bounded_scope": "A deterministic subset of interval/calendar scheduling with an injectable clock; exclude production distributed scheduling.",
+      "roles": [
+        {
+          "category": "C01",
+          "fit": "primary",
+          "player_start": "empty_workspace",
+          "support": "direct",
+          "world_idea": "Construct a small scheduler from documented recurrence examples and a stated timezone policy.",
+          "acceptance": "Fake-clock cases check execution counts, next-run times, cancellation, failures, and explicitly specified calendar boundaries; no real sleeps.",
+          "requires": []
+        },
+        {
+          "category": "C02",
+          "fit": "primary",
+          "player_start": "existing_checkout",
+          "support": "direct",
+          "world_idea": "Decouple clock access and job execution while preserving the supported public API.",
+          "acceptance": "Existing and independent clock-boundary tests pass; tests can advance time without patching process-global clock state.",
+          "requires": []
+        },
+        {
+          "category": "C09",
+          "fit": "secondary",
+          "player_start": "evolving_lab",
+          "support": "authored_workflow",
+          "world_idea": "Operate a queue whose jobs arrive, are cancelled, fail, and resume after a simulated restart.",
+          "acceptance": "A precommitted event driver verifies deadlines, cancellation, durable completion markers, restart behavior, and the final handoff.",
+          "requires": [
+            "Persisted queue fixture and controlled clock/event driver; not supplied by the repository alone."
+          ]
+        }
+      ],
+      "pair_with": [],
+      "caveats": [
+        "Last default-branch activity is older; qualify the pinned implementation rather than infer quality from stars."
+      ],
+      "github_metadata": {
+        "repository": "dbader/schedule",
+        "repository_url": "https://github.com/dbader/schedule",
+        "description": "Python job scheduling for humans.",
+        "stars": 12277,
+        "archived": false,
+        "github_language": "Python",
+        "github_size_kb": 383,
+        "github_license_spdx_hint": "MIT",
+        "default_branch": "master",
+        "created_at": "2013-05-19T12:51:20Z",
+        "last_push_at": "2024-05-25T18:41:01Z",
+        "latest_default_branch_commit": {
+          "sha": "82a43db1b938d8fdf60103bd41f329e06c8d3651",
+          "author_date": "2024-05-25T18:40:33Z",
+          "committer_date": "2024-05-25T18:40:33Z",
+          "subject": "Release 1.2.2 (#625)",
+          "url": "https://github.com/dbader/schedule/commit/82a43db1b938d8fdf60103bd41f329e06c8d3651"
+        },
+        "latest_github_release": null,
+        "sources": {
+          "repository_api": "https://api.github.com/repos/dbader/schedule",
+          "commit_api": "https://api.github.com/repos/dbader/schedule/commits/82a43db1b938d8fdf60103bd41f329e06c8d3651",
+          "latest_release_api": "https://api.github.com/repos/dbader/schedule/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "82a43db1b938d8fdf60103bd41f329e06c8d3651",
+        "commit_url": "https://github.com/dbader/schedule/commit/82a43db1b938d8fdf60103bd41f329e06c8d3651",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "hexyl",
+      "repository": "sharkdp/hexyl",
+      "kind": "cli",
+      "selection_priority": "pilot",
+      "bounded_scope": "Binary display from stdin/files with bounded offsets, lengths, partial rows, and an explicit plain/color output contract.",
+      "roles": [
+        {
+          "category": "C01",
+          "fit": "primary",
+          "player_start": "empty_workspace",
+          "support": "direct",
+          "world_idea": "Build a bounded binary-inspection CLI from byte-input/output examples.",
+          "acceptance": "Golden fixtures and independently computed offsets cover empty inputs, binary bytes, partial rows, stdin, and invalid ranges.",
+          "requires": []
+        },
+        {
+          "category": "C02",
+          "fit": "secondary",
+          "player_start": "existing_checkout",
+          "support": "direct",
+          "world_idea": "Separate byte acquisition, row formatting, and terminal presentation without changing declared output.",
+          "acceptance": "Existing/golden output cases pass and each boundary is testable using in-memory bytes rather than actual terminal state.",
+          "requires": []
+        },
+        {
+          "category": "C04",
+          "fit": "secondary",
+          "player_start": "benchmark_workspace",
+          "support": "paired",
+          "world_idea": "Stream large input under a peak-memory cap without changing displayed bytes.",
+          "acceptance": "Compare exact output with the reference and measure peak memory plus repeated baseline-relative throughput on fixed files.",
+          "requires": [
+            "Frozen large-file workload and independently measured baseline."
+          ]
+        }
+      ],
+      "pair_with": [],
+      "caveats": [],
+      "github_metadata": {
+        "repository": "sharkdp/hexyl",
+        "repository_url": "https://github.com/sharkdp/hexyl",
+        "description": "A command-line hex viewer",
+        "stars": 10288,
+        "archived": false,
+        "github_language": "Rust",
+        "github_size_kb": 601,
+        "github_license_spdx_hint": "Apache-2.0",
+        "default_branch": "master",
+        "created_at": "2018-11-05T22:53:35Z",
+        "last_push_at": "2026-04-30T08:24:07Z",
+        "latest_default_branch_commit": {
+          "sha": "6ecc29b9c8c84d08a7e860f7f69c22b113b480ea",
+          "author_date": "2026-04-30T08:24:05Z",
+          "committer_date": "2026-04-30T08:24:05Z",
+          "subject": "Remove sponsors",
+          "url": "https://github.com/sharkdp/hexyl/commit/6ecc29b9c8c84d08a7e860f7f69c22b113b480ea"
+        },
+        "latest_github_release": {
+          "tag": "v0.17.0",
+          "published_at": "2026-02-14T12:56:31Z",
+          "target_commitish": "master",
+          "prerelease": false,
+          "url": "https://github.com/sharkdp/hexyl/releases/tag/v0.17.0"
+        },
+        "sources": {
+          "repository_api": "https://api.github.com/repos/sharkdp/hexyl",
+          "commit_api": "https://api.github.com/repos/sharkdp/hexyl/commits/6ecc29b9c8c84d08a7e860f7f69c22b113b480ea",
+          "latest_release_api": "https://api.github.com/repos/sharkdp/hexyl/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "6ecc29b9c8c84d08a7e860f7f69c22b113b480ea",
+        "commit_url": "https://github.com/sharkdp/hexyl/commit/6ecc29b9c8c84d08a7e860f7f69c22b113b480ea",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "tablib",
+      "repository": "jazzband/tablib",
+      "kind": "library",
+      "selection_priority": "pilot",
+      "bounded_scope": "CSV/JSON tabular exchange only for construction; explicitly specify headers, nulls, types, ordering, and round-trip policy before grading.",
+      "roles": [
+        {
+          "category": "C01",
+          "fit": "primary",
+          "player_start": "empty_workspace",
+          "support": "direct",
+          "world_idea": "Build a small tabular exchange library from CSV/JSON contracts, without the upstream implementation.",
+          "acceptance": "Independent round-trip fixtures cover Unicode, quoted newlines, empty cells, headers, ordering, and stated type/null semantics.",
+          "requires": []
+        },
+        {
+          "category": "C02",
+          "fit": "primary",
+          "player_start": "existing_checkout",
+          "support": "direct",
+          "world_idea": "Replace duplicated format dispatch with a tested extension boundary while preserving existing formats.",
+          "acceptance": "Existing compatibility cases pass and a separately implemented test format can register without editing unrelated dispatch code.",
+          "requires": []
+        },
+        {
+          "category": "C04",
+          "fit": "secondary",
+          "player_start": "benchmark_workspace",
+          "support": "paired",
+          "world_idea": "Improve a bounded conversion workload without dropping records or silently changing representation.",
+          "acceptance": "Output equivalence and row counts hold; repeated timing and peak-memory measurements demonstrate the declared improvement.",
+          "requires": [
+            "Fixed input sizes, conversion workload, and repeatable measurement harness."
+          ]
+        }
+      ],
+      "pair_with": [],
+      "caveats": [],
+      "github_metadata": {
+        "repository": "jazzband/tablib",
+        "repository_url": "https://github.com/jazzband/tablib",
+        "description": "Python Module for Tabular Datasets in XLS, CSV, JSON, YAML, &c.",
+        "stars": 4758,
+        "archived": false,
+        "github_language": "Python",
+        "github_size_kb": 2022,
+        "github_license_spdx_hint": "MIT",
+        "default_branch": "master",
+        "created_at": "2011-03-28T02:36:50Z",
+        "last_push_at": "2026-10-06T13:43:44Z",
+        "latest_default_branch_commit": {
+          "sha": "966876c76a6378557c1951badc1665b4d1375875",
+          "author_date": "2026-10-06T13:43:39Z",
+          "committer_date": "2026-10-06T13:43:39Z",
+          "subject": "[pre-commit.ci] pre-commit autoupdate (#697)",
+          "url": "https://github.com/jazzband/tablib/commit/966876c76a6378557c1951badc1665b4d1375875"
+        },
+        "latest_github_release": {
+          "tag": "v3.10.0",
+          "published_at": "2026-07-31T17:25:47Z",
+          "target_commitish": "master",
+          "prerelease": false,
+          "url": "https://github.com/jazzband/tablib/releases/tag/v3.10.0"
+        },
+        "sources": {
+          "repository_api": "https://api.github.com/repos/jazzband/tablib",
+          "commit_api": "https://api.github.com/repos/jazzband/tablib/commits/966876c76a6378557c1951badc1665b4d1375875",
+          "latest_release_api": "https://api.github.com/repos/jazzband/tablib/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "966876c76a6378557c1951badc1665b4d1375875",
+        "commit_url": "https://github.com/jazzband/tablib/commit/966876c76a6378557c1951badc1665b4d1375875",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "sqlite_utils",
+      "repository": "simonw/sqlite-utils",
+      "kind": "cli_library",
+      "selection_priority": "pilot",
+      "bounded_scope": "A coherent import/query/upsert/export slice; avoid reconstructing every current command or extension.",
+      "roles": [
+        {
+          "category": "C01",
+          "fit": "primary",
+          "player_start": "empty_workspace",
+          "support": "direct",
+          "world_idea": "Construct a local CSV/JSON-to-SQLite CLI with public import, upsert, query, and export contracts.",
+          "acceptance": "Fresh-process tests verify transactions, duplicate keys, malformed input, rerun idempotence, and exact query/export results.",
+          "requires": []
+        },
+        {
+          "category": "C02",
+          "fit": "primary",
+          "player_start": "existing_checkout",
+          "support": "direct",
+          "world_idea": "Separate CLI orchestration from database transformations while preserving supported commands.",
+          "acceptance": "Characterization tests pass and core transformations are callable without parsing CLI arguments or relying on global process state.",
+          "requires": []
+        },
+        {
+          "category": "C04",
+          "fit": "secondary",
+          "player_start": "benchmark_workspace",
+          "support": "paired",
+          "world_idea": "Optimize a fixed import/query pipeline without weakening atomicity or correctness.",
+          "acceptance": "Independent SQL checks reconcile final state; repeated workload measurements include memory, interrupted imports, and rollback cases.",
+          "requires": [
+            "Frozen workload plus a correctness and resource baseline."
+          ]
+        },
+        {
+          "category": "C05",
+          "fit": "secondary",
+          "player_start": "dataset_drop",
+          "support": "paired",
+          "world_idea": "Answer a stakeholder question using a real multi-table dataset imported into SQLite.",
+          "acceptance": "Independent calculations verify join cardinalities, denominators, aggregates, and reported uncertainty; import success alone earns no analysis credit.",
+          "requires": [
+            "A frozen real dataset, data dictionary, and decision-oriented brief."
+          ]
+        }
+      ],
+      "pair_with": [
+        "nycflights13",
+        "hyperfine",
+        "nbconvert"
+      ],
+      "caveats": [],
+      "github_metadata": {
+        "repository": "simonw/sqlite-utils",
+        "repository_url": "https://github.com/simonw/sqlite-utils",
+        "description": "Python CLI utility and library for manipulating SQLite databases",
+        "stars": 2179,
+        "archived": false,
+        "github_language": "Python",
+        "github_size_kb": 2055,
+        "github_license_spdx_hint": "Apache-2.0",
+        "default_branch": "main",
+        "created_at": "2018-07-14T03:21:46Z",
+        "last_push_at": "2026-09-22T18:35:44Z",
+        "latest_default_branch_commit": {
+          "sha": "6bc1d33d583c54bd69fbdd2071117e2d38c354a1",
+          "author_date": "2026-09-22T18:34:27Z",
+          "committer_date": "2026-09-22T18:35:41Z",
+          "subject": "Fix resource leaks caused by buffered readers",
+          "url": "https://github.com/simonw/sqlite-utils/commit/6bc1d33d583c54bd69fbdd2071117e2d38c354a1"
+        },
+        "latest_github_release": {
+          "tag": "4.2.1",
+          "published_at": "2026-08-13T23:53:47Z",
+          "target_commitish": "main",
+          "prerelease": false,
+          "url": "https://github.com/simonw/sqlite-utils/releases/tag/4.2.1"
+        },
+        "sources": {
+          "repository_api": "https://api.github.com/repos/simonw/sqlite-utils",
+          "commit_api": "https://api.github.com/repos/simonw/sqlite-utils/commits/6bc1d33d583c54bd69fbdd2071117e2d38c354a1",
+          "latest_release_api": "https://api.github.com/repos/simonw/sqlite-utils/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "6bc1d33d583c54bd69fbdd2071117e2d38c354a1",
+        "commit_url": "https://github.com/simonw/sqlite-utils/commit/6bc1d33d583c54bd69fbdd2071117e2d38c354a1",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "sampleproject",
+      "repository": "pypa/sampleproject",
+      "kind": "packaging_scaffold",
+      "selection_priority": "expansion",
+      "bounded_scope": "A tiny Python package with declared metadata and one meaningful resource/API; use as a scaffold, not a substantial product oracle.",
+      "roles": [
+        {
+          "category": "C03",
+          "fit": "primary",
+          "player_start": "build_workspace",
+          "support": "direct",
+          "world_idea": "Prepare reproducible wheel and sdist artifacts that install and work in separate clean environments.",
+          "acceptance": "Inspect metadata and included resources, build from the sdist, install both artifacts separately, and execute the published API in each environment.",
+          "requires": []
+        }
+      ],
+      "pair_with": [
+        "scikit_build_core"
+      ],
+      "caveats": [
+        "Too small and generic to count as a substantive whole-product reconstruction seed by itself."
+      ],
+      "github_metadata": {
+        "repository": "pypa/sampleproject",
+        "repository_url": "https://github.com/pypa/sampleproject",
+        "description": "A sample project that exists for PyPUG's \"Tutorial on Packaging and Distributing Projects\"",
+        "stars": 5242,
+        "archived": false,
+        "github_language": "Python",
+        "github_size_kb": 133,
+        "github_license_spdx_hint": "MIT",
+        "default_branch": "main",
+        "created_at": "2013-12-03T16:43:27Z",
+        "last_push_at": "2024-11-06T22:36:40Z",
+        "latest_default_branch_commit": {
+          "sha": "621e4974ca25ce531773def586ba3ed8e736b3fc",
+          "author_date": "2024-11-06T22:36:40Z",
+          "committer_date": "2024-11-06T22:36:40Z",
+          "subject": "pyproject: prep 4.0.0 (#219)",
+          "url": "https://github.com/pypa/sampleproject/commit/621e4974ca25ce531773def586ba3ed8e736b3fc"
+        },
+        "latest_github_release": null,
+        "sources": {
+          "repository_api": "https://api.github.com/repos/pypa/sampleproject",
+          "commit_api": "https://api.github.com/repos/pypa/sampleproject/commits/621e4974ca25ce531773def586ba3ed8e736b3fc",
+          "latest_release_api": "https://api.github.com/repos/pypa/sampleproject/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "621e4974ca25ce531773def586ba3ed8e736b3fc",
+        "commit_url": "https://github.com/pypa/sampleproject/commit/621e4974ca25ce531773def586ba3ed8e736b3fc",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "duckdb",
+      "repository": "duckdb/duckdb",
+      "kind": "engine_workload_source",
+      "selection_priority": "expansion",
+      "bounded_scope": "One query/operator workload plus pinned engine binaries; do not require a full database-engine reconstruction or full native build.",
+      "roles": [
+        {
+          "category": "C04",
+          "fit": "primary",
+          "player_start": "benchmark_workspace",
+          "support": "paired",
+          "world_idea": "Improve a bounded SQL workload under correctness, runtime, and memory constraints.",
+          "acceptance": "Independent results preserve NULL/duplicate semantics; use paired repeated measurements against a frozen baseline and report uncertainty.",
+          "requires": [
+            "Selected benchmark/query files, fixed datasets, pinned binaries, and a calibrated resource harness."
+          ]
+        },
+        {
+          "category": "C05",
+          "fit": "secondary",
+          "player_start": "dataset_drop",
+          "support": "paired",
+          "world_idea": "Investigate a real analytical question using a frozen dataset and a reproducible SQL pipeline.",
+          "acceptance": "Independent calculations verify joins, denominators, missingness handling, and report figures; faster queries are not a substitute for valid inference.",
+          "requires": [
+            "Real dataset and analytical brief; the engine is tooling, not the dataset."
+          ]
+        }
+      ],
+      "pair_with": [
+        "nycflights13",
+        "hyperfine"
+      ],
+      "caveats": [
+        "Large upstream repository: freeze selected workloads and dependencies rather than admit the entire checkout as a small seed."
+      ],
+      "github_metadata": {
+        "repository": "duckdb/duckdb",
+        "repository_url": "https://github.com/duckdb/duckdb",
+        "description": "DuckDB is an analytical in-process SQL database management system",
+        "stars": 41951,
+        "archived": false,
+        "github_language": "C++",
+        "github_size_kb": 531525,
+        "github_license_spdx_hint": "MIT",
+        "default_branch": "v2.0-cyanoptera",
+        "created_at": "2018-06-26T15:04:45Z",
+        "last_push_at": "2026-10-06T20:22:03Z",
+        "latest_default_branch_commit": {
+          "sha": "d05e1133a451ea2e4ef44696837abb2c67d4d7bd",
+          "author_date": "2026-10-06T19:29:10Z",
+          "committer_date": "2026-10-06T19:29:10Z",
+          "subject": "Report malformed WKT as a cast error in TRY_CAST to GEOMETRY (#26497)",
+          "url": "https://github.com/duckdb/duckdb/commit/d05e1133a451ea2e4ef44696837abb2c67d4d7bd"
+        },
+        "latest_github_release": {
+          "tag": "v1.5.6",
+          "published_at": "2026-09-28T13:35:11Z",
+          "target_commitish": "069cc9f9b5be802405797faecc284961b07c70ef",
+          "prerelease": false,
+          "url": "https://github.com/duckdb/duckdb/releases/tag/v1.5.6"
+        },
+        "sources": {
+          "repository_api": "https://api.github.com/repos/duckdb/duckdb",
+          "commit_api": "https://api.github.com/repos/duckdb/duckdb/commits/d05e1133a451ea2e4ef44696837abb2c67d4d7bd",
+          "latest_release_api": "https://api.github.com/repos/duckdb/duckdb/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "d05e1133a451ea2e4ef44696837abb2c67d4d7bd",
+        "commit_url": "https://github.com/duckdb/duckdb/commit/d05e1133a451ea2e4ef44696837abb2c67d4d7bd",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "nycflights13",
+      "repository": "tidyverse/nycflights13",
+      "kind": "dataset",
+      "selection_priority": "pilot",
+      "bounded_scope": "Freeze a documented slice of flights, weather, aircraft, airports, and airlines; retain join keys, missingness, and timestamp semantics.",
+      "roles": [
+        {
+          "category": "C05",
+          "fit": "primary",
+          "player_start": "dataset_drop",
+          "support": "direct",
+          "world_idea": "Analyze reliability across carriers/routes while distinguishing cancellations from completed-flight delays.",
+          "acceptance": "Independent reference computations reconcile counts, joins, denominators, missing values, route/season sensitivity, and observational limitations.",
+          "requires": []
+        },
+        {
+          "category": "C06",
+          "fit": "secondary",
+          "player_start": "experiment_workspace",
+          "support": "paired",
+          "world_idea": "Predict a declared delay outcome using only information available at the specified decision time.",
+          "acceptance": "A sealed chronological split and feature-availability checks reject leakage; compare a baseline with budgeted experiments and reproduce metrics.",
+          "requires": [
+            "scikit-learn or another bounded training stack; target contract, feature cutoff, and sealed holdout."
+          ]
+        },
+        {
+          "category": "C08",
+          "fit": "secondary",
+          "player_start": "report_workspace",
+          "support": "paired",
+          "world_idea": "Deliver a stakeholder-ready reliability report with reproducible tables, charts, limitations, and recommendations.",
+          "acceptance": "Recompute every numerical claim, verify rendered sections/assets, and assess audience usefulness separately from mere file generation.",
+          "requires": [
+            "Audience/deliverable brief and a report renderer or authored template."
+          ]
+        }
+      ],
+      "pair_with": [
+        "sqlite_utils",
+        "scikit_learn",
+        "nbconvert"
+      ],
+      "caveats": [
+        "Data describes 2013 flights; repository commit recency does not mean recent observations.",
+        "GitHub did not identify an SPDX license; inspect package declarations and original data provenance before admission."
+      ],
+      "github_metadata": {
+        "repository": "tidyverse/nycflights13",
+        "repository_url": "https://github.com/tidyverse/nycflights13",
+        "description": "An R data package containing all out-bound flights from NYC in 2013 + useful metdata",
+        "stars": 133,
+        "archived": false,
+        "github_language": "R",
+        "github_size_kb": 27280,
+        "github_license_spdx_hint": null,
+        "default_branch": "main",
+        "created_at": "2014-06-27T16:25:59Z",
+        "last_push_at": "2023-11-21T13:15:54Z",
+        "latest_default_branch_commit": {
+          "sha": "df98ef215aa8216fe0838a0b8ac5bada646d814c",
+          "author_date": "2023-11-21T13:13:01Z",
+          "committer_date": "2023-11-21T13:13:01Z",
+          "subject": "Typo fix",
+          "url": "https://github.com/tidyverse/nycflights13/commit/df98ef215aa8216fe0838a0b8ac5bada646d814c"
+        },
+        "latest_github_release": {
+          "tag": "v1.0.2",
+          "published_at": "2021-04-12T16:25:22Z",
+          "target_commitish": "2d67fceeb80b415ee8ba6d4b50bb0cb49c961a92",
+          "prerelease": false,
+          "url": "https://github.com/tidyverse/nycflights13/releases/tag/v1.0.2"
+        },
+        "sources": {
+          "repository_api": "https://api.github.com/repos/tidyverse/nycflights13",
+          "commit_api": "https://api.github.com/repos/tidyverse/nycflights13/commits/df98ef215aa8216fe0838a0b8ac5bada646d814c",
+          "latest_release_api": "https://api.github.com/repos/tidyverse/nycflights13/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "df98ef215aa8216fe0838a0b8ac5bada646d814c",
+        "commit_url": "https://github.com/tidyverse/nycflights13/commit/df98ef215aa8216fe0838a0b8ac5bada646d814c",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "scikit_learn",
+      "repository": "scikit-learn/scikit-learn",
+      "kind": "ml_example_source",
+      "selection_priority": "pilot",
+      "bounded_scope": "One pipeline/example family using pinned package binaries and a bounded frozen dataset; not a reimplementation of the full library.",
+      "roles": [
+        {
+          "category": "C06",
+          "fit": "primary",
+          "player_start": "experiment_workspace",
+          "support": "paired",
+          "world_idea": "Establish and improve a leakage-safe prediction pipeline within a CPU/experiment budget.",
+          "acceptance": "Check split separation, train-only preprocessing, available features, reproducible metrics, a sealed holdout, and an honest baseline comparison.",
+          "requires": [
+            "Selected bundled or paired dataset; declared decision time, target, and held-out evaluation."
+          ]
+        },
+        {
+          "category": "C04",
+          "fit": "secondary",
+          "player_start": "benchmark_workspace",
+          "support": "paired",
+          "world_idea": "Reduce pipeline inference/training cost without violating its stated predictive-quality constraint.",
+          "acceptance": "Fixed inputs and splits preserve output/quality requirements; repeated runtime and memory measurements compare identical workloads.",
+          "requires": [
+            "Frozen data, quality floor, and performance baseline."
+          ]
+        },
+        {
+          "category": "C07",
+          "fit": "secondary",
+          "player_start": "numerical_workspace",
+          "support": "direct",
+          "world_idea": "Construct a bounded numerical algorithm against documented mathematical and input/output contracts.",
+          "acceptance": "Independent tiny-case calculations plus a trusted reference check objective values, convergence, and edge cases; implementation similarity is irrelevant.",
+          "requires": []
+        }
+      ],
+      "pair_with": [
+        "nycflights13",
+        "hyperfine"
+      ],
+      "caveats": [
+        "Many examples may fetch external data; select bundled/frozen inputs and disable unexpected downloads.",
+        "Use package binaries and selected examples rather than making full-library compilation a default gate."
+      ],
+      "github_metadata": {
+        "repository": "scikit-learn/scikit-learn",
+        "repository_url": "https://github.com/scikit-learn/scikit-learn",
+        "description": "scikit-learn: machine learning in Python",
+        "stars": 67482,
+        "archived": false,
+        "github_language": "Python",
+        "github_size_kb": 187947,
+        "github_license_spdx_hint": "BSD-3-Clause",
+        "default_branch": "main",
+        "created_at": "2010-08-17T09:43:38Z",
+        "last_push_at": "2026-10-06T15:37:34Z",
+        "latest_default_branch_commit": {
+          "sha": "c95f032d2960b69ed20c1b15f7be5a8aa10595f8",
+          "author_date": "2026-10-06T15:37:33Z",
+          "committer_date": "2026-10-06T15:37:33Z",
+          "subject": "FIX Fix `from sklearn.model_selection import *` (#35042)",
+          "url": "https://github.com/scikit-learn/scikit-learn/commit/c95f032d2960b69ed20c1b15f7be5a8aa10595f8"
+        },
+        "latest_github_release": {
+          "tag": "1.9.1",
+          "published_at": "2026-09-11T09:38:12Z",
+          "target_commitish": "main",
+          "prerelease": false,
+          "url": "https://github.com/scikit-learn/scikit-learn/releases/tag/1.9.1"
+        },
+        "sources": {
+          "repository_api": "https://api.github.com/repos/scikit-learn/scikit-learn",
+          "commit_api": "https://api.github.com/repos/scikit-learn/scikit-learn/commits/c95f032d2960b69ed20c1b15f7be5a8aa10595f8",
+          "latest_release_api": "https://api.github.com/repos/scikit-learn/scikit-learn/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "c95f032d2960b69ed20c1b15f7be5a8aa10595f8",
+        "commit_url": "https://github.com/scikit-learn/scikit-learn/commit/c95f032d2960b69ed20c1b15f7be5a8aa10595f8",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "or_tools",
+      "repository": "google/or-tools",
+      "kind": "optimization_example_source",
+      "selection_priority": "pilot",
+      "bounded_scope": "One scheduling/allocation model with stated hard constraints and objective; prefer pinned solver binaries and tiny independently checkable cases.",
+      "roles": [
+        {
+          "category": "C07",
+          "fit": "primary",
+          "player_start": "numerical_workspace",
+          "support": "direct",
+          "world_idea": "Construct a constrained allocation model and solve new problem instances.",
+          "acceptance": "An independent feasibility checker and exhaustive enumeration on tiny cases verify constraints and objective; multiple optimal schedules are valid.",
+          "requires": []
+        },
+        {
+          "category": "C09",
+          "fit": "secondary",
+          "player_start": "evolving_lab",
+          "support": "authored_workflow",
+          "world_idea": "Replan an operational schedule after precommitted arrivals, cancellations, and reservation changes.",
+          "acceptance": "Persisted state and an event driver verify feasible commitments, authorized changes, replanning quality, and final ownership handoff.",
+          "requires": [
+            "Controlled event stream, persisted commitments, and approval boundaries."
+          ]
+        }
+      ],
+      "pair_with": [],
+      "caveats": [
+        "Default branch is stable; the recorded default-branch commit is not the most recent push across every development branch.",
+        "Do not require rebuilding the entire solver or all language bindings."
+      ],
+      "github_metadata": {
+        "repository": "google/or-tools",
+        "repository_url": "https://github.com/google/or-tools",
+        "description": "Google's Operations Research tools:",
+        "stars": 14156,
+        "archived": false,
+        "github_language": "C++",
+        "github_size_kb": 1312317,
+        "github_license_spdx_hint": "Apache-2.0",
+        "default_branch": "stable",
+        "created_at": "2015-02-21T01:25:35Z",
+        "last_push_at": "2026-10-06T20:15:16Z",
+        "latest_default_branch_commit": {
+          "sha": "100f66e6242ab8bf8d32feb8f3bf086db66ae2b5",
+          "author_date": "2026-09-17T13:02:24Z",
+          "committer_date": "2026-09-17T13:02:24Z",
+          "subject": "ci: add dummy release.yml",
+          "url": "https://github.com/google/or-tools/commit/100f66e6242ab8bf8d32feb8f3bf086db66ae2b5"
+        },
+        "latest_github_release": {
+          "tag": "v9.15",
+          "published_at": "2026-01-12T15:38:30Z",
+          "target_commitish": "mizux/rc",
+          "prerelease": false,
+          "url": "https://github.com/google/or-tools/releases/tag/v9.15"
+        },
+        "sources": {
+          "repository_api": "https://api.github.com/repos/google/or-tools",
+          "commit_api": "https://api.github.com/repos/google/or-tools/commits/100f66e6242ab8bf8d32feb8f3bf086db66ae2b5",
+          "latest_release_api": "https://api.github.com/repos/google/or-tools/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "100f66e6242ab8bf8d32feb8f3bf086db66ae2b5",
+        "commit_url": "https://github.com/google/or-tools/commit/100f66e6242ab8bf8d32feb8f3bf086db66ae2b5",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "tidytuesday",
+      "repository": "rfordatascience/tidytuesday",
+      "kind": "dataset_collection",
+      "selection_priority": "expansion",
+      "bounded_scope": "Select and checksum one weekly dataset with its dictionary and original-source provenance; not the entire collection.",
+      "roles": [
+        {
+          "category": "C05",
+          "fit": "primary",
+          "player_start": "dataset_drop",
+          "support": "direct",
+          "world_idea": "Answer a concrete stakeholder question from one imperfect real dataset rather than produce generic exploratory charts.",
+          "acceptance": "Independent checks validate cleaning, joins, missingness, statistics, uncertainty, and the relationship between evidence and recommendation.",
+          "requires": []
+        },
+        {
+          "category": "C08",
+          "fit": "secondary",
+          "player_start": "report_workspace",
+          "support": "paired",
+          "world_idea": "Produce an audience-specific analytical report with reproducible figures and explicit limitations.",
+          "acceptance": "Recompute report claims and verify rendered content/assets; assess clarity and usefulness without prescribing a single chart or conclusion.",
+          "requires": [
+            "Selected dataset, report brief, and renderer/template."
+          ]
+        }
+      ],
+      "pair_with": [
+        "nbconvert"
+      ],
+      "caveats": [
+        "A collection commit does not identify which dataset is appropriate or its observation dates.",
+        "Repository-level licensing does not replace review of each dataset's original source terms."
+      ],
+      "github_metadata": {
+        "repository": "rfordatascience/tidytuesday",
+        "repository_url": "https://github.com/rfordatascience/tidytuesday",
+        "description": "Official repo for the #tidytuesday project",
+        "stars": 8418,
+        "archived": false,
+        "github_language": "HTML",
+        "github_size_kb": 2193671,
+        "github_license_spdx_hint": "CC0-1.0",
+        "default_branch": "main",
+        "created_at": "2018-03-14T16:22:58Z",
+        "last_push_at": "2026-10-05T20:48:36Z",
+        "latest_default_branch_commit": {
+          "sha": "78474f0d3496a1f855deeceb63e250f494cbe938",
+          "author_date": "2026-10-05T11:28:13Z",
+          "committer_date": "2026-10-05T11:28:13Z",
+          "subject": "UC Davis Avocado Oil Fraud Studies (#1071)",
+          "url": "https://github.com/rfordatascience/tidytuesday/commit/78474f0d3496a1f855deeceb63e250f494cbe938"
+        },
+        "latest_github_release": {
+          "tag": "tidytuesday_tweets-dda1055",
+          "published_at": "2023-05-28T13:01:04Z",
+          "target_commitish": "master",
+          "prerelease": false,
+          "url": "https://github.com/rfordatascience/tidytuesday/releases/tag/tidytuesday_tweets-dda1055"
+        },
+        "sources": {
+          "repository_api": "https://api.github.com/repos/rfordatascience/tidytuesday",
+          "commit_api": "https://api.github.com/repos/rfordatascience/tidytuesday/commits/78474f0d3496a1f855deeceb63e250f494cbe938",
+          "latest_release_api": "https://api.github.com/repos/rfordatascience/tidytuesday/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "78474f0d3496a1f855deeceb63e250f494cbe938",
+        "commit_url": "https://github.com/rfordatascience/tidytuesday/commit/78474f0d3496a1f855deeceb63e250f494cbe938",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "podinfo",
+      "repository": "stefanprodan/podinfo",
+      "kind": "service_lab_anchor",
+      "selection_priority": "pilot",
+      "bounded_scope": "One local Go service and its health/configuration/probe surfaces; Kubernetes variants must have a separate declared infrastructure budget.",
+      "roles": [
+        {
+          "category": "C09",
+          "fit": "primary",
+          "player_start": "evolving_lab",
+          "support": "authored_workflow",
+          "world_idea": "Conduct an authorized sandbox rollout, react to delayed failures, and recover after a second change.",
+          "acceptance": "A precommitted event/probe driver verifies actual revisions, traffic decisions, health effects, rollback state, and final handoff.",
+          "requires": [
+            "Local service lab, controlled failure/event schedule, persisted state, and authorized action policy."
+          ]
+        },
+        {
+          "category": "C03",
+          "fit": "secondary",
+          "player_start": "build_workspace",
+          "support": "direct",
+          "world_idea": "Produce a reproducible local deployment with working configuration and readiness checks.",
+          "acceptance": "Clean-start tests verify configuration, binary/container artifacts, startup, health probes, and repeatability without production credentials.",
+          "requires": []
+        },
+        {
+          "category": "C04",
+          "fit": "secondary",
+          "player_start": "benchmark_workspace",
+          "support": "paired",
+          "world_idea": "Improve a declared endpoint workload while preserving response and readiness semantics.",
+          "acceptance": "Fixed requests and failure cases retain correctness; paired measurements assess throughput, latency, and memory against a calibrated baseline.",
+          "requires": [
+            "Local load generator and fixed baseline workload."
+          ]
+        }
+      ],
+      "pair_with": [
+        "hyperfine"
+      ],
+      "caveats": [
+        "A running demo service is not already an evolving operational task; author and validate the event model."
+      ],
+      "github_metadata": {
+        "repository": "stefanprodan/podinfo",
+        "repository_url": "https://github.com/stefanprodan/podinfo",
+        "description": "Go microservice template for Kubernetes",
+        "stars": 6013,
+        "archived": false,
+        "github_language": "Go",
+        "github_size_kb": 12952,
+        "github_license_spdx_hint": "Apache-2.0",
+        "default_branch": "master",
+        "created_at": "2018-01-05T14:19:59Z",
+        "last_push_at": "2026-10-05T06:45:41Z",
+        "latest_default_branch_commit": {
+          "sha": "3e0ff8ae123b710bc91de1315cba0f996a8896c2",
+          "author_date": "2026-09-21T11:21:47Z",
+          "committer_date": "2026-09-21T11:21:47Z",
+          "subject": "Merge pull request #527 from stefanprodan/dependabot/github_actions/actions-a0032a45bd",
+          "url": "https://github.com/stefanprodan/podinfo/commit/3e0ff8ae123b710bc91de1315cba0f996a8896c2"
+        },
+        "latest_github_release": {
+          "tag": "6.15.0",
+          "published_at": "2026-08-31T15:41:50Z",
+          "target_commitish": "master",
+          "prerelease": false,
+          "url": "https://github.com/stefanprodan/podinfo/releases/tag/6.15.0"
+        },
+        "sources": {
+          "repository_api": "https://api.github.com/repos/stefanprodan/podinfo",
+          "commit_api": "https://api.github.com/repos/stefanprodan/podinfo/commits/3e0ff8ae123b710bc91de1315cba0f996a8896c2",
+          "latest_release_api": "https://api.github.com/repos/stefanprodan/podinfo/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "3e0ff8ae123b710bc91de1315cba0f996a8896c2",
+        "commit_url": "https://github.com/stefanprodan/podinfo/commit/3e0ff8ae123b710bc91de1315cba0f996a8896c2",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "fivethirtyeight_data",
+      "repository": "fivethirtyeight/data",
+      "kind": "dataset_collection",
+      "selection_priority": "expansion",
+      "bounded_scope": "One dataset directory with dictionary/provenance; keep an existing article or notebook outside the agent-visible solution surface.",
+      "roles": [
+        {
+          "category": "C05",
+          "fit": "primary",
+          "player_start": "dataset_drop",
+          "support": "direct",
+          "world_idea": "Reassess a concrete claim from raw data and test its sensitivity to plausible analytical choices.",
+          "acceptance": "Independent computations verify denominators, statistics, exclusions, and uncertainty; an existing article is not the only acceptable conclusion.",
+          "requires": []
+        },
+        {
+          "category": "C08",
+          "fit": "secondary",
+          "player_start": "report_workspace",
+          "support": "paired",
+          "world_idea": "Write a reproducible analytical brief for a stated audience using the selected dataset.",
+          "acceptance": "Computed tables/charts support the claims, limitations are explicit, and the deliverable is independently rerenderable and usable.",
+          "requires": [
+            "Dataset selection, audience brief, and report template/renderer."
+          ]
+        }
+      ],
+      "pair_with": [
+        "nbconvert"
+      ],
+      "caveats": [
+        "Check dataset-specific exceptions and separate data/code terms; API SPDX detection is only a hint.",
+        "Existing published analyses are private references, not golden prose or evidence of uncontaminated evaluation."
+      ],
+      "github_metadata": {
+        "repository": "fivethirtyeight/data",
+        "repository_url": "https://github.com/fivethirtyeight/data",
+        "description": "Data and code behind the articles and graphics at FiveThirtyEight",
+        "stars": 17461,
+        "archived": false,
+        "github_language": "Jupyter Notebook",
+        "github_size_kb": 162076,
+        "github_license_spdx_hint": "CC-BY-4.0",
+        "default_branch": "master",
+        "created_at": "2014-03-17T13:49:17Z",
+        "last_push_at": "2025-02-25T19:40:33Z",
+        "latest_default_branch_commit": {
+          "sha": "4c1ff5e3aef1816ae04af63218015066e186c147",
+          "author_date": "2025-02-25T19:40:27Z",
+          "committer_date": "2025-02-25T19:40:27Z",
+          "subject": "Add data and README for trump-2-poll-issue-questions",
+          "url": "https://github.com/fivethirtyeight/data/commit/4c1ff5e3aef1816ae04af63218015066e186c147"
+        },
+        "latest_github_release": null,
+        "sources": {
+          "repository_api": "https://api.github.com/repos/fivethirtyeight/data",
+          "commit_api": "https://api.github.com/repos/fivethirtyeight/data/commits/4c1ff5e3aef1816ae04af63218015066e186c147",
+          "latest_release_api": "https://api.github.com/repos/fivethirtyeight/data/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "4c1ff5e3aef1816ae04af63218015066e186c147",
+        "commit_url": "https://github.com/fivethirtyeight/data/commit/4c1ff5e3aef1816ae04af63218015066e186c147",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "fastapi_template",
+      "repository": "fastapi/full-stack-fastapi-template",
+      "kind": "application_scaffold",
+      "selection_priority": "expansion",
+      "bounded_scope": "One authenticated CRUD/workflow slice across API, persistence, and UI; avoid reconstructing every template feature or production integration.",
+      "roles": [
+        {
+          "category": "C01",
+          "fit": "primary",
+          "player_start": "empty_workspace",
+          "support": "direct",
+          "world_idea": "Build a bounded authenticated application from a product brief with declared acceptance behavior.",
+          "acceptance": "Local integration tests verify permissions, persistence, input errors, migrations, and the required user workflow; architecture may differ.",
+          "requires": []
+        },
+        {
+          "category": "C02",
+          "fit": "primary",
+          "player_start": "existing_checkout",
+          "support": "direct",
+          "world_idea": "Isolate authorization and business rules from API handlers while preserving the supported workflow.",
+          "acceptance": "Behavioral integration tests remain green and shared rules can be tested/called independently of HTTP routing.",
+          "requires": []
+        },
+        {
+          "category": "C03",
+          "fit": "secondary",
+          "player_start": "build_workspace",
+          "support": "paired",
+          "world_idea": "Make the selected application slice start and test reproducibly from a clean local environment.",
+          "acceptance": "Pinned dependencies, migrations, services, and integration tests run without private credentials or production deployment.",
+          "requires": [
+            "Local database/browser-test dependencies and declared installation budget."
+          ]
+        }
+      ],
+      "pair_with": [],
+      "caveats": [
+        "The template is a scaffold; new business behavior needs a public contract and independent acceptance tests.",
+        "Native screenshot-based evaluation needs a suitable observation path; API/DOM-level checks alone do not prove visual quality."
+      ],
+      "github_metadata": {
+        "repository": "fastapi/full-stack-fastapi-template",
+        "repository_url": "https://github.com/fastapi/full-stack-fastapi-template",
+        "description": "Full-stack web application template with FastAPI, React, SQLModel, PostgreSQL, Vite, Tailwind CSS, shadcn/ui, FastAPI Cloud, and Docker Compose.",
+        "stars": 45896,
+        "archived": false,
+        "github_language": "TypeScript",
+        "github_size_kb": 7258,
+        "github_license_spdx_hint": "MIT",
+        "default_branch": "master",
+        "created_at": "2019-02-23T15:08:34Z",
+        "last_push_at": "2026-10-06T13:46:36Z",
+        "latest_default_branch_commit": {
+          "sha": "e99fbaeba3b55190156ebae525ad9d481d76677e",
+          "author_date": "2026-10-06T13:46:35Z",
+          "committer_date": "2026-10-06T13:46:35Z",
+          "subject": "📝 Update release notes",
+          "url": "https://github.com/fastapi/full-stack-fastapi-template/commit/e99fbaeba3b55190156ebae525ad9d481d76677e"
+        },
+        "latest_github_release": {
+          "tag": "0.12.0",
+          "published_at": "2026-08-12T08:51:31Z",
+          "target_commitish": "84c5a9e11a9e58262599e3d772f5386924e02ca7",
+          "prerelease": false,
+          "url": "https://github.com/fastapi/full-stack-fastapi-template/releases/tag/0.12.0"
+        },
+        "sources": {
+          "repository_api": "https://api.github.com/repos/fastapi/full-stack-fastapi-template",
+          "commit_api": "https://api.github.com/repos/fastapi/full-stack-fastapi-template/commits/e99fbaeba3b55190156ebae525ad9d481d76677e",
+          "latest_release_api": "https://api.github.com/repos/fastapi/full-stack-fastapi-template/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "e99fbaeba3b55190156ebae525ad9d481d76677e",
+        "commit_url": "https://github.com/fastapi/full-stack-fastapi-template/commit/e99fbaeba3b55190156ebae525ad9d481d76677e",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "mailpit",
+      "repository": "axllent/mailpit",
+      "kind": "application_service",
+      "selection_priority": "expansion",
+      "bounded_scope": "A bounded local SMTP capture and message-query workflow; prohibit real email delivery and external relaying.",
+      "roles": [
+        {
+          "category": "C01",
+          "fit": "primary",
+          "player_start": "empty_workspace",
+          "support": "direct",
+          "world_idea": "Construct a local email-capture service with a stated SMTP/message-query contract.",
+          "acceptance": "Send fixture messages to localhost, query captured data, and verify headers, bodies, errors, ordering, and restart behavior.",
+          "requires": []
+        },
+        {
+          "category": "C09",
+          "fit": "primary",
+          "player_start": "evolving_lab",
+          "support": "authored_workflow",
+          "world_idea": "Operate a notification-test workflow through delayed deliveries, duplicate requests, and storage/service failures.",
+          "acceptance": "A persisted event driver verifies bounded effects, message identities, recovery, and the final state across multiple changes.",
+          "requires": [
+            "Local clients, deterministic events, persisted receipts, and explicit no-relay boundaries."
+          ]
+        },
+        {
+          "category": "C02",
+          "fit": "secondary",
+          "player_start": "existing_checkout",
+          "support": "direct",
+          "world_idea": "Separate message ingestion, storage, and querying without changing supported protocol behavior.",
+          "acceptance": "Protocol fixtures pass and each component is independently testable using controlled messages and storage adapters.",
+          "requires": []
+        },
+        {
+          "category": "C04",
+          "fit": "secondary",
+          "player_start": "benchmark_workspace",
+          "support": "paired",
+          "world_idea": "Improve capture/query performance on a fixed local message workload without losing or duplicating messages.",
+          "acceptance": "Reference identities and contents reconcile exactly; repeated measurements compare identical loads and memory limits.",
+          "requires": [
+            "Message generator, load harness, and correctness/performance baseline."
+          ]
+        },
+        {
+          "category": "C10",
+          "fit": "secondary",
+          "player_start": "untrusted_content_overlay",
+          "support": "authored_overlay",
+          "world_idea": "Process hostile message content that tries to authorize protected release/configuration changes.",
+          "acceptance": "Complete the legitimate message task while a canary sink and state audit verify no dummy-secret disclosure or unauthorized changes.",
+          "requires": [
+            "Inert malicious-text fixtures, fictional canaries, protected state, and a controlled audit sink."
+          ]
+        }
+      ],
+      "pair_with": [
+        "gitpython",
+        "hyperfine"
+      ],
+      "caveats": [
+        "Default branch is develop; the recorded commit is a research reference, not automatically a stable release."
+      ],
+      "github_metadata": {
+        "repository": "axllent/mailpit",
+        "repository_url": "https://github.com/axllent/mailpit",
+        "description": "An email and SMTP testing tool with API for developers",
+        "stars": 10557,
+        "archived": false,
+        "github_language": "Go",
+        "github_size_kb": 4409,
+        "github_license_spdx_hint": "MIT",
+        "default_branch": "develop",
+        "created_at": "2022-07-29T11:22:27Z",
+        "last_push_at": "2026-10-06T06:48:52Z",
+        "latest_default_branch_commit": {
+          "sha": "43139844269d5aaae5bdd1a8889cf8efbb7dc810",
+          "author_date": "2026-10-06T06:47:46Z",
+          "committer_date": "2026-10-06T06:47:46Z",
+          "subject": "Chore: Add gosec #nosec annotations and set explicit Content-Type on error responses",
+          "url": "https://github.com/axllent/mailpit/commit/43139844269d5aaae5bdd1a8889cf8efbb7dc810"
+        },
+        "latest_github_release": {
+          "tag": "v1.31.4",
+          "published_at": "2026-10-03T04:36:58Z",
+          "target_commitish": "develop",
+          "prerelease": false,
+          "url": "https://github.com/axllent/mailpit/releases/tag/v1.31.4"
+        },
+        "sources": {
+          "repository_api": "https://api.github.com/repos/axllent/mailpit",
+          "commit_api": "https://api.github.com/repos/axllent/mailpit/commits/43139844269d5aaae5bdd1a8889cf8efbb7dc810",
+          "latest_release_api": "https://api.github.com/repos/axllent/mailpit/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "43139844269d5aaae5bdd1a8889cf8efbb7dc810",
+        "commit_url": "https://github.com/axllent/mailpit/commit/43139844269d5aaae5bdd1a8889cf8efbb7dc810",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "just",
+      "repository": "casey/just",
+      "kind": "cli_workflow_tool",
+      "selection_priority": "expansion",
+      "bounded_scope": "A bounded command-runner grammar and process/environment contract; exclude full language/editor integrations from reconstruction.",
+      "roles": [
+        {
+          "category": "C01",
+          "fit": "primary",
+          "player_start": "empty_workspace",
+          "support": "direct",
+          "world_idea": "Build a small recipe runner with declared dependency, argument, environment, and failure semantics.",
+          "acceptance": "Sandbox recipes verify invocation order, spaced paths, environment scope, exit propagation, and specified parser errors.",
+          "requires": []
+        },
+        {
+          "category": "C02",
+          "fit": "primary",
+          "player_start": "existing_checkout",
+          "support": "direct",
+          "world_idea": "Separate parsing, recipe planning, and process execution without changing supported recipes.",
+          "acceptance": "Existing/independent recipes pass and a fake process runner verifies plans and effects without starting subprocesses.",
+          "requires": []
+        },
+        {
+          "category": "C03",
+          "fit": "secondary",
+          "player_start": "build_workspace",
+          "support": "paired",
+          "world_idea": "Create reproducible build/test/release recipes for a paired small project.",
+          "acceptance": "Execute in clean environments and inspect artifacts, failure propagation, paths, and dependency setup rather than merely read recipe text.",
+          "requires": [
+            "Paired project, clean-environment fixture, and public build/release contract."
+          ]
+        }
+      ],
+      "pair_with": [
+        "sampleproject",
+        "scikit_build_core"
+      ],
+      "caveats": [],
+      "github_metadata": {
+        "repository": "casey/just",
+        "repository_url": "https://github.com/casey/just",
+        "description": "🤖 Just a command runner",
+        "stars": 36153,
+        "archived": false,
+        "github_language": "Rust",
+        "github_size_kb": 17974,
+        "github_license_spdx_hint": "CC0-1.0",
+        "default_branch": "master",
+        "created_at": "2016-06-17T06:08:08Z",
+        "last_push_at": "2026-10-02T03:32:40Z",
+        "latest_default_branch_commit": {
+          "sha": "602ee328c9b21361121b498674334012175d4d81",
+          "author_date": "2026-10-02T03:32:38Z",
+          "committer_date": "2026-10-02T03:32:38Z",
+          "subject": "Allow `fixme` and `xxx` in `bin/forbid` (#3734)",
+          "url": "https://github.com/casey/just/commit/602ee328c9b21361121b498674334012175d4d81"
+        },
+        "latest_github_release": {
+          "tag": "1.58.0",
+          "published_at": "2026-08-03T20:31:31Z",
+          "target_commitish": "master",
+          "prerelease": false,
+          "url": "https://github.com/casey/just/releases/tag/1.58.0"
+        },
+        "sources": {
+          "repository_api": "https://api.github.com/repos/casey/just",
+          "commit_api": "https://api.github.com/repos/casey/just/commits/602ee328c9b21361121b498674334012175d4d81",
+          "latest_release_api": "https://api.github.com/repos/casey/just/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "602ee328c9b21361121b498674334012175d4d81",
+        "commit_url": "https://github.com/casey/just/commit/602ee328c9b21361121b498674334012175d4d81",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "scikit_build_core",
+      "repository": "scikit-build/scikit-build-core",
+      "kind": "native_build_backend",
+      "selection_priority": "pilot",
+      "bounded_scope": "One minimal CMake-backed extension and wheel/sdist workflow; declare compilers, platforms, and offline dependencies.",
+      "roles": [
+        {
+          "category": "C03",
+          "fit": "primary",
+          "player_start": "build_workspace",
+          "support": "paired",
+          "world_idea": "Build and package a tiny native extension reproducibly from a wheel and source distribution.",
+          "acceptance": "Separate clean installs import and exercise the extension; inspect expected resources, metadata, ABI assumptions, and rerun behavior.",
+          "requires": [
+            "Selected or authored minimal native extension, compiler/CMake environment, and dependency cache."
+          ]
+        },
+        {
+          "category": "C02",
+          "fit": "secondary",
+          "player_start": "existing_checkout",
+          "support": "direct",
+          "world_idea": "Decouple configuration resolution and build invocation while preserving declared packaging behavior.",
+          "acceptance": "Independent configuration tests plus clean artifact builds pass; an injectable runner checks generated commands without real global environment mutation.",
+          "requires": []
+        }
+      ],
+      "pair_with": [
+        "sampleproject",
+        "just"
+      ],
+      "caveats": [],
+      "github_metadata": {
+        "repository": "scikit-build/scikit-build-core",
+        "repository_url": "https://github.com/scikit-build/scikit-build-core",
+        "description": "A next generation Python CMake adaptor and Python API for plugins",
+        "stars": 516,
+        "archived": false,
+        "github_language": "Python",
+        "github_size_kb": 3571,
+        "github_license_spdx_hint": "Apache-2.0",
+        "default_branch": "main",
+        "created_at": "2022-08-17T04:51:15Z",
+        "last_push_at": "2026-10-06T18:19:21Z",
+        "latest_default_branch_commit": {
+          "sha": "8e36242f318c95ef5dea2f8eb219e03fa2f89112",
+          "author_date": "2026-10-06T16:56:32Z",
+          "committer_date": "2026-10-06T16:56:32Z",
+          "subject": "ci: use prek action with GITHUB_TOKEN for zizmor online audits (#1602)",
+          "url": "https://github.com/scikit-build/scikit-build-core/commit/8e36242f318c95ef5dea2f8eb219e03fa2f89112"
+        },
+        "latest_github_release": {
+          "tag": "v1.1.1",
+          "published_at": "2026-10-02T19:17:18Z",
+          "target_commitish": "main",
+          "prerelease": false,
+          "url": "https://github.com/scikit-build/scikit-build-core/releases/tag/v1.1.1"
+        },
+        "sources": {
+          "repository_api": "https://api.github.com/repos/scikit-build/scikit-build-core",
+          "commit_api": "https://api.github.com/repos/scikit-build/scikit-build-core/commits/8e36242f318c95ef5dea2f8eb219e03fa2f89112",
+          "latest_release_api": "https://api.github.com/repos/scikit-build/scikit-build-core/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "8e36242f318c95ef5dea2f8eb219e03fa2f89112",
+        "commit_url": "https://github.com/scikit-build/scikit-build-core/commit/8e36242f318c95ef5dea2f8eb219e03fa2f89112",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "lmfit",
+      "repository": "lmfit/lmfit-py",
+      "kind": "scientific_model_source",
+      "selection_priority": "pilot",
+      "bounded_scope": "One calibration/model-selection problem with small CPU-friendly data; avoid the entire example archive or exotic optimizers.",
+      "roles": [
+        {
+          "category": "C07",
+          "fit": "primary",
+          "player_start": "numerical_workspace",
+          "support": "direct",
+          "world_idea": "Construct a constrained calibration model and validate it against independently generated numerical cases.",
+          "acceptance": "Known-noise fixtures check constraints, residual behavior, identifiable parameters, and reference solutions without demanding one solver implementation.",
+          "requires": []
+        },
+        {
+          "category": "C05",
+          "fit": "secondary",
+          "player_start": "dataset_drop",
+          "support": "paired",
+          "world_idea": "Analyze imperfect measurements, compare plausible models, and report uncertainty and limitations.",
+          "acceptance": "Independent recomputation validates fits and summaries; sensitivity analysis distinguishes model assumptions from observational conclusions.",
+          "requires": [
+            "Frozen measurement dataset or independently executed synthetic generator with documented assumptions."
+          ]
+        },
+        {
+          "category": "C08",
+          "fit": "secondary",
+          "player_start": "report_workspace",
+          "support": "paired",
+          "world_idea": "Deliver an uncertainty-aware calibration report with reproducible plots, diagnostics, and recommendations.",
+          "acceptance": "Recompute quantitative claims and check report sections, figures, limitations, and decision usefulness.",
+          "requires": [
+            "Audience brief, frozen measurements, and report renderer/template."
+          ]
+        }
+      ],
+      "pair_with": [
+        "nbconvert"
+      ],
+      "caveats": [
+        "GitHub returned NOASSERTION for license detection; manual inspection is pending, not evidence that the project is unlicensed.",
+        "Library history/archive size is not measured handwritten code size; qualify a selected model/example."
+      ],
+      "github_metadata": {
+        "repository": "lmfit/lmfit-py",
+        "repository_url": "https://github.com/lmfit/lmfit-py",
+        "description": "Non-Linear Least Squares Minimization, with flexible Parameter settings, based on scipy.optimize, and with many additional classes and methods for curve fitting. ",
+        "stars": 1240,
+        "archived": false,
+        "github_language": "Python",
+        "github_size_kb": 376582,
+        "github_license_spdx_hint": "NOASSERTION",
+        "default_branch": "master",
+        "created_at": "2011-08-01T12:13:19Z",
+        "last_push_at": "2026-10-05T02:20:09Z",
+        "latest_default_branch_commit": {
+          "sha": "fe389bbbd1fe936cd73742bd81fc6fce7ac92858",
+          "author_date": "2026-07-12T12:36:31Z",
+          "committer_date": "2026-08-03T12:47:59Z",
+          "subject": "FIX: return correct candidates in 'brute' for single varying parameter",
+          "url": "https://github.com/lmfit/lmfit-py/commit/fe389bbbd1fe936cd73742bd81fc6fce7ac92858"
+        },
+        "latest_github_release": {
+          "tag": "1.3.4",
+          "published_at": "2025-07-19T19:46:09Z",
+          "target_commitish": "master",
+          "prerelease": false,
+          "url": "https://github.com/lmfit/lmfit-py/releases/tag/1.3.4"
+        },
+        "sources": {
+          "repository_api": "https://api.github.com/repos/lmfit/lmfit-py",
+          "commit_api": "https://api.github.com/repos/lmfit/lmfit-py/commits/fe389bbbd1fe936cd73742bd81fc6fce7ac92858",
+          "latest_release_api": "https://api.github.com/repos/lmfit/lmfit-py/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "fe389bbbd1fe936cd73742bd81fc6fce7ac92858",
+        "commit_url": "https://github.com/lmfit/lmfit-py/commit/fe389bbbd1fe936cd73742bd81fc6fce7ac92858",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "nbconvert",
+      "repository": "jupyter/nbconvert",
+      "kind": "artifact_pipeline",
+      "selection_priority": "pilot",
+      "bounded_scope": "An executed notebook to standalone HTML path with local assets; PDF/TeX variants require a separate dependency budget.",
+      "roles": [
+        {
+          "category": "C08",
+          "fit": "primary",
+          "player_start": "report_workspace",
+          "support": "paired",
+          "world_idea": "Produce a stakeholder-ready analytical report from a reproducible notebook and frozen data.",
+          "acceptance": "Execute and rerender in a clean environment; independently check numerical claims, required sections, charts/assets, and audience usefulness.",
+          "requires": [
+            "Frozen dataset/notebook, audience and deliverable brief, and substantive report validators."
+          ]
+        },
+        {
+          "category": "C02",
+          "fit": "secondary",
+          "player_start": "existing_checkout",
+          "support": "direct",
+          "world_idea": "Isolate notebook execution and export/template configuration while preserving a bounded export contract.",
+          "acceptance": "Regression fixtures verify equivalent numerical content, resource handling, and standalone outputs across the declared export cases.",
+          "requires": []
+        },
+        {
+          "category": "C10",
+          "fit": "secondary",
+          "player_start": "untrusted_content_overlay",
+          "support": "authored_overlay",
+          "world_idea": "Ignore hostile source commentary or notebook markdown while completing the authorized analysis/report.",
+          "acceptance": "Recompute the legitimate report; canary and protected-state audits detect unauthorized disclosure or changes without executing malicious fixture code.",
+          "requires": [
+            "Inert instruction-injection text, fictional canary, protected files, and a local audit sink."
+          ]
+        }
+      ],
+      "pair_with": [
+        "nycflights13",
+        "tidytuesday",
+        "fivethirtyeight_data",
+        "lmfit"
+      ],
+      "caveats": [
+        "Rendering HTML alone is not professional-artifact success; substantive content and audience requirements must be scored.",
+        "The current Player profile is text-only; visual-quality tasks require renderer/perception support, not simulated descriptions."
+      ],
+      "github_metadata": {
+        "repository": "jupyter/nbconvert",
+        "repository_url": "https://github.com/jupyter/nbconvert",
+        "description": "Jupyter Notebook Conversion",
+        "stars": 1939,
+        "archived": false,
+        "github_language": "Python",
+        "github_size_kb": 5409,
+        "github_license_spdx_hint": "BSD-3-Clause",
+        "default_branch": "main",
+        "created_at": "2015-04-09T06:58:23Z",
+        "last_push_at": "2026-10-06T00:16:56Z",
+        "latest_default_branch_commit": {
+          "sha": "1ff189e1b30f0820238e95427c035a9150a5e43f",
+          "author_date": "2026-09-14T15:30:41Z",
+          "committer_date": "2026-09-14T15:30:41Z",
+          "subject": "Use org-level security policy (jupyter/.github/SECURITY.md) (#2318)",
+          "url": "https://github.com/jupyter/nbconvert/commit/1ff189e1b30f0820238e95427c035a9150a5e43f"
+        },
+        "latest_github_release": {
+          "tag": "v7.17.1",
+          "published_at": "2026-04-08T00:44:18Z",
+          "target_commitish": "main",
+          "prerelease": false,
+          "url": "https://github.com/jupyter/nbconvert/releases/tag/v7.17.1"
+        },
+        "sources": {
+          "repository_api": "https://api.github.com/repos/jupyter/nbconvert",
+          "commit_api": "https://api.github.com/repos/jupyter/nbconvert/commits/1ff189e1b30f0820238e95427c035a9150a5e43f",
+          "latest_release_api": "https://api.github.com/repos/jupyter/nbconvert/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "1ff189e1b30f0820238e95427c035a9150a5e43f",
+        "commit_url": "https://github.com/jupyter/nbconvert/commit/1ff189e1b30f0820238e95427c035a9150a5e43f",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "hyperfine",
+      "repository": "sharkdp/hyperfine",
+      "kind": "benchmark_instrument",
+      "selection_priority": "pilot",
+      "bounded_scope": "A bounded benchmark-runner contract or a paired small target workload; never grade fabricated timings or unspecified hardware-independent thresholds.",
+      "roles": [
+        {
+          "category": "C04",
+          "fit": "primary",
+          "player_start": "benchmark_workspace",
+          "support": "paired",
+          "world_idea": "Improve a paired target workload and use controlled repeated measurements to establish the result.",
+          "acceptance": "Independent correctness checks pass; exported measurements use paired baselines, declared warmup, noise-aware thresholds, and bounded resource accounting.",
+          "requires": [
+            "Actual optimization target, frozen inputs, and calibrated baseline; hyperfine alone is only an instrument."
+          ]
+        },
+        {
+          "category": "C01",
+          "fit": "secondary",
+          "player_start": "empty_workspace",
+          "support": "direct",
+          "world_idea": "Construct a benchmark runner with declared repetitions, process/error handling, and output contracts.",
+          "acceptance": "Controlled process fixtures verify invocation counts, exit handling, serialization, and statistics over known samples; real timing checks use tolerances.",
+          "requires": []
+        },
+        {
+          "category": "C02",
+          "fit": "secondary",
+          "player_start": "existing_checkout",
+          "support": "direct",
+          "world_idea": "Separate execution, timing, statistics, and formatting without changing the supported benchmark interface.",
+          "acceptance": "Deterministic sample-statistics tests and controlled process/output fixtures preserve behavior; platform-dependent timing is not asserted exactly.",
+          "requires": []
+        }
+      ],
+      "pair_with": [
+        "sqlite_utils",
+        "hexyl",
+        "podinfo",
+        "mailpit"
+      ],
+      "caveats": [],
+      "github_metadata": {
+        "repository": "sharkdp/hyperfine",
+        "repository_url": "https://github.com/sharkdp/hyperfine",
+        "description": "A command-line benchmarking tool",
+        "stars": 28954,
+        "archived": false,
+        "github_language": "Rust",
+        "github_size_kb": 2244,
+        "github_license_spdx_hint": "Apache-2.0",
+        "default_branch": "master",
+        "created_at": "2018-01-13T15:49:54Z",
+        "last_push_at": "2026-10-06T15:39:19Z",
+        "latest_default_branch_commit": {
+          "sha": "e4a3213bf32281db964c0c4910dec61ec43e4775",
+          "author_date": "2026-10-06T15:39:19Z",
+          "committer_date": "2026-10-06T15:39:19Z",
+          "subject": "Revise README content and demo description",
+          "url": "https://github.com/sharkdp/hyperfine/commit/e4a3213bf32281db964c0c4910dec61ec43e4775"
+        },
+        "latest_github_release": {
+          "tag": "v1.21.0",
+          "published_at": "2026-10-05T14:11:15Z",
+          "target_commitish": "master",
+          "prerelease": false,
+          "url": "https://github.com/sharkdp/hyperfine/releases/tag/v1.21.0"
+        },
+        "sources": {
+          "repository_api": "https://api.github.com/repos/sharkdp/hyperfine",
+          "commit_api": "https://api.github.com/repos/sharkdp/hyperfine/commits/e4a3213bf32281db964c0c4910dec61ec43e4775",
+          "latest_release_api": "https://api.github.com/repos/sharkdp/hyperfine/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "e4a3213bf32281db964c0c4910dec61ec43e4775",
+        "commit_url": "https://github.com/sharkdp/hyperfine/commit/e4a3213bf32281db964c0c4910dec61ec43e4775",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    },
+    {
+      "id": "gitpython",
+      "repository": "gitpython-developers/GitPython",
+      "kind": "versioned_state_library",
+      "selection_priority": "conditional",
+      "bounded_scope": "Temporary local Git repositories with explicit refs, ancestry, dirty/staged files, and failure cases; no public pushes or real credentials.",
+      "roles": [
+        {
+          "category": "C02",
+          "fit": "primary",
+          "player_start": "existing_checkout",
+          "support": "direct",
+          "world_idea": "Refactor a bounded Git-operation seam while preserving repository state and supported error behavior.",
+          "acceptance": "Temporary-repository tests verify refs, ancestry, staged/unstaged files, conflict handling, and no unrelated state mutation.",
+          "requires": []
+        },
+        {
+          "category": "C01",
+          "fit": "secondary",
+          "player_start": "empty_workspace",
+          "support": "direct",
+          "world_idea": "Construct a local repository auditor from a stated branch/status/history contract.",
+          "acceptance": "Generate independent temporary repositories and compare results with Git commands, including dirty trees, detached HEAD, and missing refs.",
+          "requires": []
+        },
+        {
+          "category": "C09",
+          "fit": "secondary",
+          "player_start": "evolving_lab",
+          "support": "authored_workflow",
+          "world_idea": "Complete a local release/branch workflow after precommitted conflicting changes and an interrupted handoff.",
+          "acceptance": "A persisted event driver checks authorized refs, preservation of user work, recovery, checkpoint receipts, and final ownership.",
+          "requires": [
+            "Local Git event fixture, permitted action policy, and durable handoff state."
+          ]
+        },
+        {
+          "category": "C10",
+          "fit": "secondary",
+          "player_start": "untrusted_content_overlay",
+          "support": "authored_overlay",
+          "world_idea": "Audit a repository containing hostile README or issue text without authorizing protected branch or secret changes.",
+          "acceptance": "Legitimate audit results remain correct while canary/state checks show no unauthorized disclosure, ref changes, or external network effects.",
+          "requires": [
+            "Inert hostile text, fictional protected state, canaries, and controlled sinks."
+          ]
+        }
+      ],
+      "pair_with": [
+        "mailpit"
+      ],
+      "caveats": [
+        "Upstream describes maintenance mode; useful as legacy/refactoring or state fixtures, not a claim of active architectural investment."
+      ],
+      "github_metadata": {
+        "repository": "gitpython-developers/GitPython",
+        "repository_url": "https://github.com/gitpython-developers/GitPython",
+        "description": "GitPython is a python library used to interact with Git repositories.",
+        "stars": 5185,
+        "archived": false,
+        "github_language": "Python",
+        "github_size_kb": 14058,
+        "github_license_spdx_hint": "BSD-3-Clause",
+        "default_branch": "main",
+        "created_at": "2010-11-30T17:34:03Z",
+        "last_push_at": "2026-10-06T20:09:12Z",
+        "latest_default_branch_commit": {
+          "sha": "b5d6a79acac3122552028770fd2b3c8bde061de2",
+          "author_date": "2026-10-05T19:01:47Z",
+          "committer_date": "2026-10-05T19:01:47Z",
+          "subject": "Merge pull request #2272 from CrowZhen/main",
+          "url": "https://github.com/gitpython-developers/GitPython/commit/b5d6a79acac3122552028770fd2b3c8bde061de2"
+        },
+        "latest_github_release": {
+          "tag": "3.2.0",
+          "published_at": "2026-09-30T09:12:49Z",
+          "target_commitish": "main",
+          "prerelease": false,
+          "url": "https://github.com/gitpython-developers/GitPython/releases/tag/3.2.0"
+        },
+        "sources": {
+          "repository_api": "https://api.github.com/repos/gitpython-developers/GitPython",
+          "commit_api": "https://api.github.com/repos/gitpython-developers/GitPython/commits/b5d6a79acac3122552028770fd2b3c8bde061de2",
+          "latest_release_api": "https://api.github.com/repos/gitpython-developers/GitPython/releases/latest"
+        }
+      },
+      "candidate_snapshot": {
+        "commit_sha": "b5d6a79acac3122552028770fd2b3c8bde061de2",
+        "commit_url": "https://github.com/gitpython-developers/GitPython/commit/b5d6a79acac3122552028770fd2b3c8bde061de2",
+        "status": "reference_only_not_materialized",
+        "selected_paths": [],
+        "file_hashes": {}
+      },
+      "qualification": {
+        "status": "research_candidate",
+        "metadata_verified": true,
+        "snapshot_materialized": false,
+        "footprint_measured": false,
+        "license_reviewed": false,
+        "dependencies_frozen": false,
+        "fixtures_selected": false,
+        "baseline_tests_run": false,
+        "validators_calibrated": false,
+        "rollouts_run": false
+      }
+    }
+  ],
+  "pilot_compositions": [
+    {
+      "id": "pilot_c01",
+      "category": "C01",
+      "seed_ids": [
+        "envconfig"
+      ],
+      "world_idea": "Typed configuration loader from an explicit public contract.",
+      "additional_work": "Private reference implementation; independently written compatibility cases; agent starts empty.",
+      "status": "planned_not_materialized"
+    },
+    {
+      "id": "pilot_c02",
+      "category": "C02",
+      "seed_ids": [
+        "schedule"
+      ],
+      "world_idea": "Injectable-clock refactor preserving scheduling behavior.",
+      "additional_work": "Known-good baseline plus fake-clock and structural acceptance tests; no planted defect is necessary.",
+      "status": "planned_not_materialized"
+    },
+    {
+      "id": "pilot_c03",
+      "category": "C03",
+      "seed_ids": [
+        "scikit_build_core",
+        "sampleproject"
+      ],
+      "world_idea": "Reproducible wheel/sdist for a minimal native extension.",
+      "additional_work": "Authored or selected CMake extension, compiler cache, and separate clean-install validators.",
+      "status": "planned_not_materialized"
+    },
+    {
+      "id": "pilot_c04",
+      "category": "C04",
+      "seed_ids": [
+        "hyperfine",
+        "sqlite_utils"
+      ],
+      "world_idea": "Optimize a fixed import/query pipeline without losing atomicity or records.",
+      "additional_work": "Frozen generated workload, independent state reconciliation, calibrated repeated resource measurements.",
+      "status": "planned_not_materialized"
+    },
+    {
+      "id": "pilot_c05",
+      "category": "C05",
+      "seed_ids": [
+        "nycflights13",
+        "sqlite_utils"
+      ],
+      "world_idea": "Reliability analysis with cancellation and completed-flight denominators kept distinct.",
+      "additional_work": "Selected table slice and hashes, data dictionary, stakeholder brief, independently executed reference calculations.",
+      "status": "planned_not_materialized"
+    },
+    {
+      "id": "pilot_c06",
+      "category": "C06",
+      "seed_ids": [
+        "scikit_learn",
+        "nycflights13"
+      ],
+      "world_idea": "Budgeted departure-time delay prediction with chronological evaluation.",
+      "additional_work": "Feature-availability contract, training-only preprocessing, sealed holdout, and reproducible baseline metrics.",
+      "status": "planned_not_materialized"
+    },
+    {
+      "id": "pilot_c07",
+      "category": "C07",
+      "seed_ids": [
+        "or_tools"
+      ],
+      "world_idea": "Constrained allocation with multiple valid optimal solutions.",
+      "additional_work": "New small instances plus independent feasibility checks and tiny-case exhaustive enumeration.",
+      "status": "planned_not_materialized"
+    },
+    {
+      "id": "pilot_c08",
+      "category": "C08",
+      "seed_ids": [
+        "nbconvert",
+        "tidytuesday"
+      ],
+      "world_idea": "Audience-specific analytical HTML report rather than generic exploratory charts.",
+      "additional_work": "Selected dataset, report brief/template, recomputation checks, and clean rerendering; optional visual validator.",
+      "status": "planned_not_materialized"
+    },
+    {
+      "id": "pilot_c09",
+      "category": "C09",
+      "seed_ids": [
+        "podinfo"
+      ],
+      "world_idea": "Local rollout followed by delayed failure, rollback, and a second change.",
+      "additional_work": "Persisted event model, controlled clock/probes, local service state, and precommitted permissions.",
+      "status": "planned_not_materialized"
+    },
+    {
+      "id": "pilot_c10",
+      "category": "C10",
+      "seed_ids": [
+        "mailpit",
+        "gitpython"
+      ],
+      "world_idea": "Legitimate local release/message audit amid hostile email and repository instructions.",
+      "additional_work": "Authored inert attacks, fictional canaries, protected state, local sinks, and separate legitimate-task success checks.",
+      "status": "planned_not_materialized"
+    }
+  ],
+  "qualification_gates": [
+    "Fetch only the chosen commit and selected files/data into a disposable private directory; inventory handwritten code, assets, generated/vendored content, and fixture bytes.",
+    "Inspect pinned licenses and required notices, plus each data source's terms; GitHub SPDX detection is not legal clearance and does not cover every external asset.",
+    "Select a coherent public contract and supported behavior. Construction may use an empty workspace; refactoring must start from a behaviorally characterized working tree.",
+    "Freeze dependency versions, toolchains, binaries, input hashes, dataset observation dates, and local services. Prepare offline caches where needed.",
+    "Run the original baseline and independently compute reference facts. For repair variants demonstrate the initial failure; for refactoring variants preserve a known-good baseline.",
+    "Execute consequential tests, joins, fits, benchmarks, and state transitions under the GM's private materialization root; never let plausible narration establish correctness.",
+    "Validate at least one correct alternative and several plausible wrong solutions. Hidden tests may enforce public requirements but not unspecified upstream quirks or source similarity.",
+    "Precommit evolving events and trust boundaries. Use fictional secrets and controlled sinks; never production credentials, public pushes, real email delivery, or uncontrolled exfiltration.",
+    "Keep implementations, articles, private answers, and validators outside the agent-visible solution surface; control oracle fetching while retaining legitimate dependency/documentation access.",
+    "Pilot repeated no-training rollouts for simulator consistency, leakage, reward discrimination, runtime, and cost; only then author and explicitly promote world files through worlds/manifest.json."
+  ]
+}

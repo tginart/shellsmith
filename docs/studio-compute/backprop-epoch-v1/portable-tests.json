@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "tests": 524,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 84.911,
+  "timestamp": "2026-10-19T14:19:39.425777-07:00",
+  "code_commit": "7235e72212304932a3002ed77c6ca64638f486f3",
+  "command": "PYTHONPATH=src python -m pytest tests/test_training_telemetry.py tests/test_trainer.py tests/test_trainer_resume.py tests/test_trainer_sparse_resume.py tests/test_trainer_metrics_recovery.py tests/test_trainer_world_selection.py tests/test_stream_policy.py tests/test_stream_cursor.py tests/test_durable_capture.py tests/test_studio_service.py tests/test_studio_integration.py tests/test_studio_receipt_compaction.py tests/test_studio_compact_metrics.py tests/test_studio_recovery_lifecycle.py tests/test_studio_checkpoint_io.py tests/test_studio_submission_fences.py tests/test_studio_resume_attempts.py tests/test_inference_metrics.py tests/test_studio_metrics_observer.py tests/test_mlx_training_contract.py -q"
+}

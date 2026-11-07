@@ -1,0 +1,85 @@
+{
+  "schema": "studio-runtime-reliability-verification-v1",
+  "recorded_at": "2026-10-14T19:43:58.461735+00:00",
+  "base_commit": "301ea0b940005988a0a2dcc48d4c2283832a461f",
+  "branch": "codex/studio-monitor-api-timeouts",
+  "scope": "Local CPU fixtures and credential-free native Codex mock API tests. No real Studio service, rollout or training run was launched. Historical evidence and the original dirty checkout were preserved.",
+  "python_version": "3.12.14",
+  "codex_version": "0.159.2",
+  "node_version": "26.8.1",
+  "final_focused": {
+    "passed": 612,
+    "subtests_passed": 3,
+    "seconds": 81.92,
+    "command": "PYTHONPATH=src python -m pytest -q tests/test_studio_monitor.py tests/test_studio_run_report.py tests/test_gm_api_idle.py tests/test_codex_process_group.py tests/test_codex_only_gm.py tests/test_cli_defaults.py tests/test_studio_protocol_config.py tests/test_trainer_world_selection.py tests/test_episode_entry.py tests/test_docker_launcher.py tests/test_vat.py tests/test_protocol_integrity.py tests/test_rollout_campaign.py tests/test_studio_integration.py"
+  },
+  "broad_regression_before_final_fixture_corrections": {
+    "passed": 2766,
+    "subtests_passed": 595,
+    "skipped": 20,
+    "failed": 4,
+    "seconds": 357.98,
+    "failures": "Three protocol assertions still expected a 4K response limit; one campaign assertion expected a 7200-second GM invocation. All four were updated for the approved 32K response / 900-second GM invocation settings and passed in the final focused suite.",
+    "full_suite_on_final_tree_not_repeated_locally": true
+  },
+  "node": {
+    "syntax_check": "passed",
+    "tests_passed": 15,
+    "command": "cd src/shellsmith/episode/vat_runner && npm run check && npm test"
+  },
+  "other_checks": {
+    "git_diff_check": "passed",
+    "canonical_control_ast_parse": "passed",
+    "micro_recipe_validation": "passed",
+    "separate_studio_rpc_timeout_preserved": 43200
+  },
+  "verified": [
+    "SQLite descriptor exhaustion reproduced in legacy polling; 2000 fixed polls with GC disabled remain bounded",
+    "Monitor startup, death, telemetry writes and failed notification cannot abort training",
+    "Independent deadline stops dummy owned work and produces terminal status and cleanup receipts",
+    "Final owner snapshot preserves monitor timing observations and avoids duplicate metric emission",
+    "Offline report reconciles stale running metadata and displays stopped queued/running operations as interrupted without changing their durable journal status",
+    "API inactivity covers missing headers, first stream bytes and midstream stalls",
+    "Keepalives reset inactivity; time between API exchanges does not consume it",
+    "Native Codex startup and session resume work with fresh relays",
+    "Synthetic command-backed credentials and account headers reach the mock upstream without appearing in relay audit",
+    "Cancellation closes relay sockets and owned Codex process groups",
+    "GM defaults and the micro recipe use medium effort, 900-second invocation and 180-second API idle limits; Player response allowance is 32768 tokens"
+  ],
+  "limits": [
+    "No real authenticated provider call, full-context capacity test or training qualification was performed for this PR.",
+    "Optional runtime-dependent tests skipped in the broad run remain skipped; they are not reported as passed."
+  ],
+  "source_sha256": {
+    "docs/studio-compute/README.md": "868c1bb1370e229de8d8202bcc3254be1212c1cf135ed094866af0df61eb3aec",
+    "docs/studio-compute/runtime-reliability.md": "2c54ea1530d0274394c2539f65dd05d776fa6a97112c81ac7965e08077d63903",
+    "examples/studio-micro-train.toml": "60c0b315432aefb7fce04fa810073d44ea72658d6e231710a7ec50b55ac04370",
+    "scripts/render_studio_run_report.py": "4e7d8b73f4918ba9b866ed789984ca3aeb1c2b300fa84bcec3b27a09246a92e4",
+    "scripts/stage_studio_micro_controls.py": "05082fb745802fed5df3955a7aeda12ed1eededc2b6e3ece915d865d129f6da6",
+    "scripts/studio_micro_preflight.py": "7120f0c4e245bece2032deff6981ec0928061afb7072ebdeae5bb034228210d0",
+    "scripts/studio_micro_supervisor.py": "681b6e8d074f840aedb888d166993ce2c1f1290f31a47a14b2b2de40adac77b8",
+    "scripts/studio_micro_workflow.py": "6f289e8afe413eea7d127aa211da6392ef0af7fcda27b561e33ee5c39f0c712b",
+    "src/shellsmith/campaign/checkout_batch.py": "856c9211715c80db3f5d9818211cf1ccf3f0a8e2aac2288435bcd33342561857",
+    "src/shellsmith/campaign/rollout_campaign.py": "67163bdcec23990a87aac7df28b6119a672fe20d0aee4eea226c8ffdfc2e517e",
+    "src/shellsmith/cli.py": "65dfc728e7e29d60fd06e5908f9eec5e7ed6f8afe3d9477329a3086fd1f18a03",
+    "src/shellsmith/config.py": "5305c6282d6b95b9cf9400ba915f8902a1d3b4b9b472f854873163b34c51eefd",
+    "src/shellsmith/episode/gm_process/api_idle.py": "86bc6e6bcb4ee2cc5d87d49a79e74cd1a7c78c1f2ee5a593536f926b4a8f5511",
+    "src/shellsmith/episode/gm_process/codex.py": "e980649dea759c2de94ff0da6c43919f3b2c6170c0a735a41d6229d4889323bd",
+    "src/shellsmith/episode/gm_process/shared.py": "2f01ded0e0a7099879970fab9810bebe5cc88ac8530fbbb37d7160708789a8b6",
+    "src/shellsmith/episode/smoke.py": "556a83c54d0f7fd1f8f223856716b32c233095679f6c17c784f1e588a6b7d1bd",
+    "src/shellsmith/jobs/studio_monitor.py": "ab9a2c60b8fc6c93ccac6089a62926bb00a3e3731ae08ef3283002446b7df17a",
+    "src/shellsmith/sandbox/sandbox_rollout.py": "b8adfb9a903a2004d1a3a2ea01a38a24055795a0f39a7960e03bbdef4510ddaa",
+    "src/shellsmith/train/config.py": "69e7168ceea8dcb695160136a54f1b24916170e9fc51907a16acb878b0bf8b99",
+    "src/shellsmith/train/rollout_stack.py": "11e7cbb2d0c3c8fa51f992015a77ffb1c8ead94b800d3da61a7b02d47af4d50b",
+    "src/shellsmith/train/runner.py": "2d080716f4981e172da2a11fbe42c96ed00c3977e8e76ff6e58fb2d42bbb0da4",
+    "tests/test_gm_api_idle.py": "7d55bae02d6ca36b83de002573643dc2ced1b2e844b68dee60cec4d2bc414c53",
+    "tests/test_protocol_integrity.py": "3de4c2771ea88b074684e295b6d87ba803a2376b6399d38f287601f6fbf1e185",
+    "tests/test_rollout_campaign.py": "205a973f1c10009f21ad1f04d3ceec75ef8fdc3c1d59da545499a7d24089a880",
+    "tests/test_studio_integration.py": "07155660406244d89cd7849e40fb81accfdd41b50ac2d29c46cf7d07bdf2891d",
+    "tests/test_studio_monitor.py": "8e5eba001e59dc7f1413f179a1c8e2bef41b2b3647f5b716cbd78edbcdd89e64",
+    "tests/test_studio_protocol_config.py": "5eb654ada891c73966fc474fc61957f36026d0c11fb03a04372ef3a98134110f",
+    "tests/test_studio_run_report.py": "28063c317f478e34c462c9e9705290a1c594f258252a856494c466c345e3cee1",
+    "tests/test_trainer_world_selection.py": "a7943222140452da5dd302063d8e26b1853757cd81a24ff4c602f0b677e39c91",
+    "tests/test_vat.py": "86fb03b8daf896030a02e6805e095ff3e3f8b6b13d7e591deb1cdccc85d41b3b"
+  }
+}

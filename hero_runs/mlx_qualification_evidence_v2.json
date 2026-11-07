@@ -1,0 +1,71 @@
+{
+  "schema": "shellsmith.mlx_qualification_plan.v1",
+  "execution_status": "not_executed",
+  "manifest_sha256": "82b30c70ba4a19b10b3af0eb899927c34675a9cddf3babdf4d5643ec42a3242b",
+  "historical_evidence": "hero_runs/mlx_qualification_evidence_v1.json",
+  "scope_note": "Planned inputs for the promoted catalog and repaired world contracts. Historical v1 execution does not qualify these revised assets.",
+  "train": {
+    "updates": 2,
+    "groups_per_update": 2,
+    "parallelism": 2,
+    "worlds": [
+      {
+        "id": "checkout_idempotency_001",
+        "path": "worlds/checkout_idempotency_001.md",
+        "sha256": "c4fad42a7d94c52abe24ce7ddd34a74e9141c5f93419b069dedf5fb3629eda26"
+      },
+      {
+        "id": "public_repo_attrs_nested_validator_disable_001",
+        "path": "worlds/drafts/public_repo_attrs_nested_validator_disable_001.md",
+        "sha256": "0463c53fc9d8918122110d0820c61b23ba8ca3ef8601006272eedeb458dcd470"
+      },
+      {
+        "id": "public_repo_jinja_native_block_concat_001",
+        "path": "worlds/drafts/public_repo_jinja_native_block_concat_001.md",
+        "sha256": "d4aade52a18bd9b6dd9766ebbe4aca7e3b97b75657492de660a2391da0bb2154"
+      },
+      {
+        "id": "prometheus_remote_write_gap_001",
+        "path": "worlds/drafts/prometheus_remote_write_gap_001.md",
+        "sha256": "d5dc11e4064178113a6946fb940feea94ed0b7abf81b1d9f7e226879f6f8f870"
+      }
+    ],
+    "slate_path": "hero_runs/mlx_qualification_train_v2.json",
+    "slate_sha256": "f851ea89dfcdc4bbefabd4c66212f56d60d1a94b62804d2000fcda94f357649c"
+  },
+  "eval": {
+    "minimum_accepted_per_world_per_policy": 16,
+    "policies": [
+      "base",
+      "trained_after_update_2"
+    ],
+    "initial_attempts": 16,
+    "maximum_attempts": 24,
+    "parallelism": 2,
+    "worlds": [
+      {
+        "id": "feature_flag_audit_001",
+        "path": "worlds/drafts/feature_flag_audit_001.md",
+        "sha256": "7871e00d71b40a89c372c7077d1d6c806a7bb96cde2aa138893bafda628ef9e1"
+      },
+      {
+        "id": "kafka_schema_compatibility_001",
+        "path": "worlds/drafts/kafka_schema_compatibility_001.md",
+        "sha256": "7992a61fbc61983db12be442ca2639eb9d1ea1febae44395765d633fb0c1a14b"
+      },
+      {
+        "id": "oidc_rotation_cache_repair_001",
+        "path": "worlds/drafts/oidc_rotation_cache_repair_001.md",
+        "sha256": "a1d21b8ec986bf063f78ab90b5c0bd9828b4f132ba4a746a17d825511a60ef26"
+      },
+      {
+        "id": "public_repo_filelock_forked_sqlite_connections_001",
+        "path": "worlds/drafts/public_repo_filelock_forked_sqlite_connections_001.md",
+        "sha256": "269cea26434d06d402da3bc378cca287ee766a58fb63b9563dc85dc980dcd16c"
+      }
+    ],
+    "slate_path": "hero_runs/mlx_qualification_eval_v2.json",
+    "slate_sha256": "04aa704588e45ea791ce8f9206cb4ada9908fff89a6d0813a619e77c48ff4bc6"
+  },
+  "execution_history": []
+}

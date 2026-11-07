@@ -1,0 +1,109 @@
+{
+  "status": "passed",
+  "reviewed_head": "5b95ca5968205702a417b5dd50fb823d04f039a8",
+  "thread_id": "PRRT_kwDOU6izec6uBJqm",
+  "thread_url": "https://github.com/tginart/shellsmith-dev/pull/17#discussion_r4316509582",
+  "classification": "Severe",
+  "fix": "BF16 request admission, cache eviction and cold inference batch capacity use min(allocator, recommended working-set cap). Legacy retains its allocator policy.",
+  "source_snapshot": {
+    "remote_root": "/private/tmp/shellsmith-pr17-working-set.bF18Wk",
+    "archive": "/private/tmp/shellsmith-pr17-working-set-source-v2.tar.gz",
+    "sha256": "193f9bfe789be4ef4ad5c32dba1eeb9ebb01e87bedc64e99a8d337c09fb417a9",
+    "parent_head": "5b95ca5968205702a417b5dd50fb823d04f039a8",
+    "file_count": 373
+  },
+  "matching_current_source_files": 192,
+  "kernel_build_id": "17520c9086b18946a0dcaf1ab97f8eb9cb2c9933c18a37651e103d4afbd72dbd",
+  "numerical_sources_sha256": "9ff4307ad2e88f61662b8f87b92d7627c658d0d50fcf7812ca1d632ec103ca41",
+  "numerical_modules_unchanged_from_parent": true,
+  "allocator_budget_bytes": 257698037760,
+  "recommended_working_set_bytes": 239143780352,
+  "bf16_admission_budget_bytes": 239143780352,
+  "native": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "80",
+    "time": "10.908",
+    "timestamp": "2026-10-19T10:13:03.112725-07:00",
+    "hostname": "studio-host.local"
+  },
+  "portable": {
+    "passed": 325,
+    "skipped": 1,
+    "subtests_passed": 3,
+    "junit": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "1",
+      "tests": "329",
+      "time": "38.006",
+      "timestamp": "2026-10-19T10:14:24.360336-07:00",
+      "hostname": "Mac.local"
+    }
+  },
+  "memorization": {
+    "learning_rate": 0.0003,
+    "fixture_sha256": "8e3d034a41c07ded4d978e5da04dec8ddff932ec9aca2f7686798edfe3d22a25",
+    "attempts": [
+      {
+        "seed": 23,
+        "status": "passed",
+        "initial_mean_nll": 5.10625,
+        "final_mean_nll": -0.0,
+        "exact_answer": true,
+        "restore_exact": true
+      },
+      {
+        "seed": 91,
+        "status": "passed",
+        "initial_mean_nll": 5.10625,
+        "final_mean_nll": -0.0,
+        "exact_answer": true,
+        "restore_exact": true
+      }
+    ],
+    "zero_rate_control": true,
+    "frozen_base_unchanged": true
+  },
+  "regressions": [
+    "One-byte interleaved admission boundary when allocator exceeds recommended cap, with automatic and explicit activation budgets.",
+    "Allocator boundary when the allocator is below the recommended cap.",
+    "Real active bytes above the recommended cap despite small logical reservations.",
+    "Cache eviction and cold inference batch sizing use the same BF16 cap.",
+    "Legacy retains its original allocator cap."
+  ],
+  "performance_scope": "Admission-only correction. No matched full-batch or longest-path performance trial was repeated.",
+  "artifacts": {
+    "evidence/review-working-set-native-report.json.gz": {
+      "sha256": "e8ba1f5047b781921268ec2895569b45c6a5f41d6d50ec88481ae80fefbfe6c3",
+      "uncompressed_sha256": "5272862df1c89ce832fd55d1c00a776894453411ca4d1cef4ff03e97e9003c99"
+    },
+    "evidence/review-working-set-native-execution.json.gz": {
+      "sha256": "9dc03b20b79dfaa1a4899c223e031230b15c9266ad83d66a7cc92c385f090790",
+      "uncompressed_sha256": "474e384e6f7167f33008bf61baac5017b3106317e002220f510759eafe9e9f01"
+    },
+    "evidence/review-working-set-native-tests.xml.gz": {
+      "sha256": "ff766519c0d81de6df186f862395ba593fc4313d4edeef1bb4a06530f7210122",
+      "uncompressed_sha256": "952b625a2594aa83b61a81a1b1799eac004d39f902dfda230a0e59616a83c606"
+    },
+    "evidence/review-working-set-memorization-report.json.gz": {
+      "sha256": "00fe0577533fb383cf3ba121c9f14ebc419c6733853ebfa8eea5c117366a350c",
+      "uncompressed_sha256": "6cb12e47776fb8cd6c75d238e29d5a0b77b7c8c86dbf2fbf8e4d2daaa95376ee"
+    },
+    "evidence/review-working-set-memorization-execution.json.gz": {
+      "sha256": "31403485b4eeb29c0cad87312d3275a3abe165fd2e57c2f904b121a5bdb6b497",
+      "uncompressed_sha256": "855afc007a9b8572cbc6f5eff51a44d9b0b6729ae5f763729033a7fc9805cf59"
+    },
+    "evidence/review-working-set-sequence.json.gz": {
+      "sha256": "c18c1df10328265133dfd24e7b28c22c0d571c6e94a452298bf49fed27d224cf",
+      "uncompressed_sha256": "61c1b233b08d008e1ef8c698f370cc130a0454b53f0c4c6dadb0b9451526b596"
+    },
+    "evidence/review-portable-working-set-studio-tests.xml.gz": {
+      "sha256": "09b2c16a3389b0b76b1bff5d92615df7df5b962ef49eb62bea44e2bfdd7f7698",
+      "uncompressed_sha256": "41d3391864c492d198bdc956e5fa9b5eb098033fd58f5e2421186b543c1182e7"
+    }
+  }
+}

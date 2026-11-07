@@ -1,0 +1,397 @@
+{
+  "status": "prepared_only",
+  "worlds": 177,
+  "config_sha256": "f2128292f620440dae8295449418e2e7bc96044a97013ea1da714f5c54d09c0f",
+  "slate_sha256": "2b29b2e7922cd8a91ed43dcb50ffede2500859cc3070bef70cef0b298760fd3b",
+  "manifest_sha256": "82b30c70ba4a19b10b3af0eb899927c34675a9cddf3babdf4d5643ec42a3242b",
+  "seed": 20261019,
+  "logical_attempts": 1416,
+  "attempts_per_world": 8,
+  "accepted_episodes": "measured at runtime; not guaranteed by attempt count",
+  "maximum_optimizer_updates": 89,
+  "final_group_worlds": 1,
+  "rollout_gm_slots": 8,
+  "compatible_gpu_batch_limit": 4,
+  "service_memory_settings": {
+    "execution_profile": "bf16-fast",
+    "model": "~/models/Qwen3.8-27B-8bit",
+    "state_root": "~/.local/state/shellsmith/catalog-epoch-v1/service",
+    "host": "127.0.0.1",
+    "port": 8766,
+    "gpu_lease_root": "~/.local/state/shellsmith/gpu-lease",
+    "headroom_gib": 16.0,
+    "allocator_gib": "auto",
+    "prefix_cache_gib": "auto",
+    "metal_cache_gib": 2.0,
+    "segment_tokens": 2048,
+    "checkpoint_layers": "auto",
+    "activation_budget_gib": 16.0,
+    "head_rows": 128,
+    "prefill_tokens": 2048
+  },
+  "estimated_seconds": 426665.58,
+  "estimate_assumptions": {
+    "collection_minutes_per_world": 30.0,
+    "update_seconds": 1214.22,
+    "update_source": "prior merged full-batch BF16 median; not a new timing qualification",
+    "collection_source": "planning assumption, eight attempts share eight slots",
+    "excludes": "outages, manual stops, initialization, publication and checkpoint overhead"
+  },
+  "update_groups": [
+    [
+      "checkout_idempotency_001",
+      "access_review_exception_001"
+    ],
+    [
+      "ad_auction_loss_notice_reconciliation_001",
+      "airflow_dataset_alias_stall_001"
+    ],
+    [
+      "analytics_lineage_break_001",
+      "cdc_snapshot_boundary_repair_001"
+    ],
+    [
+      "clickhouse_replacing_merge_001",
+      "cross_region_ledger_recovery_001"
+    ],
+    [
+      "customer_identity_merge_conflict_001",
+      "data_residency_replay_destination_001"
+    ],
+    [
+      "dns_weighted_failover_001",
+      "elasticsearch_pit_export_gap_001"
+    ],
+    [
+      "erp_fx_restatement_policy_001",
+      "exactly_once_replay_planner_001"
+    ],
+    [
+      "feature_flag_audit_001",
+      "fixed_width_bank_settlement_001"
+    ],
+    [
+      "gcs_composite_checksum_001",
+      "geospatial_antimeridian_tile_gap_001"
+    ],
+    [
+      "graphql_persisted_query_rollout_001",
+      "healthcare_fhir_patient_export_001"
+    ],
+    [
+      "incident_bridge_handoff_001",
+      "insurance_edi_835_plb_balance_001"
+    ],
+    [
+      "kafka_schema_compatibility_001",
+      "kinesis_checkpoint_shard_split_001"
+    ],
+    [
+      "ldap_referral_group_sync_001",
+      "legacy_edi_997_rejection_001"
+    ],
+    [
+      "legacy_mtls_chain_recovery_001",
+      "legacy_settlement_batch_001"
+    ],
+    [
+      "lz_penalty_paper_audit_001",
+      "marketing_consent_precedence_001"
+    ],
+    [
+      "mes_opcua_namespace_rebind_001",
+      "mongodb_change_stream_resume_001"
+    ],
+    [
+      "multiparty_capex_approval_race_001",
+      "object_store_retention_incident_001"
+    ],
+    [
+      "oidc_rotation_cache_repair_001",
+      "paper_biased_edge_game_001"
+    ],
+    [
+      "paper_brownian_lpp_shock_proof_001",
+      "paper_classical_light_soundness_001"
+    ],
+    [
+      "paper_compressing_search_dimensions_001",
+      "paper_control_attention_sink_001"
+    ],
+    [
+      "paper_control_bitnet_entropy_001",
+      "paper_control_deepseek_v2_mla_001"
+    ],
+    [
+      "paper_control_deepseek_v3_load_bias_001",
+      "paper_control_deepseekmoe_accounting_001"
+    ],
+    [
+      "paper_control_dpo_loss_001",
+      "paper_control_flashattention2_merge_001"
+    ],
+    [
+      "paper_control_gated_delta_rule_001",
+      "paper_control_gemma2_sliding_window_001"
+    ],
+    [
+      "paper_control_gqa_conversion_001",
+      "paper_control_griffin_rg_lru_001"
+    ],
+    [
+      "paper_control_hyena_convolution_001",
+      "paper_control_jamba_hybrid_001"
+    ],
+    [
+      "paper_control_jetmoe_accounting_001",
+      "paper_control_longrope_rescale_001"
+    ],
+    [
+      "paper_control_mamba_recurrence_001",
+      "paper_control_matmul_free_gru_001"
+    ],
+    [
+      "paper_control_mixture_of_depths_001",
+      "paper_control_qlora_nf4_001"
+    ],
+    [
+      "paper_control_recurrentgemma_rglru_001",
+      "paper_control_retnet_duality_001"
+    ],
+    [
+      "paper_control_ring_attention_softmax_001",
+      "paper_control_rwkv_wkv6_001"
+    ],
+    [
+      "paper_control_ssd_semiseparable_001",
+      "paper_control_yarn_rope_scaling_001"
+    ],
+    [
+      "paper_dark_photon_lineshape_001",
+      "paper_frs_event_partition_001"
+    ],
+    [
+      "paper_gaplessness_local_annihilation_001",
+      "paper_hamming_distance_lemma_001"
+    ],
+    [
+      "paper_image_compression_reparameterization_001",
+      "paper_multimagic_rank_lemma_001"
+    ],
+    [
+      "paper_poset_ramsey_constant_001",
+      "paper_qplex_cglmp_bound_001"
+    ],
+    [
+      "paper_quantum_blowing_up_001",
+      "paper_quantum_k_reconstruction_001"
+    ],
+    [
+      "paper_schreier_barrier_proposition_001",
+      "paper_semigroup_stability_appendix_001"
+    ],
+    [
+      "paper_sheaf_obstruction_class_001",
+      "paper_size_ramsey_appendix_001"
+    ],
+    [
+      "paper_spin_chain_symmetry_lemma_001",
+      "paper_strong_edge_coloring_distance_001"
+    ],
+    [
+      "paper_tambara_transfer_001",
+      "paper_transversal_ccz_codes_001"
+    ],
+    [
+      "paper_vector_bundle_enumeration_001",
+      "paper_yukawa_gravity_projector_001"
+    ],
+    [
+      "partner_api_quota_outage_001",
+      "payroll_offcycle_selection_001"
+    ],
+    [
+      "privacy_erasure_hold_001",
+      "prometheus_remote_write_gap_001"
+    ],
+    [
+      "public_repo_anyhow_ensure_negative_expression_001",
+      "public_repo_attrs_nested_validator_disable_001"
+    ],
+    [
+      "public_repo_bytes_zero_width_signed_read_001",
+      "public_repo_cattrs_union_order_disambiguation_001"
+    ],
+    [
+      "public_repo_chi_writer_discard_readfrom_001",
+      "public_repo_click_ansi_textwrap_001"
+    ],
+    [
+      "public_repo_click_color_validation_001",
+      "public_repo_click_distribution_resolution_001"
+    ],
+    [
+      "public_repo_click_help_name_collision_001",
+      "public_repo_content_type_horizontal_tab_001"
+    ],
+    [
+      "public_repo_filelock_forked_sqlite_connections_001",
+      "public_repo_flask_automatic_options_override_001"
+    ],
+    [
+      "public_repo_go_jose_multisig_key_selection_001",
+      "public_repo_go_toml_local_time_roundtrip_001"
+    ],
+    [
+      "public_repo_golang_jwt_epoch_expiry_001",
+      "public_repo_gorilla_websocket_error_identity_001"
+    ],
+    [
+      "public_repo_gson_atomic_long_null_error_001",
+      "public_repo_guava_multiset_sum_overflow_001"
+    ],
+    [
+      "public_repo_hapi_content_duplicate_parameters_001",
+      "public_repo_jackson_next_name_leading_decimal_001"
+    ],
+    [
+      "public_repo_jinja_native_block_concat_001",
+      "public_repo_node_semver_tilde_prerelease_001"
+    ],
+    [
+      "public_repo_node_tmp_path_escape_001",
+      "public_repo_okio_must_create_errno_throw_001"
+    ],
+    [
+      "public_repo_p_limit_async_context_001",
+      "public_repo_packaging_dependency_error_collection_001"
+    ],
+    [
+      "public_repo_packaging_description_content_type_001",
+      "public_repo_packaging_error_placeholder_integrity_001"
+    ],
+    [
+      "public_repo_packaging_exception_pickle_001",
+      "public_repo_packaging_marker_environment_cache_001"
+    ],
+    [
+      "public_repo_packaging_marker_parentheses_001",
+      "public_repo_path_to_regexp_empty_param_001"
+    ],
+    [
+      "public_repo_pluggy_deferred_annotation_varnames_001",
+      "public_repo_pytest_trailing_diff_off_by_one_001"
+    ],
+    [
+      "public_repo_regex_unicode_property_negation_001",
+      "public_repo_rich_ansi_newlines_001"
+    ],
+    [
+      "public_repo_rich_file_proxy_isatty_001",
+      "public_repo_rich_lazy_import_startup_001"
+    ],
+    [
+      "public_repo_serde_json_enum_key_validation_001",
+      "public_repo_structlog_async_thread_callsite_001"
+    ],
+    [
+      "public_repo_tomlkit_dotted_table_scalar_scope_001",
+      "public_repo_typer_hidden_commands_plain_help_001"
+    ],
+    [
+      "public_repo_typer_list_argument_default_001",
+      "public_repo_typer_option_suggestion_format_001"
+    ],
+    [
+      "public_repo_typer_rich_metavar_columns_001",
+      "public_repo_typer_xdg_open_wait_001"
+    ],
+    [
+      "public_repo_urllib3_http_ssl_kwargs_001",
+      "public_repo_werkzeug_multipart_chunk_boundary_001"
+    ],
+    [
+      "public_repo_yarl_malformed_ipv6_exception_001",
+      "public_repo_zipp_iterdir_exception_001"
+    ],
+    [
+      "report_export_timezone_repair_001",
+      "s3_parquet_decimal_schema_001"
+    ],
+    [
+      "sap_odata_delta_token_001",
+      "scientific_scpi_binary_spectrum_001"
+    ],
+    [
+      "sftp_pgp_key_rotation_001",
+      "signed_artifact_provenance_001"
+    ],
+    [
+      "snowflake_dst_task_duplication_001",
+      "soap_crm_pagination_gap_001"
+    ],
+    [
+      "telecom_tl1_provisioning_drift_001",
+      "vendor_invoice_reconciliation_001"
+    ],
+    [
+      "warehouse_inventory_reconciliation_001",
+      "webhook_signature_repair_001"
+    ],
+    [
+      "xml_namespace_batch_ack_001",
+      "seed_envconfig_rebuild_001"
+    ],
+    [
+      "seed_schedule_rebuild_001",
+      "seed_hexyl_rebuild_001"
+    ],
+    [
+      "seed_tablib_format_refactor_001",
+      "seed_sqlite_import_tool_001"
+    ],
+    [
+      "seed_sampleproject_release_001",
+      "seed_duckdb_query_optimization_001"
+    ],
+    [
+      "seed_flights_reliability_analysis_001",
+      "seed_flights_prediction_pipeline_001"
+    ],
+    [
+      "seed_constraint_schedule_solver_001",
+      "seed_spaceflight_report_001"
+    ],
+    [
+      "seed_service_rollout_recovery_001",
+      "seed_airline_safety_analysis_001"
+    ],
+    [
+      "seed_project_permissions_feature_001",
+      "seed_local_mailbox_service_001"
+    ],
+    [
+      "seed_recipe_runner_rebuild_001",
+      "seed_native_package_contract_001"
+    ],
+    [
+      "seed_spectral_calibration_001",
+      "seed_report_export_refactor_001"
+    ],
+    [
+      "seed_benchmark_runner_rebuild_001",
+      "seed_git_state_refactor_001"
+    ],
+    [
+      "seed_untrusted_release_messages_001",
+      "seed_untrusted_report_sources_001"
+    ],
+    [
+      "meta_world_simulator_click_ansi_001",
+      "meta_world_simulator_gcs_checksum_001"
+    ],
+    [
+      "meta_world_simulator_mongodb_resume_001"
+    ]
+  ]
+}

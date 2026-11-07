@@ -1,0 +1,15 @@
+{
+  "committed_update_rows": 1,
+  "events_read_back": 35,
+  "events_required": 35,
+  "failure_and_interruption_visible": true,
+  "optimizer_steps": 1,
+  "publication_validator_sha256": "5a268f56eb9efbe18145e71bf9b71b8a779e648ce481e1e4a68a6e8a5003047b",
+  "run_id": "shellsmith-qualification-7235e72-20261019",
+  "status": "passed",
+  "tables_downloaded": 5,
+  "timestamp": 1792445357.02387,
+  "url": "<backprop-app>?project=%2Fshellsmith-qualification&run=shellsmith-qualification-7235e72-20261019",
+  "qualified_commit": "7235e72212304932a3002ed77c6ca64638f486f3",
+  "source_sha256": "73a83f372bd7497abf141be29fcbf5775961e48b48b84e2cfda88b3402f16994"
+}

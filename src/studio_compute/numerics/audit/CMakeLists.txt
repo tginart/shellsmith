@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.27)
+project(shellsmith_graph_audit LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+find_package(Python 3.12 COMPONENTS Interpreter Development.Module REQUIRED)
+add_subdirectory(${NANOBIND_SOURCE} nanobind-build)
+find_package(MLX CONFIG REQUIRED)
+nanobind_add_module(_shellsmith_graph_audit NB_STATIC LTO NOMINSIZE
+    NB_DOMAIN mlx audit.cpp)
+target_link_libraries(_shellsmith_graph_audit PRIVATE mlx)

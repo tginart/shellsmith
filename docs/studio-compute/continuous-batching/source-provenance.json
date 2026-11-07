@@ -1,0 +1,26 @@
+{
+  "shellsmith_base": "36a33805252b3606beab2b9ee3838392f7b0a76e",
+  "high_command_source": "1f51929bf55c2f954c11c6774dc8e80fb8f2c063",
+  "final_runtime_source_sha256": {
+    "activation_budget.py": "2ea6f84a805ad9dc4f91160a2e0d5ef7a570e5660b4c033b99ed1e373958e5ac",
+    "cache.py": "ffa05b5e2efd2562b3ef8eb2d8703d2a3cc41dedeba12a9ec3018708c4680ad5",
+    "cli.py": "cd8f12250769bc589a8859938c64c4847e28c1f5dfe6c9d7b59321cb5a930737",
+    "http.py": "25b85f5dcaf84a492e1fe2ab88568450e0f5273e011d1b8ea80bd75f65b519f5",
+    "inference.py": "39c5eb45f04bf3a8d9675abe270d0e5d87eaac2bcbdeef2877febe097477be31",
+    "inference_metrics.py": "9d2c10ad039ae885026d72a87c768ac2540ddc0fc0cc1199322f598b3f859a93",
+    "mlx_decode.py": "a902a07b43b165c053227b0092562f70b839890f9c5fbd96a49fd9214c3e45d6",
+    "mlx_racing.py": "2086fb9598ff49f42d79ad41d5d088355dde3f7f714c99c70ae59b3f5c484f57",
+    "mlx_request_cache.py": "75a0297b312da1aa7eca8f2c338d8ccebc74c46ff5cae843a1cd670df58d0e46",
+    "protocol.py": "f2750b1ac1fe6ce00eab3de0be4f649e75bd88af3aa070d1a27eadafbe3c59e5",
+    "runtime.py": "ab1f05361d73d7d3a16ef5e73252cf50e5f4477f35fb5c96862664d329076491",
+    "service.py": "2c3a7d948b3178bc10dfeb4b22e157524fdacdc95d651e68d41693366353a090",
+    "storage.py": "3cca6b97d257b5fe68f10efcb06fe354d4ff94878beeddadf2bb6936a6cfda5a"
+  },
+  "final_hardware_receipt_matches_implementation_snapshot": true,
+  "latest_review_receipt": "review-pass-1.json",
+  "training_model_engine_numerics_unchanged_from_origin_main": true,
+  "full_sweep_decode_source_matches_final": true,
+  "full_sweep_prefill_function_ast_matches_final": true,
+  "full_sweep_sampling_function_ast_matches_final": true,
+  "full_sweep_differences": "The repeated sweep preceded receipt/cohort accounting, the native empty-cache hook, service error/RNG deferral refinements, and admission deferral before snapshot eviction. Final-source native, replay/KL, memory, packed-cache, and real RPC checkpoint probes validate those refinements."
+}

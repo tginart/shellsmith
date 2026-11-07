@@ -1,0 +1,36 @@
+{
+  "schema": "shellsmith.hero_slate.v1",
+  "shuffle_seed": 20260716,
+  "world_order": [
+    "geospatial_antimeridian_tile_gap_001",
+    "public_repo_go_jose_multisig_key_selection_001",
+    "insurance_edi_835_plb_balance_001",
+    "public_repo_packaging_error_placeholder_integrity_001"
+  ],
+  "groups_per_update": 2,
+  "catalog": {
+    "include_flavors": ["agentic", "public_repo"],
+    "include": [
+      "geospatial_antimeridian_tile_gap_001",
+      "public_repo_go_jose_multisig_key_selection_001",
+      "insurance_edi_835_plb_balance_001",
+      "public_repo_packaging_error_placeholder_integrity_001"
+    ],
+    "exclude": ["incident_bridge_handoff_001"],
+    "additional_worlds": []
+  },
+  "paper_worlds": [],
+  "simulators": {
+    "terra": {
+      "runtime": "codex",
+      "model": "gpt-5.6-terra",
+      "provider": "codex-cli",
+      "reasoning_effort": "low"
+    }
+  },
+  "default_simulator": "terra",
+  "expected_simulator_counts": {
+    "terra": 4
+  },
+  "assignments": {}
+}

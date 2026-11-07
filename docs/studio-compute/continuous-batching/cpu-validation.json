@@ -1,0 +1,20 @@
+{
+  "full_suite": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python -m pytest -q tests/test_studio*.py tests/test_inference_metrics.py tests/test_bf16_qualification_report.py",
+    "passed": 358,
+    "skipped": 2,
+    "subtests_passed": 3,
+    "seconds": 38.53,
+    "skip_scope": "The local environment has no MLX runtime. The Studio runs those native tests separately."
+  },
+  "final_admission_refinement": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python -m pytest -q tests/test_studio_continuous.py tests/test_studio_cache_memory.py",
+    "passed": 33,
+    "seconds": 0.12,
+    "scope": "After the full suite, the final refinement preserves warm prefixes while live reservations prevent admission."
+  },
+  "static_checks": {
+    "ruff_check_new_modules_benchmark_and_tests": "passed",
+    "git_diff_check": "passed"
+  }
+}

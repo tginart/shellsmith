@@ -1,0 +1,265 @@
+{
+  "status": "completed",
+  "identity": {
+    "model": "46e540f1bef19dfe99a4941e2e3f8651fc5b6551a72838757bb2e80d1687cada",
+    "model_files": {
+      "model-00001-of-00006.safetensors": "c7921fe72af5c961c3c4230ea25068ed6d1e502d5ecb2b4a53b7c9c213effa0c",
+      "model-00002-of-00006.safetensors": "e9d93d15495354045da281f102649b99793e5b6ed0e05852c58f46e6616b54a0",
+      "model-00003-of-00006.safetensors": "7015f40310c86a18230e28644832b624532333d5dfbf7584e6c62341dbd8975e",
+      "model-00004-of-00006.safetensors": "7dc8ae53ed51d153e6b59499cdf004bf6ef15aab6757c7604ed4834774abc2c2",
+      "model-00005-of-00006.safetensors": "8817c22c01aebdcde54eac315e9766f705eb512ba7ba84ac47501c663f930ac5",
+      "model-00006-of-00006.safetensors": "fce51843fc07e1c67c5ec6d19edb46e4fa8d2b51a1cb6c8316b0a7cc069c0eb4",
+      "config.json": "8f80874ac3ad8fa386d3f6dc0ea85377f703376e009a03dee0360e08e289a25d"
+    },
+    "tokenizer": "ba6a5aa2899296ea59aa9a1e95b5f1255fc99eda05a263ec1adbb4af1a851728",
+    "numerics": "7b170fae5e9c5a2587191717a5be37a37bcc1a2abeec32308182a91f404788b2",
+    "versions": {
+      "mlx": "0.32.3",
+      "mlx-lm": "0.32.0",
+      "mlx-vlm": "0.7.4",
+      "transformers": "5.17.0"
+    }
+  },
+  "device": {
+    "device_name": "Apple M5 Ultra",
+    "max_recommended_working_set_size": 239143780352,
+    "memory_size": 274877906944,
+    "architecture": "applegpu_g17d",
+    "max_buffer_length": 179357827072,
+    "resource_limit": 499000
+  },
+  "frozen_base_before": "ef3c30bbb0b66f211fc276b407eddd29cc1213bf61cb293cd4d4cdf6906f19cf",
+  "scope": "Five real adjacent layers and three 2048-token segments; synthetic top cotangent, actual attention and future-GDN adjoint producers.",
+  "original_layouts": {
+    "gdn2_input": {
+      "shape": [
+        1,
+        2048,
+        5120
+      ],
+      "dtype": "mlx.core.bfloat16",
+      "numpy_strides_bytes": [
+        20971520,
+        10240,
+        2
+      ],
+      "numpy_c_contiguous": true,
+      "numpy_f_contiguous": false
+    },
+    "gdn4_input_after_attention": {
+      "shape": [
+        1,
+        2048,
+        5120
+      ],
+      "dtype": "mlx.core.bfloat16",
+      "numpy_strides_bytes": [
+        20971520,
+        10240,
+        2
+      ],
+      "numpy_c_contiguous": true,
+      "numpy_f_contiguous": false
+    },
+    "cotangents": [
+      {
+        "shape": [
+          1,
+          2048,
+          5120
+        ],
+        "dtype": "mlx.core.bfloat16",
+        "numpy_strides_bytes": [
+          20971520,
+          10240,
+          2
+        ],
+        "numpy_c_contiguous": true,
+        "numpy_f_contiguous": false
+      },
+      {
+        "shape": [
+          1,
+          3,
+          10240
+        ],
+        "dtype": "mlx.core.bfloat16",
+        "numpy_strides_bytes": [
+          42004480,
+          20480,
+          2
+        ],
+        "numpy_c_contiguous": true,
+        "numpy_f_contiguous": false
+      },
+      {
+        "shape": [
+          1,
+          48,
+          128,
+          128
+        ],
+        "dtype": "mlx.core.float32",
+        "numpy_strides_bytes": [
+          3145728,
+          65536,
+          512,
+          4
+        ],
+        "numpy_c_contiguous": true,
+        "numpy_f_contiguous": false
+      }
+    ]
+  },
+  "cases": [
+    {
+      "phase": "gdn2_vjp",
+      "row_major_input": false,
+      "row_major_cotangents": false,
+      "samples_seconds": {
+        "ordinary": [
+          0.0772364999866113,
+          0.07721183402463794,
+          0.08068937505595386,
+          0.07963816693518311,
+          0.08097554103005677
+        ],
+        "compiled": [
+          0.06632420793175697,
+          0.06406662508379668,
+          0.06762791599612683,
+          0.06507274997420609,
+          0.07550304103642702
+        ]
+      },
+      "median_seconds": {
+        "ordinary": 0.07963816693518311,
+        "compiled": 0.06632420793175697
+      },
+      "every_derivative_exact": {
+        "ordinary": true,
+        "compiled": true
+      },
+      "copy_cost_included": false
+    },
+    {
+      "phase": "gdn2_vjp",
+      "row_major_input": false,
+      "row_major_cotangents": true,
+      "samples_seconds": {
+        "ordinary": [
+          0.0787247089901939,
+          0.07704483298584819,
+          0.08129783300682902,
+          0.07937537494581193,
+          0.08141783298924565
+        ],
+        "compiled": [
+          0.06653887499123812,
+          0.06642429099883884,
+          0.0667999159777537,
+          0.064742041984573,
+          0.06714008306153119
+        ]
+      },
+      "median_seconds": {
+        "ordinary": 0.07937537494581193,
+        "compiled": 0.06653887499123812
+      },
+      "every_derivative_exact": {
+        "ordinary": true,
+        "compiled": true
+      },
+      "copy_cost_included": false
+    },
+    {
+      "phase": "gdn2_vjp",
+      "row_major_input": true,
+      "row_major_cotangents": false,
+      "samples_seconds": {
+        "ordinary": [
+          0.07879770803265274,
+          0.07827658299356699,
+          0.08081087493337691,
+          0.07680179201997817,
+          0.07866054202895612
+        ],
+        "compiled": [
+          0.06630933401174843,
+          0.0638539589708671,
+          0.06772433302830905,
+          0.06413574994076043,
+          0.06629649992100894
+        ]
+      },
+      "median_seconds": {
+        "ordinary": 0.07866054202895612,
+        "compiled": 0.06629649992100894
+      },
+      "every_derivative_exact": {
+        "ordinary": true,
+        "compiled": true
+      },
+      "copy_cost_included": false
+    },
+    {
+      "phase": "gdn2_vjp",
+      "row_major_input": true,
+      "row_major_cotangents": true,
+      "samples_seconds": {
+        "ordinary": [
+          0.07742937502916902,
+          0.079144167015329,
+          0.08078800002112985,
+          0.07886158302426338,
+          0.08003054198343307
+        ],
+        "compiled": [
+          0.06714695796836168,
+          0.0630178329301998,
+          0.06747024995274842,
+          0.06373737496323884,
+          0.06788524996954948
+        ]
+      },
+      "median_seconds": {
+        "ordinary": 0.079144167015329,
+        "compiled": 0.06714695796836168
+      },
+      "every_derivative_exact": {
+        "ordinary": true,
+        "compiled": true
+      },
+      "copy_cost_included": false
+    },
+    {
+      "phase": "gdn4_forward",
+      "row_major_input": false,
+      "samples_seconds": [
+        0.026103666983544827,
+        0.026157457963563502,
+        0.026140957954339683,
+        0.026271583046764135,
+        0.026236125035211444
+      ],
+      "median_seconds": 0.026157457963563502,
+      "every_output_exact": true,
+      "copy_cost_included": true
+    },
+    {
+      "phase": "gdn4_forward",
+      "row_major_input": true,
+      "samples_seconds": [
+        0.02618283301126212,
+        0.026036832947283983,
+        0.026132834027521312,
+        0.02607379201799631,
+        0.025992666953243315
+      ],
+      "median_seconds": 0.02607379201799631,
+      "every_output_exact": true,
+      "copy_cost_included": true
+    }
+  ],
+  "frozen_base_after": "ef3c30bbb0b66f211fc276b407eddd29cc1213bf61cb293cd4d4cdf6906f19cf"
+}

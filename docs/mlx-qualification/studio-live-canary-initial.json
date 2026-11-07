@@ -1,0 +1,554 @@
+{
+  "schema": "shellsmith.mlx_live_canary_evidence.v1",
+  "qualification_status": "not_passed_simulator_runtime_failure",
+  "online_qualification_passed": false,
+  "scope": "Initial public detached MLX training canary; native protocol evidence only, no accepted online update, heldout evaluation, compaction, or sustained soak qualification.",
+  "observation_utc": "2026-10-09T20:03:42.242127+00:00",
+  "job": {
+    "job_id": "job-8d5ba3f2a5bd436eda6b3384",
+    "request_id": "studio-live-canary-20261009-001",
+    "attempt": 1,
+    "status": "stopped",
+    "created": 1791575760.281486,
+    "finished": 1791576222.2421272,
+    "stop_requested": true,
+    "exit_code": -2,
+    "destination": {
+      "home": "~/.local/state/shellsmith",
+      "host": "user@studio-host",
+      "python": "~/.local/share/shellsmith/studio-v1/env/bin/python"
+    }
+  },
+  "stop": {
+    "request_id": "studio-live-canary-runtime-stop-20261009-001",
+    "signal": "SIGINT",
+    "supervisor_status": "stopped",
+    "child_exit_code": -2,
+    "reason": "Stop the initial canary after a real simulator Python-runtime failure; retain diagnostic artifacts and complete untouched baseline checkpoints."
+  },
+  "identity": {
+    "configuration_path": "examples/mlx-studio.toml",
+    "original_config_sha256": "0dc9c2b3046dd8bbb718ed156d2b1940dd08f89158075b0997207c8725dc74e4",
+    "submitted_effective_config_sha256": "d5557081ae208c34fa59ca198978f7babd6ecf7a0b34faffda8d13ecfa2fcd7e",
+    "frozen_runtime_source_sha256": "e53be616d34de82b274b9223c5b58a36ebb4c25a85556974d84061b4ac5e79ab",
+    "trainer_snapshot_source_sha256": "657a4f3021e17fef35b5df50b478839936a0e664350789b99f2c105175961018",
+    "native_numerical_source_sha256": "b531314a204cbd48ecbce9de57c553a8563303fa643bb63edad2e15135efec4b",
+    "policy_identity_sha256": "2b78ad759e0bedb7a42f09dace2997c3276fe1379671a92b31822549f934725c",
+    "model_asset_sha256": "5de0e37b6e24b4b9cbbcd1caeeeac633dba3659ab12849e92105b6fcd5d94002",
+    "tokenizer_asset_sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+    "tokenizer_identity_sha256": "5f120ffca4b5fad8cd0ef6ccdcea2aca79ad4a82e6b2027c98bdddfc2ae19a2b",
+    "template_sha256": "c3cf9e34abf4f9e36c2d72165aa9c132d3e2a725b6c2586aaa3a8af9d7a81041",
+    "world_id": "checkout_idempotency_001",
+    "world_sha256": "c4fad42a7d94c52abe24ce7ddd34a74e9141c5f93419b069dedf5fb3629eda26",
+    "catalog_manifest_sha256": "c4812510d2d44583c8d84e1889d6f5f4cdeabaabdce3ee4831a2cf2be96bb3e1",
+    "reference_commit": "10e830e9a5becb9c2387bd37a378fd7dad1d3590",
+    "frozen_runtime_path": "~/.local/state/shellsmith/runtime/e53be616d34de82b274b9223c5b58a36ebb4c25a85556974d84061b4ac5e79ab",
+    "identity_note": "Runtime source hashes the complete submitted file inventory; trainer snapshot hashes its source subset; native numerical source and policy identities retain their separate scopes."
+  },
+  "studio_artifacts": {
+    "job_home": "~/.local/state/shellsmith/jobs/job-8d5ba3f2a5bd436eda6b3384",
+    "run_root": "~/.local/state/shellsmith/jobs/job-8d5ba3f2a5bd436eda6b3384/run",
+    "rollout_relative_path": "segments/000/checkout_idempotency_001/rollout_01",
+    "sampler_checkpoint_path": "~/.local/state/shellsmith/jobs/job-8d5ba3f2a5bd436eda6b3384/run/checkpoints/mlx-studio-canary-step00000-initial00001",
+    "full_checkpoint_path": "~/.local/state/shellsmith/jobs/job-8d5ba3f2a5bd436eda6b3384/run/checkpoints/mlx-studio-canary-step00000-initial00001-state00000",
+    "metadata_mirror_used": "/private/tmp/shellsmith-mlx-live-canary",
+    "tensor_note": "Binary checkpoint assets remain on the Studio; the synchronized manifests contain their integrity hashes. This record does not rehash tensor files from the metadata-only mirror."
+  },
+  "confined_execution": {
+    "codex_authenticated_for_real_calls": true,
+    "gm_runtime": "codex",
+    "gm_model": "gpt-6.1-sol",
+    "gm_permission_profile": "game_master",
+    "bootstrap_completed": true,
+    "codex_executable_sha256": "61b0194f3bb6534439c8d26a3ed57d0805f84b884588b761795323eeb92fcf70",
+    "codex_native_executable_sha256": "16593cc2f422d5f398a8e40f550ebbaf1245392528957be342c295920a300704",
+    "pi_sdk_module_sha256": "de74c5324f2b38317eb3f9ae36ef47b41e130a4501637a0e5fce555a3e1c065b",
+    "player_context_window": 32768,
+    "player_max_tokens": 8192,
+    "compaction_reserve_tokens": 12288,
+    "compaction_keep_recent_tokens": 8192,
+    "claim_limit": "Records verify the selected confined Codex profile and successful real bootstrap/turn calls; this canary does not add an adversarial OS confinement penetration test."
+  },
+  "completed_rollout": {
+    "episode_id": "mlx-studio-canary-s000-checkout_idempotency_001-01",
+    "accepted_count": 0,
+    "accepted_for_training": false,
+    "episode_status": "untrainable",
+    "final_reward": 0.025,
+    "wall_seconds": 396.096,
+    "player_tokens": {
+      "completion_tokens": 384,
+      "forced_close_tokens": 0,
+      "prompt_tokens": 13691,
+      "response_tokens": 334,
+      "thinking_tokens": 50
+    },
+    "logical_world_batches": 4,
+    "model_requests": 4,
+    "world_tool_actions": 13,
+    "factual_consistency_passed": true,
+    "consistency_ledger_passed": true,
+    "simulator_integrity_passed": false,
+    "simulator_integrity_issues": [
+      "Host Python runtime unavailable; absent runtime_scratch prevents provision of a dependency runtime within the authorized installation boundary. Required validation of the committed executable Python checkout surface and exact future regression tests cannot be performed. No test execution has been fabricated.",
+      "Required Python executable surface validation and exact regression execution could not be supported within the allowed runtime boundary: /usr/bin/python3 failed with xcrun invalid active developer path; runtime_scratch was absent.",
+      "Simulator supplied Python source reads without completing the required executable happy-path check and then terminated to avoid inventing validation. This compromised the episode despite competent actor behavior."
+    ],
+    "completed_rollouts_in_mirror": 1,
+    "accepted_rollouts_in_mirror": 0,
+    "training_interpretation": "Reward is an audit-only partial-outcome estimate from a rejected simulator episode; it was not used as a valid Player loss or training sample."
+  },
+  "native_protocol": {
+    "audit_passed": true,
+    "audit_problems": [],
+    "audit_warnings": [
+      "request mlx-studio-canary-s000-checkout_idempotency_001-01-req-000001 parse_termination is not clean: 'stop'",
+      "request mlx-studio-canary-s000-checkout_idempotency_001-01-req-000002 parse_termination is not clean: 'stop'",
+      "request mlx-studio-canary-s000-checkout_idempotency_001-01-req-000003 parse_termination is not clean: 'stop'",
+      "request mlx-studio-canary-s000-checkout_idempotency_001-01-req-000004 parse_termination is not clean: 'stop'"
+    ],
+    "renderer": "qwen3_8_xhigh_reasoning",
+    "thinking_mode": "thinking",
+    "request_count": 4,
+    "sampled_token_count": 384,
+    "behavior_logprob_count": 384,
+    "all_token_logprob_lengths_equal": true,
+    "all_behavior_logprobs_finite": true,
+    "thinking_response_token_partition_exact": true,
+    "all_rendered_prompt_ids_present": true,
+    "maximum_observed_prompt_plus_completion_tokens": 4585,
+    "unparsed_tool_call_count": 0,
+    "harness_rejected_tool_count": 0,
+    "tool_ids_and_arguments_match_pi_and_world": true,
+    "tool_result_ids_match_world_and_pi": true,
+    "policy_revision_count": 1,
+    "policy_ref": "~/.local/state/shellsmith/jobs/job-8d5ba3f2a5bd436eda6b3384/run/checkpoints/mlx-studio-canary-step00000-initial00001",
+    "all_policy_identity_hashes_match_snapshot": true,
+    "native_turn_eos": {
+      "token_id": 248046,
+      "decoded_label": "<|im_end|>",
+      "terminal_request_count": 4,
+      "tokenizer_asset_sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+      "verification": "Read actual supplied tokenizer.json added-token mapping on the Studio and compared every retained sampled terminal token."
+    },
+    "legacy_warning_interpretation": "parse_termination='stop' is the MLX stop-reason label; each capture retains the actual native EOS token. The warnings do not indicate missing EOS.",
+    "forced_close_request_count": 0,
+    "compaction_request_count": 0,
+    "requests": [
+      {
+        "request_id": "mlx-studio-canary-s000-checkout_idempotency_001-01-req-000001",
+        "prompt_tokens": 2571,
+        "sampled_tokens": 59,
+        "behavior_logprobs": 59,
+        "thinking_tokens": 14,
+        "response_tokens": 45,
+        "terminal_token_id": 248046,
+        "tool_call_count": 2
+      },
+      {
+        "request_id": "mlx-studio-canary-s000-checkout_idempotency_001-01-req-000002",
+        "prompt_tokens": 3052,
+        "sampled_tokens": 160,
+        "behavior_logprobs": 160,
+        "thinking_tokens": 9,
+        "response_tokens": 151,
+        "terminal_token_id": 248046,
+        "tool_call_count": 6
+      },
+      {
+        "request_id": "mlx-studio-canary-s000-checkout_idempotency_001-01-req-000003",
+        "prompt_tokens": 3578,
+        "sampled_tokens": 70,
+        "behavior_logprobs": 70,
+        "thinking_tokens": 13,
+        "response_tokens": 57,
+        "terminal_token_id": 248046,
+        "tool_call_count": 2
+      },
+      {
+        "request_id": "mlx-studio-canary-s000-checkout_idempotency_001-01-req-000004",
+        "prompt_tokens": 4490,
+        "sampled_tokens": 95,
+        "behavior_logprobs": 95,
+        "thinking_tokens": 14,
+        "response_tokens": 81,
+        "terminal_token_id": 248046,
+        "tool_call_count": 3
+      }
+    ]
+  },
+  "runtime_failure": {
+    "actual_failure": {
+      "artifact": "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000000_bootstrap.jsonl",
+      "executable": "/usr/bin/python3",
+      "exit_code": 1,
+      "error": "xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun"
+    },
+    "available_runtime_command": {
+      "artifact": "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000002_world_turn.jsonl",
+      "command": "/bin/zsh -lc 'command -v python python3 python3.12 python3.11 node perl ruby uv; test -d world/runtime_scratch && ls world/runtime_scratch'",
+      "exit_code": 0,
+      "output": "/usr/bin/python3\n/usr/bin/perl\n/usr/bin/ruby\n"
+    },
+    "gm_reported_scratch_absent": true,
+    "scratch_directory_existed": true,
+    "scratch_correction_evidence": "The final shell command was test -d world/runtime_scratch && ls world/runtime_scratch and exited 0. That proves the directory test and empty listing succeeded. An empty listing is not an absent directory.",
+    "failure_attribution": "Simulator execution environment and GM capability interpretation; native MLX rendering, tool dispatch, probability capture and factual/protocol alignment passed.",
+    "required_remediation": "Expose a working, explicitly permitted Python runtime to the confined GM and verify executable-world operations before a fresh live qualification canary. Preserve the rejection and its audit."
+  },
+  "training_and_recovery_boundary": {
+    "trainer_status_after_requested_stop": "failed",
+    "optimizer_steps": 0,
+    "rft_updates_completed": 0,
+    "optimizer_update_in_flight": false,
+    "committed_group_ids": [],
+    "active_policy_ref": "~/.local/state/shellsmith/jobs/job-8d5ba3f2a5bd436eda6b3384/run/checkpoints/mlx-studio-canary-step00000-initial00001",
+    "initial_sampler_manifest_complete": true,
+    "initial_full_manifest_complete": true,
+    "sampler_policy_version": 0,
+    "full_policy_version": 0,
+    "sampler_and_full_adapter_hashes_match": true,
+    "full_checkpoint_file_hashes": {
+      "adapters.safetensors": "1234015b56c5794e13eec1d032fada649a24c75be13cd7b1db31ce82c6c3b899",
+      "optimizer.safetensors": "40be22bf576cccbebb46d40ce21595bfa416bed5eeb648ec2a6f006f98a695a1",
+      "rng.safetensors": "b53e3a02d348679648a17a741eedebb88bae68606af41f243be7b7b7eff4911d"
+    },
+    "metrics_boundary": {
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tail": "",
+      "version": 1
+    },
+    "claim_limit": "Complete untouched baseline manifests and trainer cursor were preserved. This interrupted canary did not perform an optimizer update or prove a live next-update resume."
+  },
+  "artifact_hashes": {
+    "checkpoints/mlx-studio-canary-step00000-initial00001/manifest.json": {
+      "sha256": "97855893badada399832af6c73b6517ad913a7f971f2ab0d4cd9df79c3bd8474",
+      "size_bytes": 4788
+    },
+    "checkpoints/mlx-studio-canary-step00000-initial00001-state00000/manifest.json": {
+      "sha256": "e6bb2b77ee34d82655a2d90000d23cce0ed0a1df7c39fe70c812673c1b0bd3b0",
+      "size_bytes": 11545
+    },
+    "config_snapshot.json": {
+      "sha256": "5e53f7d424612c1f9c76f70998856d6a6102d9aab672be257b4b6ef1c5b3ec53",
+      "size_bytes": 12290
+    },
+    "segments/000/campaign_manifest.json": {
+      "sha256": "7330d44dc02fd882d06d0dd0b5d2d5c5d1c9adabd9dce794ca183264cb8ca35c",
+      "size_bytes": 291
+    },
+    "segments/000/campaign_report.json": {
+      "sha256": "4f6e8cdf6f13be8d36da3cd37a79e77fddd8ece12076ebebe642229b6e880af2",
+      "size_bytes": 541
+    },
+    "segments/000/campaign_report.md": {
+      "sha256": "5a711e4d397c310a36c3bc32533b19ea648f01950cbad4b17e728da5ff0d37de",
+      "size_bytes": 314
+    },
+    "segments/000/capture_index.json": {
+      "sha256": "f02fbd3cd6cfce59642103cd20935276d8ecab2478f0597eb69005ff237a2fe4",
+      "size_bytes": 441
+    },
+    "segments/000/checkout_idempotency_001/input/checkout_idempotency_001.md": {
+      "sha256": "c4fad42a7d94c52abe24ce7ddd34a74e9141c5f93419b069dedf5fb3629eda26",
+      "size_bytes": 7565
+    },
+    "segments/000/checkout_idempotency_001/input/prompt_provenance.json": {
+      "sha256": "50c46140b342d51d9423f459e22c892bd2642083f1c64fc49424222bdbcfa6e3",
+      "size_bytes": 1763
+    },
+    "segments/000/checkout_idempotency_001/input/prompts/AGENTS.md": {
+      "sha256": "89c12f7be39ed8b175fa62aa28ea87adc91b73b72c19b74e1db03bef696435e3",
+      "size_bytes": 23522
+    },
+    "segments/000/checkout_idempotency_001/input/prompts/WORLD_ARTIFACT_REPAIR_PROMPT.md": {
+      "sha256": "347589bf67be448c19d46c9832e14cd85322037f2e3250c8b09f7374a01ad4f1",
+      "size_bytes": 764
+    },
+    "segments/000/checkout_idempotency_001/input/prompts/WORLD_BOOTSTRAP_PROMPT.md": {
+      "sha256": "95092e3604ac1561351ef71202a7f0f5bee968aff678fa55d285b9c2b6892430",
+      "size_bytes": 2818
+    },
+    "segments/000/checkout_idempotency_001/input/prompts/WORLD_FINAL_PROMPT.md": {
+      "sha256": "cb0d198b68701e7845be943df91da4a2317ede106accd7ccd9b2d51a7ddfef0d",
+      "size_bytes": 1816
+    },
+    "segments/000/checkout_idempotency_001/input/prompts/WORLD_TURN_PROMPT.md": {
+      "sha256": "1f608249067a58f5b79442ec04fb9061c5b4202cea9d9b135bc55cb08a8d344e",
+      "size_bytes": 5827
+    },
+    "segments/000/checkout_idempotency_001/input/provenance.json": {
+      "sha256": "a8a25af32b561ec2633fe2690d5812757ead130447e5034d7b03aae436ea60b1",
+      "size_bytes": 462
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/AGENTS.md": {
+      "sha256": "89c12f7be39ed8b175fa62aa28ea87adc91b73b72c19b74e1db03bef696435e3",
+      "size_bytes": 23522
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/acceptance_audit.json": {
+      "sha256": "2b34bff2492ff1e125ba5e68077d67134da80647e4d12dfe57f55f7b57f1e273",
+      "size_bytes": 6704
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/episode.json": {
+      "sha256": "625a2f141cefb6b62be3b9bcabbee17157e6c4498a999c4b8e334913af75f645",
+      "size_bytes": 495
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000000_bootstrap.jsonl": {
+      "sha256": "4bfaee77f66a65665cf8048fb1d32b46ec2fb8aa88c994c5b89d354428c899e3",
+      "size_bytes": 21329
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000000_bootstrap.last_message.txt": {
+      "sha256": "e124a07ea2a8a00896090000554003a06dfae7b6001a5306d27b32fec80b3974",
+      "size_bytes": 54
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000000_bootstrap.request.json": {
+      "sha256": "452c1a02613c5cf76ea354ee097bddff761423c7917e34191d3d676e1a889aa8",
+      "size_bytes": 11534
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000001_world_turn.jsonl": {
+      "sha256": "23abf05c2d390529ac8c2b2fd8ccec5c1d6fd231438324abeb9987113ccfea83",
+      "size_bytes": 15532
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000001_world_turn.last_message.txt": {
+      "sha256": "a0553a426577d9951624967253380b6637d931b90b1fcaf5160395ab993ff049",
+      "size_bytes": 47
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000001_world_turn.request.json": {
+      "sha256": "c2a1269d71e1c8a7d913325d8a0d04dba37ca915e348f7696ca7d56b4923ed4f",
+      "size_bytes": 7165
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000002_world_turn.jsonl": {
+      "sha256": "a7520d45be9d23fc06d5d6b1a7f8f8788f622b1fb39d79da2831ed2274098aae",
+      "size_bytes": 14361
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000002_world_turn.last_message.txt": {
+      "sha256": "7e0a7b587086e5d068afd71afec448deac208b2a4ba4108dc619e89b3f2b1d1d",
+      "size_bytes": 50
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000002_world_turn.request.json": {
+      "sha256": "dfd64951317772995696ea2decadc90b08fbc9fc7d094229e0fb81f3fb9a84b1",
+      "size_bytes": 7599
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000003_world_turn.jsonl": {
+      "sha256": "aba9bf652337bb9e5c7f6934ca80cbb17443a172d297dbe8fc628c5d707da873",
+      "size_bytes": 17566
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000003_world_turn.last_message.txt": {
+      "sha256": "74482726710a432991418766a8ee6073fc819a61eef9cf487657577ab7dd00ae",
+      "size_bytes": 54
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000003_world_turn.request.json": {
+      "sha256": "e72bf0f735b0b5d53c2f15cecbedd2f691e6aaa060c6600ee373b2d4f111a1d2",
+      "size_bytes": 7197
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000004_world_turn.jsonl": {
+      "sha256": "769fa9d1d51891936626eaa7506575e42e2d7839459f49daf61f83d9b2a2678b",
+      "size_bytes": 19245
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000004_world_turn.last_message.txt": {
+      "sha256": "5e7713412ab0c79944585c34f077624500c0740d81d8883e89093fe72593edbd",
+      "size_bytes": 106
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000004_world_turn.request.json": {
+      "sha256": "19cd6e0f0ceeb01dbbc180b580287c8909abb9285547631aa73a864b51b882ed",
+      "size_bytes": 7331
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000005_resume.jsonl": {
+      "sha256": "82e8f43110471c8ec6c993069762030176f5b1ece82123cb201da27b39210847",
+      "size_bytes": 277781
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000005_resume.last_message.txt": {
+      "sha256": "a2848a946b62d978f8b33091c4f9359f807067deda200366c1183e39faa7a46b",
+      "size_bytes": 64
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/codex/000005_resume.request.json": {
+      "sha256": "582820ae2a612e9bdb91b74e3613d5871a82da7090163ad592227985343f6e18",
+      "size_bytes": 2311
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/durable_outcome.json": {
+      "sha256": "e878cdccbb13e774989f433b9219dabf86a74cb374d130e2ca9a64c81612b715",
+      "size_bytes": 6977
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/policy_rollout_records.jsonl": {
+      "sha256": "b75ba13c95da2d79d6a10ac2ebe2eb8be0e280a46e6da55fbe7a8f9d90d793aa",
+      "size_bytes": 166532
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/logs/vat.jsonl": {
+      "sha256": "10ee5df490679a23927faf0c088815f2f7fc32a4287bb64c06732c6462479deb",
+      "size_bytes": 50153
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/policy_provenance.json": {
+      "sha256": "0b58e91bb9ede3ac99ee82c2f8a12a1764e4ddfd879334c66a47780e67da50e0",
+      "size_bytes": 4987
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/requests/world_boot_prompt.md": {
+      "sha256": "a0b23d8991f7461f24ff9506bae30d2397257e389c9e4a742295548f9630a0d3",
+      "size_bytes": 11238
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/requests/world_final_prompt.md": {
+      "sha256": "480937bc1db047a03a86ec51510ff9373bea0101ce9c6557afdb18a73ef11108",
+      "size_bytes": 2235
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/run_config.json": {
+      "sha256": "ca8f555b4f8864723e72deb9ab2ac82be0bec029cc627470c1f89c244d9ad2ec",
+      "size_bytes": 1138
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/scenario/model_protocol.json": {
+      "sha256": "c7a5ba5826bbc5b381ed99827d7edcbc293d2d128452cb05cc306ad28760b5c5",
+      "size_bytes": 5825
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/scenario/player_agent_prompt.md": {
+      "sha256": "83213dc5355358e5bbd356ef5c384acdfb5aa5147a50aa15e4babbb4f5d851f3",
+      "size_bytes": 854
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/scenario/vat_AGENTS.md": {
+      "sha256": "578b9a85438c72037e821122fa8616b746046d326c8df640a3904093a343b742",
+      "size_bytes": 777
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/scenario/vat_workspace_audit.json": {
+      "sha256": "b50d3bf613ef4843fc7e3bab418078102e2dba29407d3ed81acc893434774693",
+      "size_bytes": 195
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/scenario/world_boot_result.json": {
+      "sha256": "96ed59ebddf80c97a093b14095661c9a6123f31067cd98e2bf05f2c4867bd0b3",
+      "size_bytes": 3265
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/scenario/world_file.md": {
+      "sha256": "c4fad42a7d94c52abe24ce7ddd34a74e9141c5f93419b069dedf5fb3629eda26",
+      "size_bytes": 7565
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/schemas/world_boot_response.schema.json": {
+      "sha256": "f32e7769ceb2522ae2f51313c808456e2816c56c026df5bdc2bfdbcb872e140d",
+      "size_bytes": 457
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/schemas/world_final_response.schema.json": {
+      "sha256": "2558e823f1a116db9215daf9d970c06fee4dcfd76519a2a858dcd0c236ee9ff7",
+      "size_bytes": 2429
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/schemas/world_turn_response.schema.json": {
+      "sha256": "3e68f0c595e8186cee7b20d0e2dcdd43dacf7704029704b9ce4317369fe93e61",
+      "size_bytes": 4265
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/smoke_summary.json": {
+      "sha256": "b46ec1659800442bcd801aea2dbd2a20f18be4906dafa417114ad6beb663d391",
+      "size_bytes": 3506
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/world/bootstrap/response.json": {
+      "sha256": "96ed59ebddf80c97a093b14095661c9a6123f31067cd98e2bf05f2c4867bd0b3",
+      "size_bytes": 3265
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/world/consistency_ledger.json": {
+      "sha256": "74fbeef7de771458e6bbcb942c6921fe0eb5953e03b278e08ae26c32a71ef592",
+      "size_bytes": 7735
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/world/final/request.json": {
+      "sha256": "430b7d68d4c1a81e3888f4aa95b5ef60bea38a8c376c13ab846d815af3136f84",
+      "size_bytes": 31566
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/world/final/response.json": {
+      "sha256": "eb8f0541abd9cad8bce90fda19e81c034056058bcd6a5c9acab573855de2d5c1",
+      "size_bytes": 4373
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/world/simulation_root/README.md": {
+      "sha256": "ae0f2e06a4f250cfdc45ec63a36687df7f8ca88bdfeafe733346031928c07540",
+      "size_bytes": 1480
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/world/simulation_root/docs/checkout-runbook.md": {
+      "sha256": "d749ca9607b90bfc8944290d7d9c9103460be209b315e789dc1c89d0467ba257",
+      "size_bytes": 1177
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/world/simulation_root/docs/operations.md": {
+      "sha256": "983e37639af84293b35af57065e3f5a59272823422bbea7f1460ea3c42f29855",
+      "size_bytes": 2794
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/world/turns/000000/request.json": {
+      "sha256": "5619dd6c80ae500bf212e631de79078f070e9fa593379abd611b0610e8c199b7",
+      "size_bytes": 3494
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/world/turns/000000/response.json": {
+      "sha256": "3e895f518f9a60e7046f7a5c770e7672dea69c04aa72c6111f571391cd4c4bf9",
+      "size_bytes": 2605
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/world/turns/000001/request.json": {
+      "sha256": "b2b9a0752828261c9bfb7f28ad7d988e26cb15a721a79732578c9532c32e1e66",
+      "size_bytes": 6407
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/world/turns/000001/response.json": {
+      "sha256": "2b956a15e31d2f91345603111a2c3bfd7d56415baf06e5d0b45fb2b022bada0a",
+      "size_bytes": 4473
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/world/turns/000002/request.json": {
+      "sha256": "a3430e0644098795d8153ceabeee26df95b178c5b78252dba7f70e41307cd0c0",
+      "size_bytes": 7579
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/world/turns/000002/response.json": {
+      "sha256": "8b0eb734b6658cad19b926a2adc609372ef2e58a7c434bee5ff54620b0ae93fa",
+      "size_bytes": 6417
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/world/turns/000003/request.json": {
+      "sha256": "0ad338fa1b520fcb502e02803dc3d2ef795c8a726201cfa1736086f80a88f3e7",
+      "size_bytes": 8245
+    },
+    "segments/000/checkout_idempotency_001/rollout_01/world/turns/000003/response.json": {
+      "sha256": "6e114def737136822d6e9f8ac96a148d73e0d424436d4354a18cc85b9a19a2ab",
+      "size_bytes": 8048
+    },
+    "segments/000/checkout_idempotency_001/rollout_02/AGENTS.md": {
+      "sha256": "89c12f7be39ed8b175fa62aa28ea87adc91b73b72c19b74e1db03bef696435e3",
+      "size_bytes": 23522
+    },
+    "segments/000/checkout_idempotency_001/rollout_02/episode.json": {
+      "sha256": "729baa2c56a095ece5fbef429154aef39838226d64c2d80841be1867ba9a964d",
+      "size_bytes": 2644
+    },
+    "segments/000/checkout_idempotency_001/rollout_02/logs/codex/000000_bootstrap.jsonl": {
+      "sha256": "021dc58eb8922dc50be786bc684c00daab7ab5fefe0f9e48df66d8831a85b528",
+      "size_bytes": 11230
+    },
+    "segments/000/checkout_idempotency_001/rollout_02/logs/codex/000000_bootstrap.request.json": {
+      "sha256": "8ee8334836108ea555f76be77f0a7c9e9ec4ae483e369034123c7ca17af91ec8",
+      "size_bytes": 11534
+    },
+    "segments/000/checkout_idempotency_001/rollout_02/requests/world_boot_prompt.md": {
+      "sha256": "a0726f7ac7eaaa067e0ddf744fbfbc95192d7b104bc7594e2c056404f50ed1d2",
+      "size_bytes": 11238
+    },
+    "segments/000/checkout_idempotency_001/rollout_02/run_config.json": {
+      "sha256": "71ecd13132708ad54716dd6dfbc226bf1ae2751bc1e87adb584d0ec150b74c65",
+      "size_bytes": 1138
+    },
+    "segments/000/checkout_idempotency_001/rollout_02/scenario/model_protocol.json": {
+      "sha256": "2c89a03dfdb2a2089b392e625c28b455119a58f0ff5186066f39e470e3c6a9e1",
+      "size_bytes": 293
+    },
+    "segments/000/checkout_idempotency_001/rollout_02/scenario/world_file.md": {
+      "sha256": "c4fad42a7d94c52abe24ce7ddd34a74e9141c5f93419b069dedf5fb3629eda26",
+      "size_bytes": 7565
+    },
+    "segments/000/checkout_idempotency_001/rollout_02/schemas/world_boot_response.schema.json": {
+      "sha256": "f32e7769ceb2522ae2f51313c808456e2816c56c026df5bdc2bfdbcb872e140d",
+      "size_bytes": 457
+    },
+    "segments/000/checkout_idempotency_001/rollout_02/schemas/world_final_response.schema.json": {
+      "sha256": "2558e823f1a116db9215daf9d970c06fee4dcfd76519a2a858dcd0c236ee9ff7",
+      "size_bytes": 2429
+    },
+    "segments/000/checkout_idempotency_001/rollout_02/schemas/world_turn_response.schema.json": {
+      "sha256": "3e68f0c595e8186cee7b20d0e2dcdd43dacf7704029704b9ce4317369fe93e61",
+      "size_bytes": 4265
+    },
+    "segments/000/player_records/mlx-studio-canary-s000-checkout_idempotency_001-01.jsonl": {
+      "sha256": "b75ba13c95da2d79d6a10ac2ebe2eb8be0e280a46e6da55fbe7a8f9d90d793aa",
+      "size_bytes": 166532
+    },
+    "studio-job.json": {
+      "sha256": "a0219afe985c23359116ff5f907f89f157dca9a0095a7e2b6149039a2b4e5282",
+      "size_bytes": 3562
+    },
+    "trainer_state.json": {
+      "sha256": "86f16f661458d9aeaf46309a327b9483ba5dc48e71049ce3e70bb50313e0691d",
+      "size_bytes": 14272
+    }
+  }
+}

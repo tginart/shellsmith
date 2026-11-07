@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "git_sha": "7235e72212304932a3002ed77c6ca64638f486f3",
+  "source_sha256": "73a83f372bd7497abf141be29fcbf5775961e48b48b84e2cfda88b3402f16994",
+  "files_verified": 200,
+  "python": "3.12.14",
+  "backprop_commit": "0b57d68295882dbd34e966b782a034c6b78e4252",
+  "versions": {
+    "mlx": "0.32.3",
+    "mlx-lm": "0.32.0",
+    "mlx-vlm": "0.7.4",
+    "transformers": "5.17.0"
+  },
+  "gpu_lease_available_after_qualification": true
+}

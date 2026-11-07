@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "started_at": 1792396959.595583,
+  "scope": "CPU diagnostics after GPU timing; agreement is not a correctness gate.",
+  "helper_sha256": "8b7c143938fd010de0c4e8e53e0fee0d049c1a5943e1d03cdafeddab17a9eb1b",
+  "results": {
+    "longest-gradients": {
+      "tensor_count": 992,
+      "both_zero_count": 496,
+      "reference_l2": 0.05555228784663287,
+      "candidate_l2": 0.05179318117039925,
+      "relative_l2": 1.1388584485271915,
+      "cosine": 0.3068888106049211,
+      "scope": "Accumulated adapter gradients",
+      "correctness_gate": false,
+      "interpretation": "Agreement with legacy is diagnostic; the old update is not a numerical oracle."
+    },
+    "longest-update-delta": {
+      "tensor_count": 992,
+      "both_zero_count": 496,
+      "reference_l2": 0.3884208277891616,
+      "candidate_l2": 0.3912628895241067,
+      "relative_l2": 1.0860966337577356,
+      "cosine": 0.4145078458606645,
+      "scope": "In-memory master-weight delta",
+      "correctness_gate": false,
+      "interpretation": "Agreement with legacy is diagnostic; the old update is not a numerical oracle."
+    },
+    "batch-gradients": {
+      "tensor_count": 992,
+      "both_zero_count": 496,
+      "reference_l2": 0.4503387254781358,
+      "candidate_l2": 0.412745016304274,
+      "relative_l2": 1.2140524722146273,
+      "cosine": 0.19971594296973086,
+      "scope": "Accumulated adapter gradients",
+      "correctness_gate": false,
+      "interpretation": "Agreement with legacy is diagnostic; the old update is not a numerical oracle."
+    },
+    "batch-update-delta": {
+      "tensor_count": 992,
+      "both_zero_count": 496,
+      "reference_l2": 0.3939265728417159,
+      "candidate_l2": 0.3967802266261196,
+      "relative_l2": 1.0918620748475791,
+      "cosine": 0.4082316877374988,
+      "scope": "In-memory master-weight delta",
+      "correctness_gate": false,
+      "interpretation": "Agreement with legacy is diagnostic; the old update is not a numerical oracle."
+    }
+  },
+  "finished_at": 1792396965.4847832
+}

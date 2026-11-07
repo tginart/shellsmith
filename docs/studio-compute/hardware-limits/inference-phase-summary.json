@@ -1,0 +1,125 @@
+{
+  "status": "passed",
+  "source_sha256": "832ee67711f4fb439c5b186780af006e11803455cb2abe6b49a33415dad5ead1",
+  "parity": [
+    {
+      "adapter": "initial",
+      "batch": 1,
+      "tokens_and_logprobs_exact": true
+    },
+    {
+      "adapter": "initial",
+      "batch": 4,
+      "tokens_and_logprobs_exact": true
+    },
+    {
+      "adapter": "adapter",
+      "batch": 1,
+      "tokens_and_logprobs_exact": true
+    },
+    {
+      "adapter": "adapter",
+      "batch": 4,
+      "tokens_and_logprobs_exact": true
+    }
+  ],
+  "cases": [
+    {
+      "policy": "initial",
+      "batch": 1,
+      "normal_prefill_seconds": 6.338961375004146,
+      "normal_decode_seconds": 2.4976936249877326,
+      "normal_decode_aggregate_tokens_s": 25.230346551182276,
+      "profiled_prefill_seconds": 6.710160084068775,
+      "profiled_decode_seconds": 4.4587990830186754,
+      "prefill_instrumentation_ratio": 1.0585582853570212,
+      "decode_instrumentation_ratio": 1.7851665386064213,
+      "profiled_phase_seconds": {
+        "prefill:gdn": 1.9772498219972476,
+        "prefill:mlp": 4.011685335310176,
+        "prefill:attention": 0.7026972041931003,
+        "prefill:head": 0.00789912510663271,
+        "decode:gdn": 1.5452872812747955,
+        "decode:mlp": 2.220423293299973,
+        "decode:attention": 0.5332645080052316,
+        "decode:head": 0.08912554197013378
+      },
+      "actual_tensor_batches": [
+        1
+      ]
+    },
+    {
+      "policy": "initial",
+      "batch": 4,
+      "normal_prefill_seconds": 24.094880146498326,
+      "normal_decode_seconds": 3.2893853334826417,
+      "normal_decode_aggregate_tokens_s": 76.65453584384778,
+      "profiled_prefill_seconds": 26.085086832987145,
+      "profiled_decode_seconds": 5.651229833019897,
+      "prefill_instrumentation_ratio": 1.082598737756247,
+      "decode_instrumentation_ratio": 1.7180200128869212,
+      "profiled_phase_seconds": {
+        "prefill:gdn": 7.0893686598865315,
+        "prefill:mlp": 15.91848295822274,
+        "prefill:attention": 3.0229879152029753,
+        "prefill:head": 0.01563983305823058,
+        "decode:gdn": 1.9233905842993408,
+        "decode:mlp": 2.793578111100942,
+        "decode:attention": 0.7440980210667476,
+        "decode:head": 0.09698203986044973
+      },
+      "actual_tensor_batches": [
+        4
+      ]
+    },
+    {
+      "policy": "adapter",
+      "batch": 1,
+      "normal_prefill_seconds": 6.357663499948103,
+      "normal_decode_seconds": 2.5217266459949315,
+      "normal_decode_aggregate_tokens_s": 24.990316832950892,
+      "profiled_prefill_seconds": 6.717507041990757,
+      "profiled_decode_seconds": 4.590277999988757,
+      "prefill_instrumentation_ratio": 1.0565999666458583,
+      "decode_instrumentation_ratio": 1.8202916669335076,
+      "profiled_phase_seconds": {
+        "prefill:gdn": 1.9650893793441355,
+        "prefill:mlp": 4.047341529047117,
+        "prefill:attention": 0.6870554987108335,
+        "prefill:head": 0.00799666706006974,
+        "decode:gdn": 1.5815527787199244,
+        "decode:mlp": 2.2905118463095278,
+        "decode:attention": 0.5563175791176036,
+        "decode:head": 0.08977004291955382
+      },
+      "actual_tensor_batches": [
+        1
+      ]
+    },
+    {
+      "policy": "adapter",
+      "batch": 4,
+      "normal_prefill_seconds": 24.083427166508045,
+      "normal_decode_seconds": 3.2775663750362583,
+      "normal_decode_aggregate_tokens_s": 76.90751985799955,
+      "profiled_prefill_seconds": 26.05569479195401,
+      "profiled_decode_seconds": 5.6817981250351295,
+      "prefill_instrumentation_ratio": 1.0818931463454142,
+      "decode_instrumentation_ratio": 1.7335417425290967,
+      "profiled_phase_seconds": {
+        "prefill:gdn": 7.092479586601257,
+        "prefill:mlp": 15.898549056379125,
+        "prefill:attention": 3.0107820807024837,
+        "prefill:head": 0.01350195799022913,
+        "decode:gdn": 1.931267765816301,
+        "decode:mlp": 2.8127112853107974,
+        "decode:attention": 0.7439335918752477,
+        "decode:head": 0.09749604214448482
+      },
+      "actual_tensor_batches": [
+        4
+      ]
+    }
+  ],
+  "limits": "Intermediate barriers alter scheduling. Compare paired baseline controls; do not present profiled throughput as production throughput."
+}

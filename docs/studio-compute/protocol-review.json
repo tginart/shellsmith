@@ -1,0 +1,42 @@
+{
+  "scope": "Offline review of four previously completed micro-r3 trajectories. No new sampling, backpropagation or optimizer work. Original run ended with zero accepted captures and zero training updates.",
+  "original_artifacts_unchanged": true,
+  "review_only_correction": {
+    "field": "scenario/model_protocol.json.expected_thinking_mode",
+    "before": "disable_thinking",
+    "after": "thinking",
+    "configured_effort": "medium"
+  },
+  "episodes": [
+    {
+      "episode": "rollout_01",
+      "gm_reward": 0.8125,
+      "corrected_protocol_passed": true,
+      "corrected_accepted": true,
+      "remaining_issue": null
+    },
+    {
+      "episode": "rollout_02",
+      "gm_reward": 0.8835,
+      "corrected_protocol_passed": true,
+      "corrected_accepted": true,
+      "remaining_issue": null
+    },
+    {
+      "episode": "rollout_03",
+      "gm_reward": 0.91,
+      "corrected_protocol_passed": true,
+      "corrected_accepted": true,
+      "remaining_issue": null
+    },
+    {
+      "episode": "rollout_04",
+      "gm_reward": 0.655,
+      "corrected_protocol_passed": true,
+      "corrected_accepted": false,
+      "remaining_issue": "Repeated empty final responses after response-limit failures; simulator marks the episode untrainable."
+    }
+  ],
+  "actual_training_updates": 0,
+  "limitation": "Source correction and offline capture validation do not establish learning quality or a completed update with the corrected runtime. Raw run archives remain outside this PR."
+}

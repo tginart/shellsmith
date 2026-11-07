@@ -1,0 +1,49 @@
+{
+  "schema": "shellsmith.hero_slate.v1",
+  "shuffle_seed": 20261009,
+  "world_order": [
+    "checkout_idempotency_001",
+    "public_repo_attrs_nested_validator_disable_001",
+    "public_repo_jinja_native_block_concat_001",
+    "prometheus_remote_write_gap_001"
+  ],
+  "groups_per_update": 2,
+  "catalog": {
+    "include_flavors": [
+      "agentic",
+      "public_repo"
+    ],
+    "include": [
+      "public_repo_attrs_nested_validator_disable_001",
+      "public_repo_jinja_native_block_concat_001",
+      "prometheus_remote_write_gap_001"
+    ],
+    "exclude": [],
+    "additional_worlds": [
+      "worlds/checkout_idempotency_001.md"
+    ]
+  },
+  "paper_worlds": [],
+  "simulators": {
+    "sol_low": {
+      "runtime": "codex",
+      "model": "gpt-6.1-sol",
+      "provider": "codex-cli",
+      "reasoning_effort": "low"
+    }
+  },
+  "default_simulator": "sol_low",
+  "expected_simulator_counts": {
+    "sol_low": 4
+  },
+  "assignments": {},
+  "pinned_assets": {
+    "manifest_sha256": "82b30c70ba4a19b10b3af0eb899927c34675a9cddf3babdf4d5643ec42a3242b",
+    "world_sha256": {
+      "checkout_idempotency_001": "c4fad42a7d94c52abe24ce7ddd34a74e9141c5f93419b069dedf5fb3629eda26",
+      "public_repo_attrs_nested_validator_disable_001": "0463c53fc9d8918122110d0820c61b23ba8ca3ef8601006272eedeb458dcd470",
+      "public_repo_jinja_native_block_concat_001": "d4aade52a18bd9b6dd9766ebbe4aca7e3b97b75657492de660a2391da0bb2154",
+      "prometheus_remote_write_gap_001": "d5dc11e4064178113a6946fb940feea94ed0b7abf81b1d9f7e226879f6f8f870"
+    }
+  }
+}

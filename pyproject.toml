@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "shellsmith"
+version = "0.1.0"
+description = "Train terminal agents in a vat with Tinker or native MLX reinforcement learning."
+readme = "README.md"
+requires-python = ">=3.11"
+# Telemetry imports remain lazy. The pinned SDK journals before upload.
+# Tinker is injected through deps and remains an optional extra.
+dependencies = ["backprop-foundry[stats] @ git+https://github.com/tginart/backprop.git@0b57d68295882dbd34e966b782a034c6b78e4252"]
+
+[project.scripts]
+shellsmith = "shellsmith.cli:main"
+studio-compute = "studio_compute.cli:main"
+
+[project.optional-dependencies]
+wandb = ["wandb==0.30.0"]
+tinker = ["tinker>=0.27", "tinker-cookbook>=0.5.7", "torch"]
+viewer = ["flask>=3.0"]
+dev = ["pytest>=8.0", "flask>=3.0"]
+mlx = ["mlx==0.32.3; platform_system == 'Darwin'", "mlx-lm==0.32.0; platform_system == 'Darwin'", "mlx-vlm==0.7.4; platform_system == 'Darwin'", "transformers==5.17.0; platform_system == 'Darwin'", "safetensors==0.8.0", "numpy==2.5.3; platform_system == 'Darwin'"]
+studio-client = ["transformers==5.17.0", "jinja2>=3.1.6"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/shellsmith", "src/studio_compute"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider"

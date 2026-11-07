@@ -1,0 +1,13 @@
+{
+  "forward": {
+    "source": "https://github.com/ml-explore/mlx",
+    "ref": "v0.32.3",
+    "path": "mlx/backend/metal/kernels/steel/attn/nax.h",
+    "license": "MIT",
+    "adaptation": "D256 causal head-dimension split with compact BF16 high/residual log-normalizer statistics."
+  },
+  "helpers": "Shared NAX helper provenance and notices are in gdn_PROVENANCE.json and docs/studio-compute/bf16-backward/third-party/.",
+  "backward": "Repository implementation with Metal Performance Primitives; M=32, N=256, eight SIMD groups. Query ownership and shared-score key/value ownership; deterministic grouped-head reductions, no global atomics.",
+  "storage": "BF16 Q/K/V/output and row-statistic pairs; score and derivative tiles remain device-local. Register accumulators use float.",
+  "qualification": "Independent FP64 forward and derivatives, maximum-context tails, fixed-rate real-27B memorization, exact restore, and dtype audit pass. Cached backward speed at 57K keys remains below the twofold objective."
+}

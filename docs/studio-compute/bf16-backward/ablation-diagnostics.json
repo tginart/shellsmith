@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "cases": {
+    "legacy-reference": {
+      "tensor_count": 992,
+      "both_zero_count": 496,
+      "reference_l2": 0.05555228784663287,
+      "candidate_l2": 0.06741724647929394,
+      "relative_l2": 1.37939520579072,
+      "cosine": 0.2348624900183558,
+      "scope": "Accumulated adapter gradients",
+      "correctness_gate": false,
+      "interpretation": "Agreement with legacy is diagnostic; the old update is not a numerical oracle."
+    },
+    "reference-gdn": {
+      "tensor_count": 992,
+      "both_zero_count": 496,
+      "reference_l2": 0.06741724647929394,
+      "candidate_l2": 0.0606508673095241,
+      "relative_l2": 1.0861996850040208,
+      "cosine": 0.3498711184455983,
+      "scope": "Accumulated adapter gradients",
+      "correctness_gate": false,
+      "interpretation": "Agreement with legacy is diagnostic; the old update is not a numerical oracle."
+    },
+    "gdn-attention": {
+      "tensor_count": 992,
+      "both_zero_count": 496,
+      "reference_l2": 0.0606508673095241,
+      "candidate_l2": 0.05050497278306868,
+      "relative_l2": 0.9598459288088627,
+      "cosine": 0.46361066428788916,
+      "scope": "Accumulated adapter gradients",
+      "correctness_gate": false,
+      "interpretation": "Agreement with legacy is diagnostic; the old update is not a numerical oracle."
+    },
+    "attention-saved": {
+      "tensor_count": 992,
+      "both_zero_count": 496,
+      "reference_l2": 0.05050497278306868,
+      "candidate_l2": 0.05053287203387997,
+      "relative_l2": 0.020821956333874417,
+      "cosine": 0.9997834952419516,
+      "scope": "Accumulated adapter gradients",
+      "correctness_gate": false,
+      "interpretation": "Agreement with legacy is diagnostic; the old update is not a numerical oracle."
+    },
+    "saved-statistics": {
+      "tensor_count": 992,
+      "both_zero_count": 496,
+      "reference_l2": 0.05053287203387997,
+      "candidate_l2": 0.05179318117039925,
+      "relative_l2": 0.9588046892934364,
+      "cosine": 0.5518351966574712,
+      "scope": "Accumulated adapter gradients",
+      "correctness_gate": false,
+      "interpretation": "Agreement with legacy is diagnostic; the old update is not a numerical oracle."
+    }
+  }
+}

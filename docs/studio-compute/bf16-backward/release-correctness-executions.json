@@ -1,0 +1,62 @@
+{
+  "native": {
+    "status": "passed",
+    "started_at": 1792397179.7703931,
+    "timeout_seconds": 600,
+    "supervisor_pid": 73228,
+    "source_sha256": "efc2e6b432fca14b625e75cbb7a8bd65ff0c18637e7df15a817aa05a3c06ceb1",
+    "supervisor_source_sha256": "de1f28de5e63a35da2fa53e417b72eddb89f18060f5b5d5d5efa9dd2a4234d2d",
+    "swap_before": "vm.swapusage: total = 1024.00M  used = 87.75M  free = 936.25M  (encrypted)",
+    "thermal_before": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+    "worker_pid": 73231,
+    "returncode": 0,
+    "finished_at": 1792397190.882484,
+    "swap_after": "vm.swapusage: total = 1024.00M  used = 87.75M  free = 936.25M  (encrypted)",
+    "thermal_after": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded"
+  },
+  "long-context": {
+    "status": "passed",
+    "started_at": 1792397190.934758,
+    "timeout_seconds": 900,
+    "supervisor_pid": 73381,
+    "source_sha256": "530ed1d32e85586277d7cbd75276f6ae4b80b565e3863620d457b68d10a8015e",
+    "supervisor_source_sha256": "de1f28de5e63a35da2fa53e417b72eddb89f18060f5b5d5d5efa9dd2a4234d2d",
+    "swap_before": "vm.swapusage: total = 1024.00M  used = 87.75M  free = 936.25M  (encrypted)",
+    "thermal_before": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+    "worker_pid": 73384,
+    "returncode": 0,
+    "finished_at": 1792397201.11659,
+    "swap_after": "vm.swapusage: total = 1024.00M  used = 87.75M  free = 936.25M  (encrypted)",
+    "thermal_after": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded"
+  },
+  "memorization": {
+    "status": "passed",
+    "started_at": 1792397201.1707652,
+    "timeout_seconds": 900,
+    "supervisor_pid": 73387,
+    "source_sha256": "aa29c37f59e312621a28097a9557f2449bcb3fb3925cb62e43933b1653afef63",
+    "supervisor_source_sha256": "de1f28de5e63a35da2fa53e417b72eddb89f18060f5b5d5d5efa9dd2a4234d2d",
+    "swap_before": "vm.swapusage: total = 1024.00M  used = 87.75M  free = 936.25M  (encrypted)",
+    "thermal_before": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+    "worker_pid": 73390,
+    "returncode": 0,
+    "finished_at": 1792397343.45701,
+    "swap_after": "vm.swapusage: total = 1024.00M  used = 87.75M  free = 936.25M  (encrypted)",
+    "thermal_after": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded"
+  },
+  "dtype": {
+    "status": "passed",
+    "started_at": 1792397343.511421,
+    "timeout_seconds": 600,
+    "supervisor_pid": 73689,
+    "source_sha256": "d3df5560ba8dbfca0c59a7e0912bd40521a6b681d4a2529fa9782645d98e52e8",
+    "supervisor_source_sha256": "de1f28de5e63a35da2fa53e417b72eddb89f18060f5b5d5d5efa9dd2a4234d2d",
+    "swap_before": "vm.swapusage: total = 1024.00M  used = 87.75M  free = 936.25M  (encrypted)",
+    "thermal_before": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+    "worker_pid": 73692,
+    "returncode": 0,
+    "finished_at": 1792397373.4847648,
+    "swap_after": "vm.swapusage: total = 1024.00M  used = 87.75M  free = 936.25M  (encrypted)",
+    "thermal_after": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded"
+  }
+}

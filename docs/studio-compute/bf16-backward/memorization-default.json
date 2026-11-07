@@ -1,0 +1,820 @@
+{
+  "status": "passed",
+  "fixture": {
+    "prompt": "Question: What is the secret phrase for Studio check Z7K4?\nAnswer:",
+    "answer": " violet otter 7391 cedar",
+    "prompt_ids": [
+      14162,
+      25,
+      3437,
+      369,
+      279,
+      6038,
+      16629,
+      364,
+      18004,
+      1716,
+      1799,
+      22,
+      42,
+      19,
+      30,
+      198,
+      15666,
+      25
+    ],
+    "target_ids": [
+      76990,
+      13742,
+      455,
+      220,
+      22,
+      18,
+      24,
+      16,
+      72730,
+      248046
+    ],
+    "updates": 10,
+    "seeds": [
+      23,
+      91
+    ]
+  },
+  "fixture_sha256": "8e3d034a41c07ded4d978e5da04dec8ddff932ec9aca2f7686798edfe3d22a25",
+  "execution_profile": "bf16-fast",
+  "identity": {
+    "model": "46e540f1bef19dfe99a4941e2e3f8651fc5b6551a72838757bb2e80d1687cada",
+    "model_files": {
+      "model-00001-of-00006.safetensors": "c7921fe72af5c961c3c4230ea25068ed6d1e502d5ecb2b4a53b7c9c213effa0c",
+      "model-00002-of-00006.safetensors": "e9d93d15495354045da281f102649b99793e5b6ed0e05852c58f46e6616b54a0",
+      "model-00003-of-00006.safetensors": "7015f40310c86a18230e28644832b624532333d5dfbf7584e6c62341dbd8975e",
+      "model-00004-of-00006.safetensors": "7dc8ae53ed51d153e6b59499cdf004bf6ef15aab6757c7604ed4834774abc2c2",
+      "model-00005-of-00006.safetensors": "8817c22c01aebdcde54eac315e9766f705eb512ba7ba84ac47501c663f930ac5",
+      "model-00006-of-00006.safetensors": "fce51843fc07e1c67c5ec6d19edb46e4fa8d2b51a1cb6c8316b0a7cc069c0eb4",
+      "config.json": "8f80874ac3ad8fa386d3f6dc0ea85377f703376e009a03dee0360e08e289a25d"
+    },
+    "tokenizer": "ba6a5aa2899296ea59aa9a1e95b5f1255fc99eda05a263ec1adbb4af1a851728",
+    "numerics": "bd8a0f9141c0c54ce57d7f98507df9df9f5c4e14ac8e446070b0d9bac744ff3b",
+    "versions": {
+      "mlx": "0.32.3",
+      "mlx-lm": "0.32.0",
+      "mlx-vlm": "0.7.4",
+      "transformers": "5.17.0"
+    },
+    "kernel_build": {
+      "numerical_sources": "bd8a0f9141c0c54ce57d7f98507df9df9f5c4e14ac8e446070b0d9bac744ff3b",
+      "runtime_versions": {
+        "mlx": "0.32.3",
+        "mlx-lm": "0.32.0",
+        "mlx-vlm": "0.7.4",
+        "transformers": "5.17.0"
+      },
+      "architecture": "applegpu_g17d",
+      "os_build": "26A425",
+      "mlx_library_sha256": "ebc8a5f5465afb79d3d9c8f5b0929de1a9b277b7179db8672f92da77ae110a1e",
+      "mlx_enable_tf32": "0"
+    },
+    "kernel_build_id": "162857f36a1a0d6be2da53884fe189fcccdd3cc7bd840cfa98db49478805c006",
+    "execution": {
+      "execution_profile": "bf16-fast",
+      "segment_tokens": 2048,
+      "head_rows": 128,
+      "checkpoint_layers": 1,
+      "activation_budget_gib": null,
+      "prefill_tokens": 2048
+    },
+    "runtime_source_sha256": {
+      "runtime.py": "24f5831404a3e2bd067d96f07a3fe376414c9aa23c9a3fc603e95e7790dd1059",
+      "cache.py": "4ad0f14aa1037adcbbe798ea12922ac2c437590c7bf5959e2f3e119a7ec2ac35",
+      "service.py": "fef8167bf948c5dd10d691123685c418e4cf482c2d4bd8bbaa28d841bb74f7ac",
+      "cli.py": "c2be21a53976d388589264fe61fcb009ecdf01d91124721f1eccb1171faccef0",
+      "storage.py": "3cca6b97d257b5fe68f10efcb06fe354d4ff94878beeddadf2bb6936a6cfda5a",
+      "protocol.py": "f2750b1ac1fe6ce00eab3de0be4f649e75bd88af3aa070d1a27eadafbe3c59e5",
+      "http.py": "f371735b00789eb49fb96ee452afd50345fe474918a947fb47586824beaceb0e",
+      "inference_metrics.py": "44b5f16a2b8233256b1bdcfa718b32b336400e14bf26ec0c752fb4cc997ee17e"
+    }
+  },
+  "capabilities": {
+    "model": "Qwen/Qwen3.8-27B",
+    "context_window": 262144,
+    "vocabulary_size": 248320,
+    "losses": [
+      "cispo",
+      "weighted_cross_entropy"
+    ],
+    "precision": {
+      "activations": "bf16",
+      "lora": "bf16",
+      "base": "8-bit affine/group64",
+      "optimizer": "bf16",
+      "recurrent_state": "bf16",
+      "training_kv": "bf16",
+      "gradients": "bf16",
+      "loss": "bf16",
+      "internal_accumulation": "native kernel registers"
+    },
+    "cache_precisions": [
+      "bf16",
+      "8bit"
+    ],
+    "max_inference_batch": 4,
+    "physical_memory_bytes": 274877906944,
+    "allocator_budget_bytes": 257698037760,
+    "host_headroom_bytes": 17179869184,
+    "recommended_working_set_bytes": 239143780352,
+    "tokenizer_hash": "ba6a5aa2899296ea59aa9a1e95b5f1255fc99eda05a263ec1adbb4af1a851728",
+    "frozen_tensors": 2180,
+    "resident_base_bytes": 29500938720,
+    "flash_requirement": {
+      "context_window": 262144,
+      "dense_bits": 8,
+      "expert_bits": 4,
+      "ngram_bits": [
+        4,
+        6
+      ],
+      "execution": "deferred"
+    },
+    "execution": {
+      "execution_profile": "bf16-fast",
+      "segment_tokens": 2048,
+      "head_rows": 128,
+      "checkpoint_layers": 1,
+      "prefill_tokens": 2048,
+      "metal_cache_limit_bytes": 2147483648,
+      "kernel_build_id": "162857f36a1a0d6be2da53884fe189fcccdd3cc7bd840cfa98db49478805c006",
+      "activation_budget_gib": null,
+      "saved_activation_backward": true
+    },
+    "runtime": {
+      "prefix_cache_mode": "capped",
+      "prefix_cache_limit_bytes": 0,
+      "source_sha256": {
+        "runtime.py": "24f5831404a3e2bd067d96f07a3fe376414c9aa23c9a3fc603e95e7790dd1059",
+        "cache.py": "4ad0f14aa1037adcbbe798ea12922ac2c437590c7bf5959e2f3e119a7ec2ac35",
+        "service.py": "fef8167bf948c5dd10d691123685c418e4cf482c2d4bd8bbaa28d841bb74f7ac",
+        "cli.py": "c2be21a53976d388589264fe61fcb009ecdf01d91124721f1eccb1171faccef0",
+        "storage.py": "3cca6b97d257b5fe68f10efcb06fe354d4ff94878beeddadf2bb6936a6cfda5a",
+        "protocol.py": "f2750b1ac1fe6ce00eab3de0be4f649e75bd88af3aa070d1a27eadafbe3c59e5",
+        "http.py": "f371735b00789eb49fb96ee452afd50345fe474918a947fb47586824beaceb0e",
+        "inference_metrics.py": "44b5f16a2b8233256b1bdcfa718b32b336400e14bf26ec0c752fb4cc997ee17e"
+      }
+    }
+  },
+  "attempts": [
+    {
+      "learning_rate": 0.0003,
+      "seed": 23,
+      "steps": [
+        {
+          "step": 1,
+          "seconds": 2.3843853750731796,
+          "adapter_delta_l2": 2.394255802367014,
+          "optim_metrics": {
+            "gradient_norm": 11.455332669473128,
+            "optimizer_steps": 1,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 5.09375,
+          "peak_mlx_bytes": 31372666968
+        },
+        {
+          "step": 2,
+          "seconds": 2.4709340420085937,
+          "adapter_delta_l2": 2.3648648724288526,
+          "optim_metrics": {
+            "gradient_norm": 5.240486679075233,
+            "optimizer_steps": 2,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 2.4375,
+          "peak_mlx_bytes": 31373245144
+        },
+        {
+          "step": 3,
+          "seconds": 2.438282292103395,
+          "adapter_delta_l2": 1.8927681547187882,
+          "optim_metrics": {
+            "gradient_norm": 7.1394212430324275,
+            "optimizer_steps": 3,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.65234375,
+          "peak_mlx_bytes": 31373245144
+        },
+        {
+          "step": 4,
+          "seconds": 2.498398041119799,
+          "adapter_delta_l2": 1.5827029650881652,
+          "optim_metrics": {
+            "gradient_norm": 0.4075674818823496,
+            "optimizer_steps": 4,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31373245144
+        },
+        {
+          "step": 5,
+          "seconds": 2.5064953749533743,
+          "adapter_delta_l2": 1.3543471006287977,
+          "optim_metrics": {
+            "gradient_norm": 0.10213423593405865,
+            "optimizer_steps": 5,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31373245144
+        },
+        {
+          "step": 6,
+          "seconds": 2.4871218751650304,
+          "adapter_delta_l2": 1.1848769841339442,
+          "optim_metrics": {
+            "gradient_norm": 0.04892282085471605,
+            "optimizer_steps": 6,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31373245144
+        },
+        {
+          "step": 7,
+          "seconds": 2.4458547921385616,
+          "adapter_delta_l2": 1.050267032835098,
+          "optim_metrics": {
+            "gradient_norm": 0.07286292683865647,
+            "optimizer_steps": 7,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31373245144
+        },
+        {
+          "step": 8,
+          "seconds": 2.474570583086461,
+          "adapter_delta_l2": 0.9374287941236843,
+          "optim_metrics": {
+            "gradient_norm": 0.1806723458383986,
+            "optimizer_steps": 8,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31373245144
+        },
+        {
+          "step": 9,
+          "seconds": 2.4615340419113636,
+          "adapter_delta_l2": 0.8417892405606691,
+          "optim_metrics": {
+            "gradient_norm": 0.010573353215584664,
+            "optimizer_steps": 9,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31373245144
+        },
+        {
+          "step": 10,
+          "seconds": 2.469515083823353,
+          "adapter_delta_l2": 0.7607427287881641,
+          "optim_metrics": {
+            "gradient_norm": 0.009406777600853608,
+            "optimizer_steps": 10,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31373245144
+        }
+      ],
+      "status": "passed",
+      "initial": {
+        "mean_nll": 5.10625,
+        "generated_tokens": [
+          271,
+          27775,
+          383,
+          279,
+          95554,
+          1970,
+          3766,
+          11,
+          411,
+          7701
+        ],
+        "generated_text": "\n\nBased on the alphanumeric code provided, this appears",
+        "exact_answer": false
+      },
+      "final": {
+        "mean_nll": -0.0,
+        "generated_tokens": [
+          76990,
+          13742,
+          455,
+          220,
+          22,
+          18,
+          24,
+          16,
+          72730,
+          248046
+        ],
+        "generated_text": " violet otter 7391 cedar",
+        "exact_answer": true
+      },
+      "restored_steps": [
+        {
+          "step": 6,
+          "seconds": 2.493009999860078,
+          "adapter_delta_l2": 1.1848769841339442,
+          "optim_metrics": {
+            "gradient_norm": 0.04892282085471605,
+            "optimizer_steps": 6,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31374872854
+        },
+        {
+          "step": 7,
+          "seconds": 2.4884584578685462,
+          "adapter_delta_l2": 1.050267032835098,
+          "optim_metrics": {
+            "gradient_norm": 0.07286292683865647,
+            "optimizer_steps": 7,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31374872854
+        },
+        {
+          "step": 8,
+          "seconds": 2.450066334102303,
+          "adapter_delta_l2": 0.9374287941236843,
+          "optim_metrics": {
+            "gradient_norm": 0.1806723458383986,
+            "optimizer_steps": 8,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31374872854
+        },
+        {
+          "step": 9,
+          "seconds": 2.4423006661236286,
+          "adapter_delta_l2": 0.8417892405606691,
+          "optim_metrics": {
+            "gradient_norm": 0.010573353215584664,
+            "optimizer_steps": 9,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31374872854
+        },
+        {
+          "step": 10,
+          "seconds": 2.476257166126743,
+          "adapter_delta_l2": 0.7607427287881641,
+          "optim_metrics": {
+            "gradient_norm": 0.009406777600853608,
+            "optimizer_steps": 10,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31374872854
+        }
+      ],
+      "restore_exact": true
+    },
+    {
+      "learning_rate": 0.0003,
+      "seed": 91,
+      "steps": [
+        {
+          "step": 1,
+          "seconds": 2.3739934999030083,
+          "adapter_delta_l2": 2.39425299796572,
+          "optim_metrics": {
+            "gradient_norm": 11.292431116913795,
+            "optimizer_steps": 1,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 5.09375,
+          "peak_mlx_bytes": 31374872854
+        },
+        {
+          "step": 2,
+          "seconds": 2.4434195409994572,
+          "adapter_delta_l2": 2.3641931688240985,
+          "optim_metrics": {
+            "gradient_norm": 5.244033394947959,
+            "optimizer_steps": 2,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 2.46875,
+          "peak_mlx_bytes": 31374872854
+        },
+        {
+          "step": 3,
+          "seconds": 2.476155749987811,
+          "adapter_delta_l2": 1.896232384515479,
+          "optim_metrics": {
+            "gradient_norm": 7.1481149066999,
+            "optimizer_steps": 3,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.70703125,
+          "peak_mlx_bytes": 31374872854
+        },
+        {
+          "step": 4,
+          "seconds": 2.480357374995947,
+          "adapter_delta_l2": 1.5860131777105468,
+          "optim_metrics": {
+            "gradient_norm": 0.4191976518457452,
+            "optimizer_steps": 4,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.01251220703125,
+          "peak_mlx_bytes": 31374872854
+        },
+        {
+          "step": 5,
+          "seconds": 2.4806320830248296,
+          "adapter_delta_l2": 1.357290302712169,
+          "optim_metrics": {
+            "gradient_norm": 0.12488707217112852,
+            "optimizer_steps": 5,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31374872854
+        },
+        {
+          "step": 6,
+          "seconds": 2.4657823748420924,
+          "adapter_delta_l2": 1.1875235837555522,
+          "optim_metrics": {
+            "gradient_norm": 0.04926881489089141,
+            "optimizer_steps": 6,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31374872854
+        },
+        {
+          "step": 7,
+          "seconds": 2.4756393330171704,
+          "adapter_delta_l2": 1.0524638168107476,
+          "optim_metrics": {
+            "gradient_norm": 0.06602538778783337,
+            "optimizer_steps": 7,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31374872854
+        },
+        {
+          "step": 8,
+          "seconds": 2.4905628748238087,
+          "adapter_delta_l2": 0.9392044073779652,
+          "optim_metrics": {
+            "gradient_norm": 0.18937019387131543,
+            "optimizer_steps": 8,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31374872854
+        },
+        {
+          "step": 9,
+          "seconds": 2.4899415420368314,
+          "adapter_delta_l2": 0.8433472645720999,
+          "optim_metrics": {
+            "gradient_norm": 0.012525208668552723,
+            "optimizer_steps": 9,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31374872854
+        },
+        {
+          "step": 10,
+          "seconds": 2.448056041961536,
+          "adapter_delta_l2": 0.7622072157596863,
+          "optim_metrics": {
+            "gradient_norm": 0.011183467351959082,
+            "optimizer_steps": 10,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31374872854
+        }
+      ],
+      "status": "passed",
+      "initial": {
+        "mean_nll": 5.10625,
+        "generated_tokens": [
+          271,
+          27775,
+          383,
+          279,
+          95554,
+          1970,
+          3766,
+          11,
+          411,
+          7701
+        ],
+        "generated_text": "\n\nBased on the alphanumeric code provided, this appears",
+        "exact_answer": false
+      },
+      "final": {
+        "mean_nll": -0.0,
+        "generated_tokens": [
+          76990,
+          13742,
+          455,
+          220,
+          22,
+          18,
+          24,
+          16,
+          72730,
+          248046
+        ],
+        "generated_text": " violet otter 7391 cedar",
+        "exact_answer": true
+      },
+      "restored_steps": [
+        {
+          "step": 6,
+          "seconds": 2.476594625040889,
+          "adapter_delta_l2": 1.1875235837555522,
+          "optim_metrics": {
+            "gradient_norm": 0.04926881489089141,
+            "optimizer_steps": 6,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31374872854
+        },
+        {
+          "step": 7,
+          "seconds": 2.4561037498060614,
+          "adapter_delta_l2": 1.0524638168107476,
+          "optim_metrics": {
+            "gradient_norm": 0.06602538778783337,
+            "optimizer_steps": 7,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31374872854
+        },
+        {
+          "step": 8,
+          "seconds": 2.47503412514925,
+          "adapter_delta_l2": 0.9392044073779652,
+          "optim_metrics": {
+            "gradient_norm": 0.18937019387131543,
+            "optimizer_steps": 8,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31374872854
+        },
+        {
+          "step": 9,
+          "seconds": 2.462206457974389,
+          "adapter_delta_l2": 0.8433472645720999,
+          "optim_metrics": {
+            "gradient_norm": 0.012525208668552723,
+            "optimizer_steps": 9,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31374872854
+        },
+        {
+          "step": 10,
+          "seconds": 2.4847242499236017,
+          "adapter_delta_l2": 0.7622072157596863,
+          "optim_metrics": {
+            "gradient_norm": 0.011183467351959082,
+            "optimizer_steps": 10,
+            "optimizer_committed": true,
+            "learning_rate": 0.0003
+          },
+          "loss": 0.0,
+          "peak_mlx_bytes": 31374872854
+        }
+      ],
+      "restore_exact": true
+    }
+  ],
+  "selector": "argmax through production inference; no forced tokens",
+  "started_at": 1792397212.259506,
+  "calibration_sha256": "6f6579ec32ddae4152108bf740a892c45c36f416ce2d45ef351fbc102172efe7",
+  "selected_learning_rate": 0.0003,
+  "zero_rate_control": {
+    "initial": {
+      "mean_nll": 5.10625,
+      "generated_tokens": [
+        271,
+        27775,
+        383,
+        279,
+        95554,
+        1970,
+        3766,
+        11,
+        411,
+        7701
+      ],
+      "generated_text": "\n\nBased on the alphanumeric code provided, this appears",
+      "exact_answer": false
+    },
+    "final": {
+      "mean_nll": 5.10625,
+      "generated_tokens": [
+        271,
+        27775,
+        383,
+        279,
+        95554,
+        1970,
+        3766,
+        11,
+        411,
+        7701
+      ],
+      "generated_text": "\n\nBased on the alphanumeric code provided, this appears",
+      "exact_answer": false
+    },
+    "steps": [
+      {
+        "step": 1,
+        "seconds": 2.4182889168150723,
+        "adapter_delta_l2": 0.0,
+        "optim_metrics": {
+          "gradient_norm": 11.455332669473128,
+          "optimizer_steps": 1,
+          "optimizer_committed": true,
+          "learning_rate": 0.0
+        },
+        "loss": 5.09375,
+        "peak_mlx_bytes": 31374872854
+      },
+      {
+        "step": 2,
+        "seconds": 2.469727958086878,
+        "adapter_delta_l2": 0.0,
+        "optim_metrics": {
+          "gradient_norm": 11.455332669473128,
+          "optimizer_steps": 2,
+          "optimizer_committed": true,
+          "learning_rate": 0.0
+        },
+        "loss": 5.09375,
+        "peak_mlx_bytes": 31374872854
+      },
+      {
+        "step": 3,
+        "seconds": 2.4606742090545595,
+        "adapter_delta_l2": 0.0,
+        "optim_metrics": {
+          "gradient_norm": 11.455332669473128,
+          "optimizer_steps": 3,
+          "optimizer_committed": true,
+          "learning_rate": 0.0
+        },
+        "loss": 5.09375,
+        "peak_mlx_bytes": 31374872854
+      },
+      {
+        "step": 4,
+        "seconds": 2.4531682920642197,
+        "adapter_delta_l2": 0.0,
+        "optim_metrics": {
+          "gradient_norm": 11.455332669473128,
+          "optimizer_steps": 4,
+          "optimizer_committed": true,
+          "learning_rate": 0.0
+        },
+        "loss": 5.09375,
+        "peak_mlx_bytes": 31374872854
+      },
+      {
+        "step": 5,
+        "seconds": 2.4742841660045087,
+        "adapter_delta_l2": 0.0,
+        "optim_metrics": {
+          "gradient_norm": 11.455332669473128,
+          "optimizer_steps": 5,
+          "optimizer_committed": true,
+          "learning_rate": 0.0
+        },
+        "loss": 5.09375,
+        "peak_mlx_bytes": 31374872854
+      },
+      {
+        "step": 6,
+        "seconds": 2.4982375830877572,
+        "adapter_delta_l2": 0.0,
+        "optim_metrics": {
+          "gradient_norm": 11.455332669473128,
+          "optimizer_steps": 6,
+          "optimizer_committed": true,
+          "learning_rate": 0.0
+        },
+        "loss": 5.09375,
+        "peak_mlx_bytes": 31374872854
+      },
+      {
+        "step": 7,
+        "seconds": 2.4890798749402165,
+        "adapter_delta_l2": 0.0,
+        "optim_metrics": {
+          "gradient_norm": 11.455332669473128,
+          "optimizer_steps": 7,
+          "optimizer_committed": true,
+          "learning_rate": 0.0
+        },
+        "loss": 5.09375,
+        "peak_mlx_bytes": 31374872854
+      },
+      {
+        "step": 8,
+        "seconds": 2.4796024581883103,
+        "adapter_delta_l2": 0.0,
+        "optim_metrics": {
+          "gradient_norm": 11.455332669473128,
+          "optimizer_steps": 8,
+          "optimizer_committed": true,
+          "learning_rate": 0.0
+        },
+        "loss": 5.09375,
+        "peak_mlx_bytes": 31374872854
+      },
+      {
+        "step": 9,
+        "seconds": 2.446080334018916,
+        "adapter_delta_l2": 0.0,
+        "optim_metrics": {
+          "gradient_norm": 11.455332669473128,
+          "optimizer_steps": 9,
+          "optimizer_committed": true,
+          "learning_rate": 0.0
+        },
+        "loss": 5.09375,
+        "peak_mlx_bytes": 31374872854
+      },
+      {
+        "step": 10,
+        "seconds": 2.456248875008896,
+        "adapter_delta_l2": 0.0,
+        "optim_metrics": {
+          "gradient_norm": 11.455332669473128,
+          "optimizer_steps": 10,
+          "optimizer_committed": true,
+          "learning_rate": 0.0
+        },
+        "loss": 5.09375,
+        "peak_mlx_bytes": 31374872854
+      }
+    ],
+    "passed": true
+  },
+  "frozen_base_unchanged": true,
+  "finished_at": 1792397343.159487
+}

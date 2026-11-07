@@ -1,0 +1,176 @@
+{
+  "status": "passed",
+  "qualified_commit": "7235e72212304932a3002ed77c6ca64638f486f3",
+  "source_sha256": "73a83f372bd7497abf141be29fcbf5775961e48b48b84e2cfda88b3402f16994",
+  "model": "~/models/Qwen3.8-27B-8bit",
+  "execution_profile": "bf16-fast",
+  "optional_activation_budget_gib": 16,
+  "memorization": {
+    "fixture_sha256": "8e3d034a41c07ded4d978e5da04dec8ddff932ec9aca2f7686798edfe3d22a25",
+    "calibration_sha256": "5ce8155830023caee10581091d92cddddb17c189de5f6a41f68b08171bcd57b6",
+    "learning_rate": 0.0003,
+    "updates_per_seed": 10,
+    "restore_at_update": 5,
+    "frozen_base_unchanged": true,
+    "zero_rate_control_passed": true,
+    "attempts": [
+      {
+        "seed": 23,
+        "status": "passed",
+        "restore_exact": true,
+        "initial_nll": 5.10625,
+        "final_nll": -0.0,
+        "final_exact_answer": true
+      },
+      {
+        "seed": 91,
+        "status": "passed",
+        "restore_exact": true,
+        "initial_nll": 5.10625,
+        "final_nll": -0.0,
+        "final_exact_answer": true
+      }
+    ],
+    "supervision": {
+      "status": "passed",
+      "started_at": 1792444885.333784,
+      "timeout_seconds": 3600,
+      "supervisor_pid": 79362,
+      "source_sha256": "aa29c37f59e312621a28097a9557f2449bcb3fb3925cb62e43933b1653afef63",
+      "supervisor_source_sha256": "de1f28de5e63a35da2fa53e417b72eddb89f18060f5b5d5d5efa9dd2a4234d2d",
+      "swap_before": "vm.swapusage: total = 1024.00M  used = 87.75M  free = 936.25M  (encrypted)",
+      "thermal_before": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+      "worker_pid": 79365,
+      "returncode": 0,
+      "finished_at": 1792445026.7715058,
+      "swap_after": "vm.swapusage: total = 1024.00M  used = 87.75M  free = 936.25M  (encrypted)",
+      "thermal_after": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded"
+    }
+  },
+  "production_rpc": {
+    "checks": {
+      "bounded_eviction": {
+        "cache": {
+          "available_capacity_bytes": 536870912,
+          "bytes": 449990656,
+          "entries": 4,
+          "evictions": 2,
+          "hit_tokens": 0,
+          "hits": 0,
+          "limit_bytes": 536870912,
+          "misses": 6,
+          "skipped": 0,
+          "stored": 6
+        },
+        "passed": true
+      },
+      "eight_requests": {
+        "actual_prefill_tokens": 8192,
+        "batch_sizes": [
+          1,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3,
+          3
+        ],
+        "passed": true,
+        "wall_seconds": 7.367866165935993
+      },
+      "fairness": {
+        "backward_status_at_sample_completion": "running",
+        "passed": true
+      },
+      "prefix_extension": {
+        "actual_prefill_tokens": 8,
+        "bf16_logprob_error": 0.0,
+        "passed": true
+      },
+      "prefix_reuse": {
+        "cold_actual_prefill_tokens": 512,
+        "logprob_error": 0.0,
+        "passed": true,
+        "warm_actual_prefill_tokens": 0
+      },
+      "training_recovery": {
+        "checkpoint": "studio-state:1c02b06e5bb846eac00be5e6a269154bf02508b1e397e74a6816295b3027559d",
+        "completion_tokens": 16,
+        "exact_state_and_next_sample": true,
+        "passed": true,
+        "prompt_tokens": 512,
+        "publication": {
+          "checkpoint": "studio-state:bf19902ea30ea08f2cedb8e91e8b591a18577489bf7b4c0ff60c05fdf89c497e",
+          "policy": "studio-policy:4594d16b3a65bdd57c081a32e02dd59b204e832457c43eb83ba9fe73fe888709",
+          "revision": 1
+        }
+      }
+    },
+    "optimizer_steps": 1,
+    "backward_execution_seconds": 2.1233599160332233,
+    "optimizer_execution_seconds": 1.610065040877089,
+    "frozen_base_unchanged": true,
+    "other_client_state_unchanged": true,
+    "supervision": {
+      "pid": 79651,
+      "returncode": 0,
+      "stop_reason": null,
+      "elapsed_seconds": 100.99536862503737,
+      "execution_seconds": 100.99536916706711,
+      "execution_limit_seconds": 3500.0
+    }
+  },
+  "live_observation": {
+    "samples": 132,
+    "saw_backward": true,
+    "max_active_requests": 4,
+    "max_queued_requests": 7,
+    "max_admitted_batch_size": 4,
+    "generated_tokens_observed": 89,
+    "memory_peak_scope": "process_lifetime",
+    "scope": "CPU-only metrics polls; no model operation submitted by observer",
+    "backward_evidence": [
+      {
+        "operation_id": "tiny-backward",
+        "phase": "replay_branch_backward",
+        "phase_seconds": {
+          "head_backward": 0.011045958148315549,
+          "replay_branch_backward": 0.08395533286966383
+        }
+      }
+    ]
+  },
+  "earlier_automatic_retention_probe": {
+    "status": "failed",
+    "reason": "interleaved inference memory admission",
+    "required_bytes": 243511541760,
+    "recommended_budget_bytes": 239143780352,
+    "resolution": "Paired epoch config caps optional saved activations at 16 GiB.",
+    "raw_receipt_sha256": "bd6c2bcb873d5e5910ce5bcff864082efb5385d717a0fcc41262505083dae835"
+  },
+  "raw_report_sha256": {
+    "report.json": "0faaf5bea103f1cde86fedfa1f1cfabfa95164eda3792a8a719e2d9a5bfd45ab",
+    "rpc.json": "5b70b26b9de2ee2a9b537f29d16f271ec7b2f0a68fb4c8c74b0d4ece895aa812",
+    "live-observation.json": "7c9fe01951f4ad16b36927c90aa6eba6e762500d929865979a25b29bf3fb9a9d",
+    "readback.json": "8e16690c30274500504242ad364d761c81fb084d837447a2a2fdf887793750b7"
+  },
+  "raw_reports_studio_root": "/tmp/shellsmith-backprop-review-7235e72-20261019",
+  "raw_reports_are_disposable": true,
+  "campaign_launched": false,
+  "historical_experiments_running": false,
+  "gpu_lease_available_after_qualification": true,
+  "gm_readiness": {
+    "status": "passed",
+    "authenticated_profile": "~/.codex",
+    "inherited_profile": "~/.local/share/shellsmith/gm-codex",
+    "node_version": "v22.22.0",
+    "codex_executable": "~/.local/share/shellsmith/studio-v1/tools/node_modules/.bin/codex",
+    "credentials_transferred": false,
+    "timestamp": 1792444884.736418
+  },
+  "full_ci": {
+    "checks_url": "https://github.com/tginart/shellsmith-dev/pull/18/checks",
+    "scope": "Live CI for the exact PR head is authoritative; these files record the scoped offline qualifications."
+  }
+}

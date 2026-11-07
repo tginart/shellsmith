@@ -1,0 +1,48 @@
+{
+  "schema": "shellsmith.hero_slate.v1",
+  "shuffle_seed": 20261009,
+  "world_order": [
+    "feature_flag_audit_001",
+    "kafka_schema_compatibility_001",
+    "oidc_rotation_cache_repair_001",
+    "public_repo_filelock_forked_sqlite_connections_001"
+  ],
+  "groups_per_update": 2,
+  "catalog": {
+    "include_flavors": [
+      "agentic",
+      "public_repo"
+    ],
+    "include": [
+      "feature_flag_audit_001",
+      "kafka_schema_compatibility_001",
+      "oidc_rotation_cache_repair_001",
+      "public_repo_filelock_forked_sqlite_connections_001"
+    ],
+    "exclude": [],
+    "additional_worlds": []
+  },
+  "paper_worlds": [],
+  "simulators": {
+    "sol_low": {
+      "runtime": "codex",
+      "model": "gpt-6.1-sol",
+      "provider": "codex-cli",
+      "reasoning_effort": "low"
+    }
+  },
+  "default_simulator": "sol_low",
+  "expected_simulator_counts": {
+    "sol_low": 4
+  },
+  "assignments": {},
+  "pinned_assets": {
+    "manifest_sha256": "c4812510d2d44583c8d84e1889d6f5f4cdeabaabdce3ee4831a2cf2be96bb3e1",
+    "world_sha256": {
+      "feature_flag_audit_001": "7871e00d71b40a89c372c7077d1d6c806a7bb96cde2aa138893bafda628ef9e1",
+      "kafka_schema_compatibility_001": "7992a61fbc61983db12be442ca2639eb9d1ea1febae44395765d633fb0c1a14b",
+      "oidc_rotation_cache_repair_001": "a1d21b8ec986bf063f78ab90b5c0bd9828b4f132ba4a746a17d825511a60ef26",
+      "public_repo_filelock_forked_sqlite_connections_001": "269cea26434d06d402da3bc378cca287ee766a58fb63b9563dc85dc980dcd16c"
+    }
+  }
+}

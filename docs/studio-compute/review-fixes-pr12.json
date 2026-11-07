@@ -1,0 +1,59 @@
+{
+  "schema": "studio-pr-review-fixes-v1",
+  "recorded_at": "2026-10-14T20:49:11.646595+00:00",
+  "reviewed_head": "f8af4500d01e0e222989f847ab816e8a093bfc8f",
+  "completed_review": "https://github.com/tginart/shellsmith-dev/pull/12#pullrequestreview-5523796374",
+  "findings": [
+    {
+      "url": "https://github.com/tginart/shellsmith-dev/pull/12#discussion_r4275550197",
+      "severity": "Severe",
+      "fix": "Owner startup/launch receipt is cleanup-protected"
+    },
+    {
+      "url": "https://github.com/tginart/shellsmith-dev/pull/12#discussion_r4275550228",
+      "severity": "Severe",
+      "fix": "Stable session enclosure recovers reparented compute children"
+    },
+    {
+      "url": "https://github.com/tginart/shellsmith-dev/pull/12#discussion_r4275550239",
+      "severity": "Significant",
+      "fix": "Refused primary operations cannot fall back to stale legacy receipts"
+    },
+    {
+      "url": "https://github.com/tginart/shellsmith-dev/pull/12#discussion_r4275550252",
+      "severity": "Severe",
+      "fix": "Symlinked staging receipt cannot overwrite its target"
+    },
+    {
+      "url": "https://github.com/tginart/shellsmith-dev/pull/12#discussion_r4275550263",
+      "severity": "Significant",
+      "fix": "Preflight/control traffic is excluded from run-specific token and training summaries"
+    }
+  ],
+  "baseline_reproductions": {
+    "startup_receipt_failure_leaves_owner_running": true,
+    "owner_crash_loses_reparented_child": true,
+    "malformed_primary_uses_stale_receipts": true,
+    "staging_receipt_symlink_overwrites_target": true,
+    "preflight_tokens_count_as_rollout_work": true
+  },
+  "verification": {
+    "monitor_and_report_tests_passed": 54,
+    "subtests_passed": 3,
+    "seconds": 8.28,
+    "api_tests_passed": 27,
+    "api_seconds": 6.92,
+    "git_diff_check": "passed"
+  },
+  "scope": "CPU fixtures, dummy owned processes, synthetic files and local mock APIs only. No real Studio/model rollout or training run, credential change, historical-evidence mutation or deadline extension.",
+  "source_sha256": {
+    "scripts/studio_micro_supervisor.py": "c7f911ca21613ca82d50072691ac153eb3ddee0da3da8e6c4c60cbe28829703e",
+    "scripts/studio_micro_workflow.py": "8375c4b93dc442931b50b8d9165166886d235e4939a03a1d6983707e84904740",
+    "scripts/stage_studio_micro_controls.py": "44d29e7d570f226dc122cc2862bff9e7d3f7d35c5c29544171322601180185dd",
+    "scripts/render_studio_run_report.py": "3cae02e147feb929af7afa78de4966b56b120bf85b00a485b10d03095065a94b",
+    "src/shellsmith/jobs/studio_monitor.py": "4538e890728589ca91b1f5343edc958f2772cfc5b6291042efa7abaf51caa9d6",
+    "tests/test_studio_monitor.py": "85e4c6a6125af3ecf74c917c92de64773d73138e09ee4bea10a38165df134ee9",
+    "tests/test_studio_run_report.py": "7e61e4a2effa1536cbe61f096193782c5e2a8683199e8e718fcc25c97648e1f2",
+    "docs/studio-compute/runtime-reliability.md": "b9ffbcb8607b44dee81cfe7260821b0c66b25bd2460af0e1a55c4b073ce187d8"
+  }
+}

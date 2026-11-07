@@ -1,0 +1,1006 @@
+{
+  "status": "passed",
+  "stages": {
+    "layer_0_forward": {
+      "primitives": 261,
+      "output_dtype_counts": {
+        "int32": 14,
+        "bool": 4,
+        "bfloat16": 250
+      },
+      "unexpected_fp32_outputs": []
+    },
+    "layer_0_backward": {
+      "primitives": 545,
+      "output_dtype_counts": {
+        "bfloat16": 534,
+        "int32": 20,
+        "bool": 7
+      },
+      "unexpected_fp32_outputs": []
+    },
+    "layer_3_forward": {
+      "primitives": 117,
+      "output_dtype_counts": {
+        "bfloat16": 117,
+        "int32": 4
+      },
+      "unexpected_fp32_outputs": []
+    },
+    "layer_3_backward": {
+      "primitives": 232,
+      "output_dtype_counts": {
+        "bfloat16": 240,
+        "int32": 2
+      },
+      "unexpected_fp32_outputs": []
+    },
+    "head_loss_and_backward": {
+      "primitives": 40,
+      "output_dtype_counts": {
+        "bfloat16": 40,
+        "int32": 1
+      },
+      "unexpected_fp32_outputs": []
+    },
+    "optimizer": {
+      "primitives": 5,
+      "output_dtype_counts": {
+        "bfloat16": 7
+      },
+      "unexpected_fp32_outputs": []
+    },
+    "balanced_accumulation": {
+      "primitives": 34,
+      "output_dtype_counts": {
+        "bfloat16": 34
+      },
+      "unexpected_fp32_outputs": []
+    },
+    "inference_token": {
+      "primitives": 8498,
+      "output_dtype_counts": {
+        "uint32": 2,
+        "bfloat16": 8655,
+        "int32": 2
+      },
+      "unexpected_fp32_outputs": []
+    }
+  },
+  "dispatches": [
+    {
+      "kind": "gdn",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn",
+      "phase": "backward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "attention",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.uint8"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "attention",
+      "phase": "query",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.uint8",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "attention",
+      "phase": "key_value",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.uint8",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    },
+    {
+      "kind": "gdn_token",
+      "phase": "forward",
+      "input_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ],
+      "output_dtypes": [
+        "mlx.core.bfloat16",
+        "mlx.core.bfloat16"
+      ]
+    }
+  ],
+  "started_at": 1792385797.584922,
+  "detects_explicit_fp32_promotion": true,
+  "frozen_base_unchanged": true,
+  "runtime_identity": {
+    "model": "46e540f1bef19dfe99a4941e2e3f8651fc5b6551a72838757bb2e80d1687cada",
+    "model_files": {
+      "model-00001-of-00006.safetensors": "c7921fe72af5c961c3c4230ea25068ed6d1e502d5ecb2b4a53b7c9c213effa0c",
+      "model-00002-of-00006.safetensors": "e9d93d15495354045da281f102649b99793e5b6ed0e05852c58f46e6616b54a0",
+      "model-00003-of-00006.safetensors": "7015f40310c86a18230e28644832b624532333d5dfbf7584e6c62341dbd8975e",
+      "model-00004-of-00006.safetensors": "7dc8ae53ed51d153e6b59499cdf004bf6ef15aab6757c7604ed4834774abc2c2",
+      "model-00005-of-00006.safetensors": "8817c22c01aebdcde54eac315e9766f705eb512ba7ba84ac47501c663f930ac5",
+      "model-00006-of-00006.safetensors": "fce51843fc07e1c67c5ec6d19edb46e4fa8d2b51a1cb6c8316b0a7cc069c0eb4",
+      "config.json": "8f80874ac3ad8fa386d3f6dc0ea85377f703376e009a03dee0360e08e289a25d"
+    },
+    "tokenizer": "ba6a5aa2899296ea59aa9a1e95b5f1255fc99eda05a263ec1adbb4af1a851728",
+    "numerics": "6a3bb7b5c0c4573583e64d35fadc89cd3d83f718348c6693b2c2d05f949a00ad",
+    "versions": {
+      "mlx": "0.32.3",
+      "mlx-lm": "0.32.0",
+      "mlx-vlm": "0.7.4",
+      "transformers": "5.17.0"
+    },
+    "kernel_build": {
+      "numerical_sources": "6a3bb7b5c0c4573583e64d35fadc89cd3d83f718348c6693b2c2d05f949a00ad",
+      "runtime_versions": {
+        "mlx": "0.32.3",
+        "mlx-lm": "0.32.0",
+        "mlx-vlm": "0.7.4",
+        "transformers": "5.17.0"
+      },
+      "architecture": "applegpu_g17d",
+      "os_build": "26A425",
+      "mlx_library_sha256": "ebc8a5f5465afb79d3d9c8f5b0929de1a9b277b7179db8672f92da77ae110a1e",
+      "mlx_enable_tf32": "0"
+    },
+    "kernel_build_id": "d127bc9caa532d12d58a65daa85676619ea1d9ed3f78e85493719f6c3ee6c52b",
+    "execution": {
+      "execution_profile": "bf16-fast",
+      "segment_tokens": 2048,
+      "head_rows": 128,
+      "checkpoint_layers": 1,
+      "activation_budget_gib": null,
+      "prefill_tokens": 2048
+    },
+    "runtime_source_sha256": {
+      "runtime.py": "24f5831404a3e2bd067d96f07a3fe376414c9aa23c9a3fc603e95e7790dd1059",
+      "cache.py": "4ad0f14aa1037adcbbe798ea12922ac2c437590c7bf5959e2f3e119a7ec2ac35",
+      "service.py": "fef8167bf948c5dd10d691123685c418e4cf482c2d4bd8bbaa28d841bb74f7ac",
+      "cli.py": "901401aa5ce73961b273e979717a5bae07c322e4b46ce70dbedbf98ade96c81e",
+      "storage.py": "3cca6b97d257b5fe68f10efcb06fe354d4ff94878beeddadf2bb6936a6cfda5a",
+      "protocol.py": "f2750b1ac1fe6ce00eab3de0be4f649e75bd88af3aa070d1a27eadafbe3c59e5",
+      "http.py": "f371735b00789eb49fb96ee452afd50345fe474918a947fb47586824beaceb0e",
+      "inference_metrics.py": "44b5f16a2b8233256b1bdcfa718b32b336400e14bf26ec0c752fb4cc997ee17e"
+    }
+  },
+  "peak_mlx_bytes": 30668696508,
+  "finished_at": 1792385826.3129869
+}

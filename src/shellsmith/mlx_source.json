@@ -1,0 +1,16 @@
+{
+  "format": "shellsmith.mlx-source.v1",
+  "reference_repository": "https://github.com/tginart/high-command",
+  "reference_revision": "10e830e9a5becb9c2387bd37a378fd7dad1d3590",
+  "model_family": "dense-qwen3_5",
+  "precision": "bf16-compute-fp32-master",
+  "python": "3.12",
+  "macos_minimum": "26",
+  "pins": {
+    "mlx": "0.32.3",
+    "mlx-lm": "0.32.0",
+    "mlx-vlm": "0.7.4",
+    "transformers": "5.17.0"
+  },
+  "scope": "Adapt numerical components; preserve Shellsmith credit, rollout and supervision contracts."
+}

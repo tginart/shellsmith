@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "qualified_source_head": "1116103",
+  "qualified_source_archive_sha256": "e837666977f0d564ddb0912dc1ce89207da71ce6669ef89327c8b5530a3f499b",
+  "all_current_src_files_match_qualified_snapshot": true,
+  "source_files_checked": 192,
+  "portable": {
+    "passed": 2877,
+    "skipped": 30,
+    "subtests_passed": 614,
+    "seconds": 361.14,
+    "command": "PYTHONPATH=src PYTHONDONTWRITEBYTECODE=1 python -m pytest -q",
+    "evidence": "evidence/portable-default-tests.xml.gz"
+  },
+  "native": {
+    "passed": 77,
+    "failures": 0,
+    "skipped": 0,
+    "evidence": "evidence/native-default-tests.xml.gz"
+  },
+  "real_model_memorization": {
+    "seeds": [
+      23,
+      91
+    ],
+    "updates": 10,
+    "learning_rate": 0.0003,
+    "exact_answer_and_loss_gate": true,
+    "zero_learning_rate_control": true,
+    "restore_continuation_exact": true,
+    "frozen_base_unchanged": true
+  },
+  "actual_model_default_dtype_and_dispatch_audit": "passed, including explicit-FP32 positive control",
+  "long_context_independent_derivatives": "passed",
+  "default_automatic_admission_selected_interval": 1,
+  "release_counter_seconds": 199.13378420914523,
+  "release_gradients_and_adapters_exact_to_three_timed_final_trials": true,
+  "kernel_build_id": "162857f36a1a0d6be2da53884fe189fcccdd3cc7bd840cfa98db49478805c006",
+  "runtime_build_identity": {
+    "numerical_sources": "bd8a0f9141c0c54ce57d7f98507df9df9f5c4e14ac8e446070b0d9bac744ff3b",
+    "runtime_versions": {
+      "mlx": "0.32.3",
+      "mlx-lm": "0.32.0",
+      "mlx-vlm": "0.7.4",
+      "transformers": "5.17.0"
+    },
+    "architecture": "applegpu_g17d",
+    "os_build": "26A425",
+    "mlx_library_sha256": "ebc8a5f5465afb79d3d9c8f5b0929de1a9b277b7179db8672f92da77ae110a1e",
+    "mlx_enable_tf32": "0"
+  },
+  "wheel": {
+    "wheel": "/private/tmp/shellsmith-wheel-v50/shellsmith-0.1.0-py3-none-any.whl",
+    "sha256": "5623f08bb3989c0bff1a2516ce0567ee437a8e59389e1abc12fa4cb709bf7c68",
+    "metal_files": 8,
+    "auditor_source_included": true,
+    "permission_notices_included": true
+  },
+  "legacy_gradient_agreement_is_a_correctness_gate": false,
+  "long_rollout_reward_improvement_tested": false,
+  "experiment_restarted": false
+}

@@ -1,0 +1,715 @@
+{
+  "schema": "shellsmith.catalog.v1",
+  "promoted_on": "2026-10-18",
+  "notes": "Curated runtime selection: the original checkout task, 150 campaign worlds, 23 seed-grounded worlds, and three simulator-operation worlds. Promotion follows static contract review; execution qualification remains separate. Five MLX context-test variants stay outside this catalog.",
+  "tasks": [
+    {
+      "id": "checkout_idempotency_001",
+      "path": "checkout_idempotency_001.md"
+    },
+    {
+      "id": "access_review_exception_001",
+      "path": "drafts/access_review_exception_001.md"
+    },
+    {
+      "id": "ad_auction_loss_notice_reconciliation_001",
+      "path": "drafts/ad_auction_loss_notice_reconciliation_001.md"
+    },
+    {
+      "id": "airflow_dataset_alias_stall_001",
+      "path": "drafts/airflow_dataset_alias_stall_001.md"
+    },
+    {
+      "id": "analytics_lineage_break_001",
+      "path": "drafts/analytics_lineage_break_001.md"
+    },
+    {
+      "id": "cdc_snapshot_boundary_repair_001",
+      "path": "drafts/cdc_snapshot_boundary_repair_001.md"
+    },
+    {
+      "id": "clickhouse_replacing_merge_001",
+      "path": "drafts/clickhouse_replacing_merge_001.md"
+    },
+    {
+      "id": "cross_region_ledger_recovery_001",
+      "path": "drafts/cross_region_ledger_recovery_001.md"
+    },
+    {
+      "id": "customer_identity_merge_conflict_001",
+      "path": "drafts/customer_identity_merge_conflict_001.md"
+    },
+    {
+      "id": "data_residency_replay_destination_001",
+      "path": "drafts/data_residency_replay_destination_001.md"
+    },
+    {
+      "id": "dns_weighted_failover_001",
+      "path": "drafts/dns_weighted_failover_001.md"
+    },
+    {
+      "id": "elasticsearch_pit_export_gap_001",
+      "path": "drafts/elasticsearch_pit_export_gap_001.md"
+    },
+    {
+      "id": "erp_fx_restatement_policy_001",
+      "path": "drafts/erp_fx_restatement_policy_001.md"
+    },
+    {
+      "id": "exactly_once_replay_planner_001",
+      "path": "drafts/exactly_once_replay_planner_001.md"
+    },
+    {
+      "id": "feature_flag_audit_001",
+      "path": "drafts/feature_flag_audit_001.md"
+    },
+    {
+      "id": "fixed_width_bank_settlement_001",
+      "path": "drafts/fixed_width_bank_settlement_001.md"
+    },
+    {
+      "id": "gcs_composite_checksum_001",
+      "path": "drafts/gcs_composite_checksum_001.md"
+    },
+    {
+      "id": "geospatial_antimeridian_tile_gap_001",
+      "path": "drafts/geospatial_antimeridian_tile_gap_001.md"
+    },
+    {
+      "id": "graphql_persisted_query_rollout_001",
+      "path": "drafts/graphql_persisted_query_rollout_001.md"
+    },
+    {
+      "id": "healthcare_fhir_patient_export_001",
+      "path": "drafts/healthcare_fhir_patient_export_001.md"
+    },
+    {
+      "id": "incident_bridge_handoff_001",
+      "path": "drafts/incident_bridge_handoff_001.md"
+    },
+    {
+      "id": "insurance_edi_835_plb_balance_001",
+      "path": "drafts/insurance_edi_835_plb_balance_001.md"
+    },
+    {
+      "id": "kafka_schema_compatibility_001",
+      "path": "drafts/kafka_schema_compatibility_001.md"
+    },
+    {
+      "id": "kinesis_checkpoint_shard_split_001",
+      "path": "drafts/kinesis_checkpoint_shard_split_001.md"
+    },
+    {
+      "id": "ldap_referral_group_sync_001",
+      "path": "drafts/ldap_referral_group_sync_001.md"
+    },
+    {
+      "id": "legacy_edi_997_rejection_001",
+      "path": "drafts/legacy_edi_997_rejection_001.md"
+    },
+    {
+      "id": "legacy_mtls_chain_recovery_001",
+      "path": "drafts/legacy_mtls_chain_recovery_001.md"
+    },
+    {
+      "id": "legacy_settlement_batch_001",
+      "path": "drafts/legacy_settlement_batch_001.md"
+    },
+    {
+      "id": "lz_penalty_paper_audit_001",
+      "path": "drafts/lz_penalty_paper_audit_001.md"
+    },
+    {
+      "id": "marketing_consent_precedence_001",
+      "path": "drafts/marketing_consent_precedence_001.md"
+    },
+    {
+      "id": "mes_opcua_namespace_rebind_001",
+      "path": "drafts/mes_opcua_namespace_rebind_001.md"
+    },
+    {
+      "id": "mongodb_change_stream_resume_001",
+      "path": "drafts/mongodb_change_stream_resume_001.md"
+    },
+    {
+      "id": "multiparty_capex_approval_race_001",
+      "path": "drafts/multiparty_capex_approval_race_001.md"
+    },
+    {
+      "id": "object_store_retention_incident_001",
+      "path": "drafts/object_store_retention_incident_001.md"
+    },
+    {
+      "id": "oidc_rotation_cache_repair_001",
+      "path": "drafts/oidc_rotation_cache_repair_001.md"
+    },
+    {
+      "id": "paper_biased_edge_game_001",
+      "path": "drafts/paper_biased_edge_game_001.md"
+    },
+    {
+      "id": "paper_brownian_lpp_shock_proof_001",
+      "path": "drafts/paper_brownian_lpp_shock_proof_001.md"
+    },
+    {
+      "id": "paper_classical_light_soundness_001",
+      "path": "drafts/paper_classical_light_soundness_001.md"
+    },
+    {
+      "id": "paper_compressing_search_dimensions_001",
+      "path": "drafts/paper_compressing_search_dimensions_001.md"
+    },
+    {
+      "id": "paper_control_attention_sink_001",
+      "path": "drafts/paper_control_attention_sink_001.md"
+    },
+    {
+      "id": "paper_control_bitnet_entropy_001",
+      "path": "drafts/paper_control_bitnet_entropy_001.md"
+    },
+    {
+      "id": "paper_control_deepseek_v2_mla_001",
+      "path": "drafts/paper_control_deepseek_v2_mla_001.md"
+    },
+    {
+      "id": "paper_control_deepseek_v3_load_bias_001",
+      "path": "drafts/paper_control_deepseek_v3_load_bias_001.md"
+    },
+    {
+      "id": "paper_control_deepseekmoe_accounting_001",
+      "path": "drafts/paper_control_deepseekmoe_accounting_001.md"
+    },
+    {
+      "id": "paper_control_dpo_loss_001",
+      "path": "drafts/paper_control_dpo_loss_001.md"
+    },
+    {
+      "id": "paper_control_flashattention2_merge_001",
+      "path": "drafts/paper_control_flashattention2_merge_001.md"
+    },
+    {
+      "id": "paper_control_gated_delta_rule_001",
+      "path": "drafts/paper_control_gated_delta_rule_001.md"
+    },
+    {
+      "id": "paper_control_gemma2_sliding_window_001",
+      "path": "drafts/paper_control_gemma2_sliding_window_001.md"
+    },
+    {
+      "id": "paper_control_gqa_conversion_001",
+      "path": "drafts/paper_control_gqa_conversion_001.md"
+    },
+    {
+      "id": "paper_control_griffin_rg_lru_001",
+      "path": "drafts/paper_control_griffin_rg_lru_001.md"
+    },
+    {
+      "id": "paper_control_hyena_convolution_001",
+      "path": "drafts/paper_control_hyena_convolution_001.md"
+    },
+    {
+      "id": "paper_control_jamba_hybrid_001",
+      "path": "drafts/paper_control_jamba_hybrid_001.md"
+    },
+    {
+      "id": "paper_control_jetmoe_accounting_001",
+      "path": "drafts/paper_control_jetmoe_accounting_001.md"
+    },
+    {
+      "id": "paper_control_longrope_rescale_001",
+      "path": "drafts/paper_control_longrope_rescale_001.md"
+    },
+    {
+      "id": "paper_control_mamba_recurrence_001",
+      "path": "drafts/paper_control_mamba_recurrence_001.md"
+    },
+    {
+      "id": "paper_control_matmul_free_gru_001",
+      "path": "drafts/paper_control_matmul_free_gru_001.md"
+    },
+    {
+      "id": "paper_control_mixture_of_depths_001",
+      "path": "drafts/paper_control_mixture_of_depths_001.md"
+    },
+    {
+      "id": "paper_control_qlora_nf4_001",
+      "path": "drafts/paper_control_qlora_nf4_001.md"
+    },
+    {
+      "id": "paper_control_recurrentgemma_rglru_001",
+      "path": "drafts/paper_control_recurrentgemma_rglru_001.md"
+    },
+    {
+      "id": "paper_control_retnet_duality_001",
+      "path": "drafts/paper_control_retnet_duality_001.md"
+    },
+    {
+      "id": "paper_control_ring_attention_softmax_001",
+      "path": "drafts/paper_control_ring_attention_softmax_001.md"
+    },
+    {
+      "id": "paper_control_rwkv_wkv6_001",
+      "path": "drafts/paper_control_rwkv_wkv6_001.md"
+    },
+    {
+      "id": "paper_control_ssd_semiseparable_001",
+      "path": "drafts/paper_control_ssd_semiseparable_001.md"
+    },
+    {
+      "id": "paper_control_yarn_rope_scaling_001",
+      "path": "drafts/paper_control_yarn_rope_scaling_001.md"
+    },
+    {
+      "id": "paper_dark_photon_lineshape_001",
+      "path": "drafts/paper_dark_photon_lineshape_001.md"
+    },
+    {
+      "id": "paper_frs_event_partition_001",
+      "path": "drafts/paper_frs_event_partition_001.md"
+    },
+    {
+      "id": "paper_gaplessness_local_annihilation_001",
+      "path": "drafts/paper_gaplessness_local_annihilation_001.md"
+    },
+    {
+      "id": "paper_hamming_distance_lemma_001",
+      "path": "drafts/paper_hamming_distance_lemma_001.md"
+    },
+    {
+      "id": "paper_image_compression_reparameterization_001",
+      "path": "drafts/paper_image_compression_reparameterization_001.md"
+    },
+    {
+      "id": "paper_multimagic_rank_lemma_001",
+      "path": "drafts/paper_multimagic_rank_lemma_001.md"
+    },
+    {
+      "id": "paper_poset_ramsey_constant_001",
+      "path": "drafts/paper_poset_ramsey_constant_001.md"
+    },
+    {
+      "id": "paper_qplex_cglmp_bound_001",
+      "path": "drafts/paper_qplex_cglmp_bound_001.md"
+    },
+    {
+      "id": "paper_quantum_blowing_up_001",
+      "path": "drafts/paper_quantum_blowing_up_001.md"
+    },
+    {
+      "id": "paper_quantum_k_reconstruction_001",
+      "path": "drafts/paper_quantum_k_reconstruction_001.md"
+    },
+    {
+      "id": "paper_schreier_barrier_proposition_001",
+      "path": "drafts/paper_schreier_barrier_proposition_001.md"
+    },
+    {
+      "id": "paper_semigroup_stability_appendix_001",
+      "path": "drafts/paper_semigroup_stability_appendix_001.md"
+    },
+    {
+      "id": "paper_sheaf_obstruction_class_001",
+      "path": "drafts/paper_sheaf_obstruction_class_001.md"
+    },
+    {
+      "id": "paper_size_ramsey_appendix_001",
+      "path": "drafts/paper_size_ramsey_appendix_001.md"
+    },
+    {
+      "id": "paper_spin_chain_symmetry_lemma_001",
+      "path": "drafts/paper_spin_chain_symmetry_lemma_001.md"
+    },
+    {
+      "id": "paper_strong_edge_coloring_distance_001",
+      "path": "drafts/paper_strong_edge_coloring_distance_001.md"
+    },
+    {
+      "id": "paper_tambara_transfer_001",
+      "path": "drafts/paper_tambara_transfer_001.md"
+    },
+    {
+      "id": "paper_transversal_ccz_codes_001",
+      "path": "drafts/paper_transversal_ccz_codes_001.md"
+    },
+    {
+      "id": "paper_vector_bundle_enumeration_001",
+      "path": "drafts/paper_vector_bundle_enumeration_001.md"
+    },
+    {
+      "id": "paper_yukawa_gravity_projector_001",
+      "path": "drafts/paper_yukawa_gravity_projector_001.md"
+    },
+    {
+      "id": "partner_api_quota_outage_001",
+      "path": "drafts/partner_api_quota_outage_001.md"
+    },
+    {
+      "id": "payroll_offcycle_selection_001",
+      "path": "drafts/payroll_offcycle_selection_001.md"
+    },
+    {
+      "id": "privacy_erasure_hold_001",
+      "path": "drafts/privacy_erasure_hold_001.md"
+    },
+    {
+      "id": "prometheus_remote_write_gap_001",
+      "path": "drafts/prometheus_remote_write_gap_001.md"
+    },
+    {
+      "id": "public_repo_anyhow_ensure_negative_expression_001",
+      "path": "drafts/public_repo_anyhow_ensure_negative_expression_001.md"
+    },
+    {
+      "id": "public_repo_attrs_nested_validator_disable_001",
+      "path": "drafts/public_repo_attrs_nested_validator_disable_001.md"
+    },
+    {
+      "id": "public_repo_bytes_zero_width_signed_read_001",
+      "path": "drafts/public_repo_bytes_zero_width_signed_read_001.md"
+    },
+    {
+      "id": "public_repo_cattrs_union_order_disambiguation_001",
+      "path": "drafts/public_repo_cattrs_union_order_disambiguation_001.md"
+    },
+    {
+      "id": "public_repo_chi_writer_discard_readfrom_001",
+      "path": "drafts/public_repo_chi_writer_discard_readfrom_001.md"
+    },
+    {
+      "id": "public_repo_click_ansi_textwrap_001",
+      "path": "drafts/public_repo_click_ansi_textwrap_001.md"
+    },
+    {
+      "id": "public_repo_click_color_validation_001",
+      "path": "drafts/public_repo_click_color_validation_001.md"
+    },
+    {
+      "id": "public_repo_click_distribution_resolution_001",
+      "path": "drafts/public_repo_click_distribution_resolution_001.md"
+    },
+    {
+      "id": "public_repo_click_help_name_collision_001",
+      "path": "drafts/public_repo_click_help_name_collision_001.md"
+    },
+    {
+      "id": "public_repo_content_type_horizontal_tab_001",
+      "path": "drafts/public_repo_content_type_horizontal_tab_001.md"
+    },
+    {
+      "id": "public_repo_filelock_forked_sqlite_connections_001",
+      "path": "drafts/public_repo_filelock_forked_sqlite_connections_001.md"
+    },
+    {
+      "id": "public_repo_flask_automatic_options_override_001",
+      "path": "drafts/public_repo_flask_automatic_options_override_001.md"
+    },
+    {
+      "id": "public_repo_go_jose_multisig_key_selection_001",
+      "path": "drafts/public_repo_go_jose_multisig_key_selection_001.md"
+    },
+    {
+      "id": "public_repo_go_toml_local_time_roundtrip_001",
+      "path": "drafts/public_repo_go_toml_local_time_roundtrip_001.md"
+    },
+    {
+      "id": "public_repo_golang_jwt_epoch_expiry_001",
+      "path": "drafts/public_repo_golang_jwt_epoch_expiry_001.md"
+    },
+    {
+      "id": "public_repo_gorilla_websocket_error_identity_001",
+      "path": "drafts/public_repo_gorilla_websocket_error_identity_001.md"
+    },
+    {
+      "id": "public_repo_gson_atomic_long_null_error_001",
+      "path": "drafts/public_repo_gson_atomic_long_null_error_001.md"
+    },
+    {
+      "id": "public_repo_guava_multiset_sum_overflow_001",
+      "path": "drafts/public_repo_guava_multiset_sum_overflow_001.md"
+    },
+    {
+      "id": "public_repo_hapi_content_duplicate_parameters_001",
+      "path": "drafts/public_repo_hapi_content_duplicate_parameters_001.md"
+    },
+    {
+      "id": "public_repo_jackson_next_name_leading_decimal_001",
+      "path": "drafts/public_repo_jackson_next_name_leading_decimal_001.md"
+    },
+    {
+      "id": "public_repo_jinja_native_block_concat_001",
+      "path": "drafts/public_repo_jinja_native_block_concat_001.md"
+    },
+    {
+      "id": "public_repo_node_semver_tilde_prerelease_001",
+      "path": "drafts/public_repo_node_semver_tilde_prerelease_001.md"
+    },
+    {
+      "id": "public_repo_node_tmp_path_escape_001",
+      "path": "drafts/public_repo_node_tmp_path_escape_001.md"
+    },
+    {
+      "id": "public_repo_okio_must_create_errno_throw_001",
+      "path": "drafts/public_repo_okio_must_create_errno_throw_001.md"
+    },
+    {
+      "id": "public_repo_p_limit_async_context_001",
+      "path": "drafts/public_repo_p_limit_async_context_001.md"
+    },
+    {
+      "id": "public_repo_packaging_dependency_error_collection_001",
+      "path": "drafts/public_repo_packaging_dependency_error_collection_001.md"
+    },
+    {
+      "id": "public_repo_packaging_description_content_type_001",
+      "path": "drafts/public_repo_packaging_description_content_type_001.md"
+    },
+    {
+      "id": "public_repo_packaging_error_placeholder_integrity_001",
+      "path": "drafts/public_repo_packaging_error_placeholder_integrity_001.md"
+    },
+    {
+      "id": "public_repo_packaging_exception_pickle_001",
+      "path": "drafts/public_repo_packaging_exception_pickle_001.md"
+    },
+    {
+      "id": "public_repo_packaging_marker_environment_cache_001",
+      "path": "drafts/public_repo_packaging_marker_environment_cache_001.md"
+    },
+    {
+      "id": "public_repo_packaging_marker_parentheses_001",
+      "path": "drafts/public_repo_packaging_marker_parentheses_001.md"
+    },
+    {
+      "id": "public_repo_path_to_regexp_empty_param_001",
+      "path": "drafts/public_repo_path_to_regexp_empty_param_001.md"
+    },
+    {
+      "id": "public_repo_pluggy_deferred_annotation_varnames_001",
+      "path": "drafts/public_repo_pluggy_deferred_annotation_varnames_001.md"
+    },
+    {
+      "id": "public_repo_pytest_trailing_diff_off_by_one_001",
+      "path": "drafts/public_repo_pytest_trailing_diff_off_by_one_001.md"
+    },
+    {
+      "id": "public_repo_regex_unicode_property_negation_001",
+      "path": "drafts/public_repo_regex_unicode_property_negation_001.md"
+    },
+    {
+      "id": "public_repo_rich_ansi_newlines_001",
+      "path": "drafts/public_repo_rich_ansi_newlines_001.md"
+    },
+    {
+      "id": "public_repo_rich_file_proxy_isatty_001",
+      "path": "drafts/public_repo_rich_file_proxy_isatty_001.md"
+    },
+    {
+      "id": "public_repo_rich_lazy_import_startup_001",
+      "path": "drafts/public_repo_rich_lazy_import_startup_001.md"
+    },
+    {
+      "id": "public_repo_serde_json_enum_key_validation_001",
+      "path": "drafts/public_repo_serde_json_enum_key_validation_001.md"
+    },
+    {
+      "id": "public_repo_structlog_async_thread_callsite_001",
+      "path": "drafts/public_repo_structlog_async_thread_callsite_001.md"
+    },
+    {
+      "id": "public_repo_tomlkit_dotted_table_scalar_scope_001",
+      "path": "drafts/public_repo_tomlkit_dotted_table_scalar_scope_001.md"
+    },
+    {
+      "id": "public_repo_typer_hidden_commands_plain_help_001",
+      "path": "drafts/public_repo_typer_hidden_commands_plain_help_001.md"
+    },
+    {
+      "id": "public_repo_typer_list_argument_default_001",
+      "path": "drafts/public_repo_typer_list_argument_default_001.md"
+    },
+    {
+      "id": "public_repo_typer_option_suggestion_format_001",
+      "path": "drafts/public_repo_typer_option_suggestion_format_001.md"
+    },
+    {
+      "id": "public_repo_typer_rich_metavar_columns_001",
+      "path": "drafts/public_repo_typer_rich_metavar_columns_001.md"
+    },
+    {
+      "id": "public_repo_typer_xdg_open_wait_001",
+      "path": "drafts/public_repo_typer_xdg_open_wait_001.md"
+    },
+    {
+      "id": "public_repo_urllib3_http_ssl_kwargs_001",
+      "path": "drafts/public_repo_urllib3_http_ssl_kwargs_001.md"
+    },
+    {
+      "id": "public_repo_werkzeug_multipart_chunk_boundary_001",
+      "path": "drafts/public_repo_werkzeug_multipart_chunk_boundary_001.md"
+    },
+    {
+      "id": "public_repo_yarl_malformed_ipv6_exception_001",
+      "path": "drafts/public_repo_yarl_malformed_ipv6_exception_001.md"
+    },
+    {
+      "id": "public_repo_zipp_iterdir_exception_001",
+      "path": "drafts/public_repo_zipp_iterdir_exception_001.md"
+    },
+    {
+      "id": "report_export_timezone_repair_001",
+      "path": "drafts/report_export_timezone_repair_001.md"
+    },
+    {
+      "id": "s3_parquet_decimal_schema_001",
+      "path": "drafts/s3_parquet_decimal_schema_001.md"
+    },
+    {
+      "id": "sap_odata_delta_token_001",
+      "path": "drafts/sap_odata_delta_token_001.md"
+    },
+    {
+      "id": "scientific_scpi_binary_spectrum_001",
+      "path": "drafts/scientific_scpi_binary_spectrum_001.md"
+    },
+    {
+      "id": "sftp_pgp_key_rotation_001",
+      "path": "drafts/sftp_pgp_key_rotation_001.md"
+    },
+    {
+      "id": "signed_artifact_provenance_001",
+      "path": "drafts/signed_artifact_provenance_001.md"
+    },
+    {
+      "id": "snowflake_dst_task_duplication_001",
+      "path": "drafts/snowflake_dst_task_duplication_001.md"
+    },
+    {
+      "id": "soap_crm_pagination_gap_001",
+      "path": "drafts/soap_crm_pagination_gap_001.md"
+    },
+    {
+      "id": "telecom_tl1_provisioning_drift_001",
+      "path": "drafts/telecom_tl1_provisioning_drift_001.md"
+    },
+    {
+      "id": "vendor_invoice_reconciliation_001",
+      "path": "drafts/vendor_invoice_reconciliation_001.md"
+    },
+    {
+      "id": "warehouse_inventory_reconciliation_001",
+      "path": "drafts/warehouse_inventory_reconciliation_001.md"
+    },
+    {
+      "id": "webhook_signature_repair_001",
+      "path": "drafts/webhook_signature_repair_001.md"
+    },
+    {
+      "id": "xml_namespace_batch_ack_001",
+      "path": "drafts/xml_namespace_batch_ack_001.md"
+    },
+    {
+      "id": "seed_envconfig_rebuild_001",
+      "path": "seeds/seed_envconfig_rebuild_001.md"
+    },
+    {
+      "id": "seed_schedule_rebuild_001",
+      "path": "seeds/seed_schedule_rebuild_001.md"
+    },
+    {
+      "id": "seed_hexyl_rebuild_001",
+      "path": "seeds/seed_hexyl_rebuild_001.md"
+    },
+    {
+      "id": "seed_tablib_format_refactor_001",
+      "path": "seeds/seed_tablib_format_refactor_001.md"
+    },
+    {
+      "id": "seed_sqlite_import_tool_001",
+      "path": "seeds/seed_sqlite_import_tool_001.md"
+    },
+    {
+      "id": "seed_sampleproject_release_001",
+      "path": "seeds/seed_sampleproject_release_001.md"
+    },
+    {
+      "id": "seed_duckdb_query_optimization_001",
+      "path": "seeds/seed_duckdb_query_optimization_001.md"
+    },
+    {
+      "id": "seed_flights_reliability_analysis_001",
+      "path": "seeds/seed_flights_reliability_analysis_001.md"
+    },
+    {
+      "id": "seed_flights_prediction_pipeline_001",
+      "path": "seeds/seed_flights_prediction_pipeline_001.md"
+    },
+    {
+      "id": "seed_constraint_schedule_solver_001",
+      "path": "seeds/seed_constraint_schedule_solver_001.md"
+    },
+    {
+      "id": "seed_spaceflight_report_001",
+      "path": "seeds/seed_spaceflight_report_001.md"
+    },
+    {
+      "id": "seed_service_rollout_recovery_001",
+      "path": "seeds/seed_service_rollout_recovery_001.md"
+    },
+    {
+      "id": "seed_airline_safety_analysis_001",
+      "path": "seeds/seed_airline_safety_analysis_001.md"
+    },
+    {
+      "id": "seed_project_permissions_feature_001",
+      "path": "seeds/seed_project_permissions_feature_001.md"
+    },
+    {
+      "id": "seed_local_mailbox_service_001",
+      "path": "seeds/seed_local_mailbox_service_001.md"
+    },
+    {
+      "id": "seed_recipe_runner_rebuild_001",
+      "path": "seeds/seed_recipe_runner_rebuild_001.md"
+    },
+    {
+      "id": "seed_native_package_contract_001",
+      "path": "seeds/seed_native_package_contract_001.md"
+    },
+    {
+      "id": "seed_spectral_calibration_001",
+      "path": "seeds/seed_spectral_calibration_001.md"
+    },
+    {
+      "id": "seed_report_export_refactor_001",
+      "path": "seeds/seed_report_export_refactor_001.md"
+    },
+    {
+      "id": "seed_benchmark_runner_rebuild_001",
+      "path": "seeds/seed_benchmark_runner_rebuild_001.md"
+    },
+    {
+      "id": "seed_git_state_refactor_001",
+      "path": "seeds/seed_git_state_refactor_001.md"
+    },
+    {
+      "id": "seed_untrusted_release_messages_001",
+      "path": "seeds/seed_untrusted_release_messages_001.md"
+    },
+    {
+      "id": "seed_untrusted_report_sources_001",
+      "path": "seeds/seed_untrusted_report_sources_001.md"
+    },
+    {
+      "id": "meta_world_simulator_click_ansi_001",
+      "path": "drafts/meta_world_simulator_click_ansi_001.md"
+    },
+    {
+      "id": "meta_world_simulator_gcs_checksum_001",
+      "path": "drafts/meta_world_simulator_gcs_checksum_001.md"
+    },
+    {
+      "id": "meta_world_simulator_mongodb_resume_001",
+      "path": "drafts/meta_world_simulator_mongodb_resume_001.md"
+    }
+  ]
+}

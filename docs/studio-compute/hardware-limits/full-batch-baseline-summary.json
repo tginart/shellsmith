@@ -1,0 +1,23 @@
+{
+  "report_sha256": "e71941165427bd7139360dd4d44f27305ba4b2e40dd7c541e42163f515f896db",
+  "update_seconds": 1901.5624710409902,
+  "first_update_ready_seconds_including_audit": 1922.3052707499592,
+  "first_update_ready_seconds_excluding_extra_frozen_audit": 1913.3718313750578,
+  "update_peak_mlx_gib": 93.86020142026246,
+  "lifetime_peak_physical_footprint_gib": 93.58731739223003,
+  "disjoint_layer_phase_seconds": {
+    "forward:gdn": 310.63291977497283,
+    "forward:attention": 156.70984270598274,
+    "vjp_total:attention": 532.7479446223006,
+    "vjp_total:gdn": 860.8768594692228
+  },
+  "disjoint_layer_coverage": 0.9786518165525806,
+  "gdn_fraction": 0.6160774610801322,
+  "attention_fraction": 0.3625743554724484,
+  "forecast_seconds": 1974.9489683489808,
+  "swap_before": "vm.swapusage: total = 1024.00M  used = 87.75M  free = 936.25M  (encrypted)",
+  "swap_after": "vm.swapusage: total = 1024.00M  used = 87.75M  free = 936.25M  (encrypted)",
+  "optimizer_steps": 1,
+  "gradient_hash": "d966c9405049a7a577f2f04f724dc6a5fc4384dadbc176332791adc369ebd1bf",
+  "updated_adapter_hash": "af3eae817e04716e50cf9c194785a7274353f6ed2506d58a6adc1907524d5499"
+}

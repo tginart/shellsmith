@@ -1,0 +1,148 @@
+{
+  "status": "passed",
+  "steps": [
+    {
+      "name": "native-tests",
+      "command": [
+        "~/.local/share/shellsmith/studio-v1/env/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_studio_continuous_metal.py",
+        "tests/test_studio_numerics.py",
+        "tests/test_bf16_token_decode.py",
+        "tests/test_bf16_inference_cache.py",
+        "tests/test_studio_policy_residency.py"
+      ],
+      "returncode": 0,
+      "seconds": 11.013735055923462
+    },
+    {
+      "name": "final-benchmark",
+      "command": [
+        "~/.local/share/shellsmith/studio-v1/env/bin/python",
+        "benchmark_studio_continuous.py",
+        "--model",
+        "~/models/Qwen3.8-27B-8bit",
+        "--records-root",
+        "~/.local/state/shellsmith/studio-pilot4-20261019T225300Z-r2/train",
+        "--sessions",
+        "4",
+        "--turns",
+        "2",
+        "--max-completion-tokens",
+        "32",
+        "--repeats",
+        "1",
+        "--sessions",
+        "8",
+        "--output",
+        "~/.local/state/shellsmith/continuous-batching-validation/final-v2/final-benchmark.json",
+        "--concurrency",
+        "8",
+        "--distribution-parity"
+      ],
+      "returncode": 0,
+      "seconds": 103.56172800064087
+    },
+    {
+      "name": "memory-pressure",
+      "command": [
+        "~/.local/share/shellsmith/studio-v1/env/bin/python",
+        "benchmark_studio_continuous.py",
+        "--model",
+        "~/models/Qwen3.8-27B-8bit",
+        "--records-root",
+        "~/.local/state/shellsmith/studio-pilot4-20261019T225300Z-r2/train",
+        "--sessions",
+        "4",
+        "--turns",
+        "2",
+        "--max-completion-tokens",
+        "32",
+        "--repeats",
+        "1",
+        "--output",
+        "~/.local/state/shellsmith/continuous-batching-validation/final-v2/memory-pressure.json",
+        "--concurrency",
+        "8",
+        "--allocator-gib",
+        "40"
+      ],
+      "returncode": 0,
+      "seconds": 49.23601484298706
+    },
+    {
+      "name": "packed-cache",
+      "command": [
+        "~/.local/share/shellsmith/studio-v1/env/bin/python",
+        "benchmark_studio_continuous.py",
+        "--model",
+        "~/models/Qwen3.8-27B-8bit",
+        "--records-root",
+        "~/.local/state/shellsmith/studio-pilot4-20261019T225300Z-r2/train",
+        "--sessions",
+        "4",
+        "--turns",
+        "2",
+        "--max-completion-tokens",
+        "32",
+        "--repeats",
+        "1",
+        "--output",
+        "~/.local/state/shellsmith/continuous-batching-validation/final-v2/packed-cache.json",
+        "--concurrency",
+        "1",
+        "6",
+        "--cache-precision",
+        "8bit"
+      ],
+      "returncode": 0,
+      "seconds": 68.21524930000305
+    },
+    {
+      "name": "rpc-training-recovery",
+      "command": [
+        "~/.local/share/shellsmith/studio-v1/env/bin/python",
+        "run_bounded_studio.py",
+        "--ready-file",
+        "~/.local/state/shellsmith/continuous-batching-validation/final-v2/rpc/ready.json",
+        "--receipt",
+        "~/.local/state/shellsmith/continuous-batching-validation/final-v2/rpc-receipt.json",
+        "--seconds",
+        "600",
+        "--",
+        "~/.local/share/shellsmith/studio-v1/env/bin/python",
+        "-u",
+        "smoke_studio_runtime.py",
+        "--model",
+        "~/models/Qwen3.8-27B-8bit",
+        "--output-root",
+        "~/.local/state/shellsmith/continuous-batching-validation/final-v2/rpc",
+        "--port",
+        "8876",
+        "--activation-budget-gib",
+        "1"
+      ],
+      "returncode": 0,
+      "seconds": 105.54073810577393
+    },
+    {
+      "name": "native-eos-refill-regression",
+      "command": [
+        "~/.local/share/shellsmith/studio-v1/env/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_studio_continuous_metal.py",
+        "tests/test_studio_numerics.py",
+        "tests/test_bf16_token_decode.py",
+        "tests/test_bf16_inference_cache.py",
+        "tests/test_studio_policy_residency.py"
+      ],
+      "returncode": 0,
+      "seconds": 11.05374002456665
+    }
+  ],
+  "full_benchmark_status": "passed"
+}

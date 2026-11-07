@@ -1,0 +1,26 @@
+# Three explicit simulator-operation worlds, one rollout group per update.
+# This recipe uses Tinker and the normal confined Codex GM.
+# Run --dry-run first; it does not launch model episodes.
+[compute]
+backend = "tinker"
+
+[worlds]
+select = "ids"
+count = 3
+ids = [
+    "meta_world_simulator_click_ansi_001",
+    "meta_world_simulator_gcs_checksum_001",
+    "meta_world_simulator_mongodb_resume_001",
+]
+
+[train]
+steps = 3
+groups_per_update = 1
+checkpoint_every = 1
+
+[adaptive]
+initial_attempts = 4
+maximum_attempts = 4
+minimum_trainable = 2
+parallelism = 4
+parallelism_per_provider = 4

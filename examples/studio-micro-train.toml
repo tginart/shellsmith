@@ -1,0 +1,96 @@
+# One explicitly bounded workflow test. No retry/top-up or held-out evaluation.
+[compute]
+backend = "studio"
+
+[run]
+run_id = "studio-micro-next"
+
+[studio]
+endpoint = "http://127.0.0.1:8766"
+training_client = "studio-micro-next"
+operation_timeout_seconds = 43200  # compute polling; Player sampling deadline is separate
+context_window = 262144
+reasoning_effort = "medium"
+reasoning_tokens_low = 2048
+reasoning_tokens_medium = 4096
+reasoning_tokens_xhigh = 8192
+response_tokens = 32768
+# One total window; phase limits and the native closing IDs count inside it.
+# No fixed prompt partition. thinking_tokens=0 selects the effort-specific limit.
+thinking_tokens = 0
+max_tokens = 0
+plain_tokens = 0
+compaction_tokens = 2048
+compaction_reserve_tokens = 65536
+compaction_keep_recent_tokens = 20000
+cache_precision = "bf16"
+
+[player]
+temperature = 1.0
+top_p = 1.0
+prompt_timeout_seconds = 7200
+
+[worlds]
+select = "ids"
+ids = ["access_review_exception_001"]
+
+[gm]
+runtime = "codex"
+provider = "codex-cli"
+model = "gpt-6.1-sol"
+reasoning_effort = "medium"
+timeout_seconds = 900
+api_idle_timeout_seconds = 180 # upstream inactivity; local tool time is excluded
+max_world_steps = 256
+
+[train]
+steps = 1
+groups_per_update = 1
+learning_rate = 0.00005
+cispo_clip_low = 0.0
+cispo_clip_high = 4.0
+kl_penalty_coef = 0.0
+kl_discount_factor = 0.0
+checkpoint_every = 1
+# These aggregate batch guards are separate from per-sequence context.
+# Zero removes the old batch guard; every sequence still must fit 262144.
+max_update_prompt_tokens = 0
+max_update_completion_tokens = 0
+
+[optimizer]
+beta1 = 0.9
+beta2 = 0.95
+epsilon = 0.00000001
+# Constant learning rate above; no weight decay or gradient norm clipping.
+
+[credit]
+advantage_std_floor = 0.25
+advantage_cap = 3.0
+credit_coefficient = 0.5
+reasoning_coefficient = 0.25
+reward_std_floor = 0.1
+reasoning_std_floor = 0.1
+residual_cap = 2.0
+residual_cap_floor = 0.25
+final_advantage_cap = 4.0
+# Sum reduction, with normalization applied once per logical rollout.
+
+[retry]
+thinking_anomaly_attempts = 3
+gm_artifact_attempts = 3
+player_enabled = true
+player_max_retries = 3
+player_base_delay_ms = 2000
+provider_max_retry_delay_ms = 60000
+
+[adaptive]
+initial_attempts = 4
+maximum_attempts = 4
+minimum_trainable = 2
+minimum_reward_range = 0.15
+low_spread_top_up = 1 # inert: maximum_attempts == initial_attempts
+parallelism = 4
+parallelism_per_provider = 4
+provider_outage = "halt"
+outage_failure_threshold = 1
+outage_cooldown_seconds = 30

@@ -1,0 +1,12 @@
+{
+  "source_commit": "9dbe106bcba90fef43ebb2ae829c0f8b20e07212",
+  "source_bundle_sha256": "2b554ef1a00facff1093502b8ed494cfa814c5d195b1acb72e92bcfc1504bb5a",
+  "timeout_seconds": 240,
+  "warmups": 0,
+  "measured_trials": 1,
+  "status": "completed",
+  "started_at": 1792291649.07159,
+  "returncode": 0,
+  "elapsed_seconds": 43.40350524999667,
+  "finished_at": 1792291692.475399
+}

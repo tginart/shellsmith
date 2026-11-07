@@ -1,0 +1,228 @@
+{
+  "document": "Provenance and deployment constraints; NOT a seccomp profile.",
+  "review_date": "2026-10-05",
+  "status": "Candidate requiring Linux runtime validation; NOT a general fix for docker-default AppArmor.",
+  "policy_file": "seccomp-codex.json",
+  "policy_sha256": "051cf2a409ab628ba7b3804ea988268f578016116f53a0b5fdbf00a92e373ee2",
+  "upstream": {
+    "repository": "https://github.com/moby/profiles",
+    "tag": "seccomp/v0.2.4",
+    "commit": "245180c51918481c0525424b3ee025d2b435d46c",
+    "url": "https://raw.githubusercontent.com/moby/profiles/245180c51918481c0525424b3ee025d2b435d46c/seccomp/default.json",
+    "sha256": "785b2429264afba4d594320337cb17f144f3c7d51585f9805eef72e28f4f9334",
+    "canonical_sha256": "20ef2b6bfd980e7dd56a971d9ec0d71bc0f2d1184415f2d968a19bbcff9ee2b2",
+    "canonical_encoding": "UTF-8 json.dumps(profile, sort_keys=True, separators=(\",\", \":\")) without trailing newline",
+    "copyright": "Copyright The Moby Authors",
+    "license": "Apache-2.0",
+    "license_text": "\n                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+  },
+  "changes": {
+    "removed_rule_index": 21,
+    "removed_rule": {
+      "names": [
+        "bpf",
+        "clone",
+        "clone3",
+        "fanotify_init",
+        "fsconfig",
+        "fsmount",
+        "fsopen",
+        "fspick",
+        "lookup_dcookie",
+        "lsm_get_self_attr",
+        "lsm_list_modules",
+        "lsm_set_self_attr",
+        "mount",
+        "mount_setattr",
+        "move_mount",
+        "open_tree",
+        "perf_event_open",
+        "quotactl",
+        "quotactl_fd",
+        "setdomainname",
+        "sethostname",
+        "setns",
+        "syslog",
+        "umount",
+        "umount2",
+        "unshare"
+      ],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "caps": [
+          "CAP_SYS_ADMIN"
+        ]
+      }
+    },
+    "removed_unconditional_syscalls": [
+      "socketcall",
+      "socketpair"
+    ],
+    "socket_rules": "Apply every original socket domain predicate to socketpair too. Delete socketcall AND disable compat ABIs (see native_abi_only); AF_ALG=38, AF_VSOCK=40 and future domains remain denied without relying on AppArmor.",
+    "additions": "Exactly the rules with comment prefix Shellsmith:. Every addition is gated to amd64/arm64. Existing ordinary clone filters, clone3 ENOSYS, other capability/architecture gates and default EPERM are unchanged; archMap is intentionally tightened to native-only.",
+    "removed_admin_rule_reason": "Never enable the broad CAP_SYS_ADMIN syscall bundle; setns and new mount APIs must not become implicitly available.",
+    "original_arch_map": [
+      {
+        "architecture": "SCMP_ARCH_X86_64",
+        "subArchitectures": [
+          "SCMP_ARCH_X86",
+          "SCMP_ARCH_X32"
+        ]
+      },
+      {
+        "architecture": "SCMP_ARCH_AARCH64",
+        "subArchitectures": [
+          "SCMP_ARCH_ARM"
+        ]
+      },
+      {
+        "architecture": "SCMP_ARCH_MIPS64",
+        "subArchitectures": [
+          "SCMP_ARCH_MIPS",
+          "SCMP_ARCH_MIPS64N32"
+        ]
+      },
+      {
+        "architecture": "SCMP_ARCH_MIPS64N32",
+        "subArchitectures": [
+          "SCMP_ARCH_MIPS",
+          "SCMP_ARCH_MIPS64"
+        ]
+      },
+      {
+        "architecture": "SCMP_ARCH_MIPSEL64",
+        "subArchitectures": [
+          "SCMP_ARCH_MIPSEL",
+          "SCMP_ARCH_MIPSEL64N32"
+        ]
+      },
+      {
+        "architecture": "SCMP_ARCH_MIPSEL64N32",
+        "subArchitectures": [
+          "SCMP_ARCH_MIPSEL",
+          "SCMP_ARCH_MIPSEL64"
+        ]
+      },
+      {
+        "architecture": "SCMP_ARCH_S390X",
+        "subArchitectures": [
+          "SCMP_ARCH_S390"
+        ]
+      },
+      {
+        "architecture": "SCMP_ARCH_RISCV64",
+        "subArchitectures": null
+      },
+      {
+        "architecture": "SCMP_ARCH_LOONGARCH64",
+        "subArchitectures": null
+      }
+    ],
+    "native_abi_only": "Replace original archMap with native-only amd64/arm64 entries (no x86/x32/ARM compat ABIs). libseccomp rewrites compat socket rules to socketcall and discards the socket-family argument predicate; deleting socketcall alone is NOT sufficient. The pinned image and Codex packages are native 64-bit. Unsupported native platforms must be rejected by the launcher; additions do not match them."
+  },
+  "codex": {
+    "version": "0.159.2",
+    "git_tag": "rust-v0.159.2",
+    "commit": "ff6aec96948b70d94983af2641a6b67c94faeff5",
+    "pin_files": [
+      "src/shellsmith/config.py",
+      "docker/Dockerfile"
+    ],
+    "image": "node:22.22.0-bookworm-slim; apt util-linux; npm @openai/codex@0.159.2; no apt bubblewrap.",
+    "helper": "The pinned image uses the npm-bundled bwrap, not an assumed Debian/system bwrap. Source identifies bubblewrap 0.11.2 with Codex changes. Codex prefers an external bwrap if present; adding one or overriding CODEX_VERSION requires a new audit.",
+    "npm_linux_x64": {
+      "metadata_url": "https://registry.npmjs.org/@openai/codex/0.159.2-linux-x64",
+      "tarball": "https://registry.npmjs.org/@openai/codex/-/codex-0.159.2-linux-x64.tgz",
+      "integrity": "sha512-RrCZ1X52wpa1lOsXtCtSyhjOFdQPh7LH5Ccv8HsKmd/2UXbUwxXFqWXFK3JzatquUNGtW/TLox5Y7qVOGkV0/Q==",
+      "verified": "Downloaded archive SHA-512 matches registry integrity; inspected bundled helper, not executed.",
+      "helper_path": "package/vendor/x86_64-unknown-linux-musl/codex-resources/bwrap",
+      "helper_mode": "0755 (not setuid)",
+      "helper_sha256": "77360cb751ccedc5971391444ac86a8a33c15b04d6b4a6fe45f5d25496e62c4c",
+      "build_provenance": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/@openai%2fcodex@0.159.2-linux-x64",
+        "resolved_source": {
+          "uri": "git+https://github.com/openai/codex@refs/tags/rust-v0.159.2",
+          "digest": {
+            "gitCommit": "ff6aec96948b70d94983af2641a6b67c94faeff5"
+          }
+        },
+        "subject_sha512": "46b099d57e76c296b594eb17b42b52ca18ce15d40f87b2c7e4272ff07b0a99dff65176d4c315c5a965c52b72736adaae50d1ad5bf4cba31e58eea54e1a4574fd",
+        "verification": "Decoded registry-served SLSA statement; subject digest matches downloaded tarball and source commit matches audited tag. Sigstore signatures/transparency proof NOT independently verified."
+      },
+      "binary_inspection": "ELF64 x86-64 static PIE; binary strings say bubblewrap built for Codex and setuid use is not supported in this build."
+    },
+    "arm64": "Source-audited with the same native clone ABI; npm metadata exists but arm64 archive and execution not verified here.",
+    "source_files": [
+      {
+        "url": "https://raw.githubusercontent.com/openai/codex/ff6aec96948b70d94983af2641a6b67c94faeff5/codex-rs/linux-sandbox/src/bwrap.rs",
+        "sha256": "1d3dfe853f9b5f1cafd7283cf760e38ff739eb7c1ac54650ae2ed510b92b870a"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/openai/codex/ff6aec96948b70d94983af2641a6b67c94faeff5/codex-rs/linux-sandbox/src/launcher.rs",
+        "sha256": "f3c07fa29232a04627b84189801ffd2e4af4d335835333a70a7530d975042d85"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/openai/codex/ff6aec96948b70d94983af2641a6b67c94faeff5/codex-rs/linux-sandbox/src/bundled_bwrap.rs",
+        "sha256": "6d57a035029048db8aeabed4a56c18f7fc72017dafb9ce61a53bd1b384e49566"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/openai/codex/ff6aec96948b70d94983af2641a6b67c94faeff5/codex-rs/linux-sandbox/src/landlock.rs",
+        "sha256": "4f92e49f44694d2c946ab2cb96fa4293daf52023b674a63332a863bb00c1370d"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/openai/codex/ff6aec96948b70d94983af2641a6b67c94faeff5/codex-rs/sandboxing/src/bwrap.rs",
+        "sha256": "43abc86eb6a62689c6aa75dc27f6cd05101cab831b339d4e85e316c1c296d19c"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/openai/codex/ff6aec96948b70d94983af2641a6b67c94faeff5/codex-rs/vendor/bubblewrap/bubblewrap.c",
+        "sha256": "9bc38fb46080b6854e0c414ccb5fbd369d9d7c0230fdfa877283d31aef0c5720"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/openai/codex/ff6aec96948b70d94983af2641a6b67c94faeff5/codex-rs/vendor/bubblewrap/bind-mount.c",
+        "sha256": "19a6ae020803e342667dd562efab027967b1c1f2965525ec7ee09521554f8f71"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/openai/codex/ff6aec96948b70d94983af2641a6b67c94faeff5/codex-rs/vendor/bubblewrap/meson.build",
+        "sha256": "3132e188bdfe4f9c133da1b98410d499a5659e94893b9c9cc9dd04b7548fe0bd"
+      }
+    ],
+    "required_operations": [
+      "Raw clone arg0 exactly 0x38020011 (NEWUSER|NEWNS|NEWPID|NEWIPC|SIGCHLD), optionally 0x78020011 (+NEWNET). PID-inherit mode, UTS/cgroup/time namespaces and arbitrary clone flag additions are not enabled.",
+      "unshare arg0 exactly 0x10000000 (NEWUSER; secondary mapping for a non-root uid with devpts) or 0x10020000 (NEWUSER|NEWNS; Shellsmith util-linux preflight). No standalone mount/net/PID unshare.",
+      "mount arg3 exactly 0x44000, 0x8c000, 0x4c000, 6, 14, 10, 0xc0edd000, 0x9000, or 0xd000. Bind-remount requires 0x9022 with only optional bits 0x200c0d. This includes MS_MGC_VAL for newroot, devpts for --dev, read-only bind remounts and util-linux propagation.",
+      "pivot_root for both bubblewrap pivots; umount2 arg1 exactly 2 (MNT_DETACH).",
+      "uid_map/gid_map/setgroups writes, capget/capset, prctl(PR_SET_NO_NEW_PRIVS), seccomp and ordinary process/file/network syscalls already have Docker rules; capabilities acquired in a child user namespace do NOT re-enable Docker includes.caps rules (resolved at container creation).",
+      "No setns, clone3 allowance, mount_setattr, open_tree, move_mount, fsopen, fsmount, fsconfig, fspick, umount, overlay-specific mount flags or mqueue flags are added. clone3 stays ENOSYS to preserve libc fallback to filterable clone."
+    ],
+    "network": "The current Game Master profile explicitly enables IP networking. This policy is NOT an egress firewall or a claim of no Internet/host-service access. The optional NEWNET path only creates a fresh namespace; setns stays denied. Preserve bridge networking (never --network=host), no Docker/host service sockets, devices or writable host mounts. Keep Codex own restricted filesystem and network filters; outer filters cannot relax an inner filter. AF_VSOCK/AF_ALG, socketcall and io_uring bypasses stay blocked."
+  },
+  "deployment": [
+    "Pass [\"--security-opt\", \"seccomp=\" + str(trusted_absolute_policy_path)] to docker create/run, never a relative cwd/user-controlled profile, shell interpolation or the provenance JSON. Docker CLI reads it on the client; it is not an in-container mount.",
+    "Resolve from trusted PROJECT_ROOT/docker/seccomp-codex.json, require a regular non-symlink file in the trusted checkout, verify its reviewed digest before use, reject missing/malformed/changed policy, and bind policy bytes to the source/image identity. For race resistance, open with O_NOFOLLOW and copy verified bytes to a private host temporary regular file used by docker; do not accept model-controlled paths or environment overrides. Do not pass unconfined on any failure.",
+    "Only native Linux amd64/arm64 are supported; reject other architectures and compatibility-ABI execution. Do not add capabilities (especially CAP_SYS_ADMIN), privileged, host namespaces, writable host mounts or additional devices. Retain normal capability bounding restrictions, proc/sys masks, LSMs and restricted Codex permission profile. no-new-privileges is compatible with the bundled non-setuid helper; validate it in the runtime gate.",
+    "Host must support unprivileged nested user/mount/PID/IPC namespaces, UID/GID mapping and required mounts. Keep existing util-linux preflight, but ALSO run a no-model pinned codex sandbox smoke with the actual game_master permissions before provisioning real credentials/model calls. Check successful allowed writes AND denied credential reads, symlink/proc-root escapes, outside writes, forbidden socket families and namespace reentry; launch failure is not proof of successful confinement.",
+    "Default Docker AppArmor explicitly says deny mount; seccomp cannot override it. Ubuntu/userns restrictions and SELinux may independently refuse the helper. Reject such engines, retaining confinement. Use an already-supported protected host backend or stop. An administrator-maintained confined LSM policy would be separate reviewed work; never choose apparmor=unconfined, disable AppArmor/userns restrictions globally, grant CAP_SYS_ADMIN or fall back to danger-full-access/legacy Landlock.",
+    "Classic seccomp cannot read pathname/filesystem-type/clone3 pointer contents or prove the caller is inside a particular user namespace. Flag-filtered mount permissions are available to all container processes, not just bwrap; kernel capabilities, namespace ownership and LSMs enforce their scope. In a child user namespace the kernel may permit other filesystem types with the same flags: this is NOT a path/type mount allowlist. Opening these previously blocked entry points increases kernel attack surface; keep kernels patched and require runtime validation. If that residual exposure is unacceptable, fail closed rather than broaden further."
+  ],
+  "primary_references": [
+    "https://docs.docker.com/engine/security/seccomp/",
+    "https://raw.githubusercontent.com/moby/profiles/245180c51918481c0525424b3ee025d2b435d46c/seccomp/seccomp_linux.go",
+    "https://raw.githubusercontent.com/moby/profiles/245180c51918481c0525424b3ee025d2b435d46c/apparmor/template.go",
+    "https://docs.kernel.org/userspace-api/seccomp_filter.html",
+    "https://raw.githubusercontent.com/util-linux/util-linux/v2.38.1/sys-utils/unshare.c",
+    "https://raw.githubusercontent.com/seccomp/libseccomp/v2.5.6/include/seccomp.h.in",
+    "https://raw.githubusercontent.com/seccomp/libseccomp/v2.5.6/src/syscalls.c"
+  ],
+  "validation": {
+    "environment": "Darwin/macOS; installed codex-cli 0.159.2; docker CLI present, but /var/run/docker.sock does not exist and no Linux Docker daemon is available.",
+    "not_verified": [
+      "Linux kernel execution",
+      "Docker profile loading",
+      "AppArmor/SELinux compatibility",
+      "actual nested bubblewrap/Codex confinement",
+      "arm64 binary runtime"
+    ],
+    "tests": "tests/test_docker_seccomp.py: offline pinned-baseline/delta and argument checks; Linux libseccomp plus compiled kernel errno/compat-ABI probes if available; opt-in actual Docker/Codex test fails rather than skips on confinement failure after opting in.",
+    "authoring_result": "uv run --no-sync pytest -q -rs tests/test_docker_seccomp.py: 35 passed, 4 skipped. Two native Linux/libseccomp tests and two opt-in Docker tests were not run. Embedded Docker-smoke Python parsed successfully; its Linux execution remains unverified."
+  }
+}

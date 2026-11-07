@@ -1,0 +1,53 @@
+{
+  "behavior_logprobs": [
+    -2.86102294921875e-05,
+    -0.000110626220703125,
+    0.0,
+    0.0,
+    -0.0001201629638671875,
+    -0.13956069946289062,
+    -0.002918243408203125,
+    -0.0008640289306640625
+  ],
+  "expected_next_state": "~/.local/share/shellsmith/qualification-numeric/final-r3/nonzero-checkpoints/nonzero-next-state",
+  "format": "shellsmith-mlx-nonzero-recovery-v1",
+  "metrics": {
+    "forward_metrics": {
+      "cispo_loss": 1.7127867977251299e-06,
+      "loss": 1.7127867977251299e-06,
+      "loss_tokens": 2,
+      "reduction": "sum",
+      "sequences": 1
+    },
+    "mlx_metrics": {
+      "peak_memory_bytes": 33238648888,
+      "policy_version": 2,
+      "replay_seconds": 0.6092029170249589,
+      "update_seconds": 2.290708083019126
+    },
+    "optim_metrics": {
+      "gradient_norm": 0.0002067663241489723,
+      "learning_rate": 5e-05,
+      "optimizer_steps": 2
+    }
+  },
+  "next_update_step": 2,
+  "origin_checkpoint_step": 1,
+  "peak_memory_bytes": 33238648888,
+  "phase": "baseline",
+  "policy_identity_sha256": "2b78ad759e0bedb7a42f09dace2997c3276fe1379671a92b31822549f934725c",
+  "populated_optimizer_roundtrip_exact": true,
+  "python_pid": 10122,
+  "sampled_tokens": [
+    3793,
+    248046,
+    198,
+    248044,
+    248045,
+    248045,
+    248045,
+    248045
+  ],
+  "seconds": 20.76232033400447,
+  "status": "baseline_saved"
+}

@@ -1,0 +1,31 @@
+{
+  "recorded_at": 1792369798.4053462,
+  "before_candidate_full_batch": true,
+  "candidate_archive_sha256": "d4f79f93042ce9dad2c4178373a6373f79b0fa73021386978b12aec805572202",
+  "baseline_complete_seconds": 1901.5624710409902,
+  "method": "Scale the measured complete-batch disjoint phases by complete longest-path phase ratios. Use direct attention ratios for attention, compiled GDN ratios for GDN. Retain measured other/head/optimizer time.",
+  "longest_path_ratios": {
+    "forward:gdn": 0.9754474561973174,
+    "forward:attention": 0.9965771120512261,
+    "vjp_total:attention": 0.9249070592144516,
+    "vjp_total:gdn": 0.9396700311840903
+  },
+  "predicted_phase_seconds": {
+    "forward:gdn": 303.0060914056426,
+    "forward:attention": 156.17344247393018,
+    "vjp_total:attention": 492.74233476315555,
+    "vjp_total:gdn": 808.9401853831064
+  },
+  "retained_other_seconds": 40.59490446851123,
+  "warm_phase_projection_seconds": 1801.456958494346,
+  "cold_trace_allowance_seconds": [
+    15,
+    45
+  ],
+  "cold_trace_allowance_limit": "Estimated allowance for new function/shape traces across22shorterpaths; not an independently measured cost.",
+  "candidate_first_cold_update_expected_range_seconds": [
+    1816.456958494346,
+    1846.456958494346
+  ],
+  "uncertainty": "Attention key lengths, short tails, actual layouts and cold traces differ. A forecast miss remains a miss; this does not replace the prior310second longest-path target."
+}

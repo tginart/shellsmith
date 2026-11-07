@@ -1,0 +1,14 @@
+[
+  {
+    "file": "mlx_group_replay.py",
+    "original_sha256": "6fd85cb5b704c37543eedc157824c0a50f4a6b30638cde08133de880e960686f",
+    "revision": "342d63392cd3cb55e4473e02a3a19328233ca5bd",
+    "adaptations": "Local import boundaries and matched Shellsmith FP32 gradient accumulator inputs; objective supplied by benchmark"
+  },
+  {
+    "file": "mlx_group_ops.py",
+    "original_sha256": "8ecfe373de4d2e5d599d5ae782623916dd073368b568cf57ccb56ff3adca29b1",
+    "revision": "342d63392cd3cb55e4473e02a3a19328233ca5bd",
+    "adaptations": "None"
+  }
+]

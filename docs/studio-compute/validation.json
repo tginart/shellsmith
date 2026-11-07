@@ -1,0 +1,330 @@
+{
+  "scope": "Clean PR branch based on main; synthetic/CPU regression checks, no real GM or model execution.",
+  "python": {
+    "passed": 2445,
+    "skipped": 20,
+    "subtests_passed": 592,
+    "failed": 0,
+    "seconds": 289.78,
+    "skip_reasons": {
+      "collection skipped": 2,
+      "Changing actual file ownership requires privilege; no stat/UID mocking.": 3,
+      "requires native Linux amd64/arm64 and real libseccomp; macOS cannot validate Linux enforcement": 8,
+      "opt in with SHELLSMITH_SECCOMP_TEST_IMAGE; Linux Docker runtime was unavailable during authoring": 2,
+      "optional real Tinker SDK serialization check": 1,
+      "optional installed Cookbook metadata check": 2,
+      "Changing actual ownership requires privilege; no UID/stat mocking.": 2
+    }
+  },
+  "node": {
+    "passed": 15,
+    "failed": 0,
+    "syntax_check": "passed",
+    "dependencies": "npm ci from pinned lockfile"
+  },
+  "wheel": {
+    "built": true,
+    "bytes": 529174,
+    "service_entry_point": true,
+    "license_notices_included": true,
+    "raw_run_archives_or_node_modules": false
+  },
+  "offline_capture_recheck": {
+    "protocol_passed": 4,
+    "full_acceptance_passed": 3,
+    "original_artifacts_unchanged": true,
+    "actual_training_updates": 0
+  },
+  "metal_execution": "Not performed during PR preparation; optional Metal tests remain explicitly skipped.",
+  "live_training_with_corrected_runtime": "Not performed; fresh frozen runtime required.",
+  "review_fix_validation": {
+    "date": "2026-10-13",
+    "scope": "Client suspension/lazy recovery, direct restore, interrupted create retry, numerical execution identity, loopback binding, separate RPC deadlines, terminal batch receipts.",
+    "passed": 2495,
+    "skipped": 20,
+    "subtests_passed": 592,
+    "failed": 0,
+    "seconds": 283.88,
+    "metal_execution": "Unavailable locally; native MLX module skipped. No real Studio workload launched."
+  },
+  "setup_asset_validation": {
+    "date": "2026-10-13",
+    "scope": "Inference-safe setup and isolated campaign clients; atomic tokenizer publications; bounded generated operation IDs; abandoned checkpoint staging recovery.",
+    "passed": 2506,
+    "skipped": 20,
+    "subtests_passed": 592,
+    "failed": 0,
+    "seconds": 301.73,
+    "metal_execution": "Unavailable locally; native MLX module skipped. No real Studio workload launched."
+  },
+  "checkpoint_io_validation": {
+    "date": "2026-10-13",
+    "scope": "Unlocked slow checkpoint I/O; sampler reference reuse; immutable optimizer/adapter hard links for state saves and restores with fresh RNG; local policy-reference validation.",
+    "passed": 2516,
+    "skipped": 20,
+    "subtests_passed": 592,
+    "failed": 0,
+    "seconds": 284.11,
+    "metal_execution": "Unavailable locally; native MLX module skipped. No real Studio workload launched."
+  },
+  "readiness_loss_validation": {
+    "date": "2026-10-13",
+    "scope": "Configured low/medium/xhigh readiness rendering and objective-specific replay metrics.",
+    "passed": 296,
+    "skipped": 1,
+    "failed": 0,
+    "seconds": 6.23,
+    "metal_execution": "Native MLX module unavailable locally; numerical fixture assertions added but not executed."
+  },
+  "transport_ownership_validation": {
+    "date": "2026-10-13",
+    "scope": "Exact canonical HTTP envelope admission before RPC/durable update intent; selected training-client ID preflight; canonical state-root ownership independent of GPU lease, including crash recovery.",
+    "passed": 2541,
+    "skipped": 20,
+    "subtests_passed": 592,
+    "failed": 0,
+    "seconds": 283.28,
+    "metal_execution": "Unavailable locally; native MLX module skipped. No real Studio workload launched.",
+    "transport_limit": "128 MiB; oversized batches rejected locally, no chunked gradient accumulation."
+  },
+  "tinker_campaign_retry_validation": {
+    "date": "2026-10-13",
+    "scope": "Tinker inference uses configured thinking-anomaly attempts in its prepared sampler; actual malformed-thinking loops exercise one and five attempts. Focused campaign, sampler, adapter, trainer and Studio regressions.",
+    "passed": 342,
+    "skipped": 3,
+    "failed": 0,
+    "seconds": 45.09,
+    "skip_reasons": {
+      "optional real Tinker SDK serialization check": 1,
+      "optional installed Cookbook metadata check": 2
+    },
+    "live_execution": "None; external SDKs and GM/Pi tools are offline fixtures."
+  },
+  "scalar_watchdog_validation": {
+    "date": "2026-10-13",
+    "scope": "Positive residual-cap preflight; Studio uint32 seeds before train/inference artifacts; watchdog cleanup assertion distinguishes real unreaped zombies from live processes.",
+    "passed": 490,
+    "skipped": 1,
+    "failed": 0,
+    "seconds": 10.55,
+    "runs": [
+      {
+        "scope": "Scalar, watchdog, Studio, selection, campaign, trainer",
+        "passed": 384,
+        "skipped": 1,
+        "seconds": 6.8
+      },
+      {
+        "scope": "Credit bridge, portable training contract, harvesting",
+        "passed": 106,
+        "skipped": 0,
+        "seconds": 3.75
+      }
+    ],
+    "platform": "Darwin; actual child zombie and PID existence checked. Linux CI remains separate.",
+    "metal_execution": "Native MLX module unavailable and skipped. No real Studio run launched."
+  },
+  "model_provenance_cancellation_validation": {
+    "date": "2026-10-13",
+    "scope": "Approved 27B config admission before MLX loading, Studio inference identity race rejection before mutation, unconditional rollout pin/partial-record cleanup on cancellation or setup failure.",
+    "passed": 2581,
+    "skipped": 20,
+    "subtests_passed": 592,
+    "failed": 0,
+    "seconds": 286.18,
+    "focused": {
+      "passed": 106,
+      "skipped": 0,
+      "seconds": 12.4
+    },
+    "approved_config_sha256": "8f80874ac3ad8fa386d3f6dc0ea85377f703376e009a03dee0360e08e289a25d",
+    "fixture_source": "Existing Studio config retrieved read-only via the repository-verified tailnet SSH address; matches historical qualification/readiness fingerprint.",
+    "metal_execution": "Unavailable locally; native MLX module skipped. No model weights loaded, live provider calls or real Studio runs launched."
+  },
+  "capabilities_fencing_metrics_validation": {
+    "date": "2026-10-13",
+    "scope": "Model/context capability validation before immutable snapshots; explicit managed-episode/active-handler fencing and eventual pin release; per-token output removal from normal/recovered durable metrics.",
+    "passed": 2592,
+    "skipped": 20,
+    "subtests_passed": 592,
+    "failed": 0,
+    "seconds": 289.0,
+    "focused": {
+      "passed": 120,
+      "skipped": 0,
+      "seconds": 14.73
+    },
+    "http_races": "Before sampling check, before pinning, and during provider sampling; includes two simultaneous handlers, rejection of closed IDs, diagnostic late evidence, successful sibling and empty lifecycle/record/pin maps.",
+    "metrics": "20,000 raw per-token values retained in receipt; scalar metrics preserved in journal, state tails and checkpoint metadata without token arrays.",
+    "metal_execution": "Native MLX unavailable and explicitly skipped. No real Studio workloads or live provider calls launched."
+  },
+  "mlx_effort_validation": {
+    "date": "2026-10-13",
+    "scope": "Optional legacy thinking override; parsed MLX low/medium/xhigh configs reach 2K/4K/8K sampler budgets and profile telemetry. Preserve explicit historical 4K thinking/8K total ceilings and reject insufficient compaction reserve.",
+    "passed": 382,
+    "skipped": 1,
+    "failed": 0,
+    "seconds": 1.24,
+    "mlx_xhigh_headroom": "8K reasoning + 3 boundary tokens + 4K response requires reserve >12291; tests use 16384 inside the 32768 context.",
+    "metal_execution": "Native MLX module unavailable and explicitly skipped. No real Studio or MLX workload launched."
+  },
+  "transient_memory_identity_validation": {
+    "date": "2026-10-13",
+    "scope": "Copy-on-write Adam peak admission before mutation and retained optimizer reservation across RPCs; cold/warm restore transient state admission before allocation/load; training identity race rejection before immutable publication or remote initialize.",
+    "passed": 2614,
+    "skipped": 20,
+    "subtests_passed": 592,
+    "failed": 0,
+    "seconds": 291.71,
+    "focused": {
+      "passed": 12,
+      "skipped": 0,
+      "seconds": 5.1
+    },
+    "admission": "Conservative unfused Adam intermediate/FP32 replacement/BF16 publication bound; restore includes blank client, loaded checkpoint, cast/validation scratch and RNG. CPU probes verify admission order, rejection without mutation, disposable cache eviction and reservation ownership.",
+    "metal_execution": "Native MLX unavailable and explicitly skipped. Native replay reservation assertion added but not executed; no measured Metal peaks or real Studio workload claimed."
+  },
+  "inference_namespace_validation": {
+    "date": "2026-10-13",
+    "scope": "Canonical campaign output identity in inference client namespace; backend namespace in remote pass and generic sampling/logprob durable IDs.",
+    "passed": 397,
+    "skipped": 1,
+    "failed": 0,
+    "seconds": 96.14,
+    "focused": {
+      "passed": 42,
+      "skipped": 0,
+      "seconds": 3.82
+    },
+    "evidence": "Two campaign entries with one run label and distinct outputs against one persistent HTTP service; identical/changed prompts, changed published policies, independent seeded RNG cursors, stable original receipts on retries, generic token APIs and canonical symlink output aliases.",
+    "live_execution": "Collection stopped before GM/provider work. Native MLX module unavailable and explicitly skipped; no real Studio run launched."
+  },
+  "policy_cache_acquisition_validation": {
+    "date": "2026-10-13",
+    "scope": "Read-only supplied-policy existence/identity preflight; advertised cache precision validation in normal train/inference setup; cleanup only after successful Studio acquisition.",
+    "passed": 2628,
+    "skipped": 20,
+    "subtests_passed": 592,
+    "failed": 0,
+    "seconds": 297.92,
+    "focused": {
+      "passed": 61,
+      "skipped": 0,
+      "seconds": 11.7,
+      "scope": "Initial targeted checks; inference competing-owner case added before full suite."
+    },
+    "evidence": "Actual HTTP/campaign/trainer entries: unknown policy leaves output reusable; policy metadata lookup creates no receipts/allocations; lookup identity race rejects; unsupported precision rejects before output/mutation; failed train/inference create preserves another owner's gradients and subsequent optimizer step; post-acquisition failure still suspends owned client.",
+    "live_execution": "Native MLX unavailable and explicitly skipped. No real Studio run or live GM/provider call launched."
+  },
+  "tokenizer_durability_validation": {
+    "date": "2026-10-13",
+    "scope": "Fsync staged tokenizer files and directory before atomic rename, cache parent after rename and on verified cache hit.",
+    "passed": 62,
+    "skipped": 0,
+    "failed": 0,
+    "seconds": 10.81,
+    "evidence": "Real file/directory fsync ordering observed; injected EIO at file, staging and parent barriers rejects success and retries safely. Existing two-cold-process publication, staging failure, corrupt-cache fail-closed, remote setup and checkpoint I/O regressions pass.",
+    "limitations": "No actual power-loss test, Metal execution, real Studio run or live provider call."
+  },
+  "training_namespace_policy_hash_validation": {
+    "date": "2026-10-13",
+    "scope": "Selected-client namespace in backend/trainer mutation IDs; retain published manifest adapter digest and verify cold/evicted loads; verify intentional positive legacy combined ceilings.",
+    "passed": 2639,
+    "skipped": 20,
+    "subtests_passed": 592,
+    "failed": 0,
+    "seconds": 297.66,
+    "focused": {
+      "passed": 44,
+      "skipped": 0,
+      "seconds": 6.27
+    },
+    "evidence": "Two same-label backends with distinct selected training clients complete concurrent independent creates/two updates each, with exact retries deduplicated. Changed backing factors fail before decode on cold/evicted loads; pinned resident factors remain unchanged and reference digest cannot be replaced.",
+    "legacy_ceiling_disposition": "Invalid contract assumption: max_tokens=0 derives reason+3+response, while a positive explicit historical cap bounds all completion IDs. Both validated MLX/Studio 8192 cap cases record effective response_limit=4093 and limit diagnostics after 4096 thinking/3 forced IDs; existing defaults retain independent 4K phases.",
+    "metal_execution": "Native MLX unavailable and explicitly skipped. No real Studio run or live GM/provider call."
+  },
+  "restore_compaction_runtime_identity_validation": {
+    "date": "2026-10-13",
+    "scope": "Live restore acquisition conflict without rollback; terminal request body compaction with hashes/results/optimizer linkage retained; runtime source fingerprint in engine identity.",
+    "passed": 2662,
+    "skipped": 20,
+    "subtests_passed": 592,
+    "failed": 0,
+    "seconds": 300.9,
+    "focused": {
+      "passed": 72,
+      "skipped": 0,
+      "seconds": 4.24,
+      "scope": "Initial focused tests; committed controlled-restore retry case added before full suite."
+    },
+    "evidence": "Owner gradients survive competing restore and its optimizer completes; new/closed/suspended/restarted restore and controlled backend recovery succeed. Terminal statuses preserve dedup/conflicts/results; consumed backward linkage survives recovery; interrupted create rehydrates; old terminal rows compact; SQLite reuses freed pages. Seven runtime source-only changes alter the bound identity and old checkpoint verification rejects.",
+    "qualification_caller": "Control checkpoint now restores directly into a new client. Script AST parsed; opt-in qualification was not executed.",
+    "limits": "Checkpoint/result receipts remain retained; SQLite file high-water mark is not immediately shrunk. Native MLX unavailable and explicitly skipped; no real Studio run or live provider call.",
+    "final_focused": {
+      "passed": 72,
+      "skipped": 0,
+      "seconds": 4.22,
+      "scope": "After final controlled-restore request-ID validation guard; invalid IDs preserve live gradients and committed retries add no suspend."
+    }
+  },
+  "initialization_acquisition_identity_validation": {
+    "date": "2026-10-13",
+    "scope": "Deterministic initialization restore receipt IDs; canonical run output in all selected-client operation namespaces.",
+    "passed": 449,
+    "skipped": 1,
+    "failed": 0,
+    "seconds": 112.11,
+    "focused": {
+      "passed": 27,
+      "skipped": 0,
+      "seconds": 9.5
+    },
+    "evidence": "Real HTTP lost-ack test commits restore then drops response; replacement backend reuses its original receipt without another restore, suspend or daemon restart. Different output with same run/client fails acquisition through backend and actual trainer, cannot submit suspend/baseline work, and preserves owner gradients/optimizer completion. Canonical aliases share identity and run lock.",
+    "live_execution": "Native MLX module unavailable and explicitly skipped; all providers/model execution are offline fixtures, no real Studio run."
+  },
+  "initialization_attempt_lifecycle_validation": {
+    "date": "2026-10-13",
+    "scope": "Durable pending versus active initialization attempts, coordinator-output lease, fenced release using acquisition receipts, snapshot/journal-only startup retry, and standalone MLX retry forwarding.",
+    "passed": 2674,
+    "skipped": 20,
+    "subtests_passed": 592,
+    "failed": 0,
+    "seconds": 303.24,
+    "full_suite_scope": "Full offline CPU regression before the final pending-baseline retry branch and direct-restore lease guard. Those final changes are covered by the final focused selection below.",
+    "final_focused": {
+      "passed": 85,
+      "skipped": 0,
+      "failed": 0,
+      "seconds": 11.82,
+      "scope": "Final source: actual coordinator process exits, surviving HTTP daemon, acquisition identity/ownership, recovery lifecycle, trainer startup retries and standalone MLX CLI."
+    },
+    "evidence": "Coordinator os._exit after committed restore before acknowledgement reuses one restore receipt. Exit after sampling/backward rotates the next attempt, rolls RNG back, removes stale gradients and completes a fresh update. Pending-journal durability failure submits no release/restore. An intervening owner survives conditional release rejection. Snapshot plus journal retries reach first state publication; an uncertain baseline restore also retries without trainer state. MLX CLI forwards every configured retry, including disabled Player retries.",
+    "supersedes": "Checkpoint-only deterministic initialization IDs from initialization_acquisition_identity_validation; stable IDs apply only to one pending attempt, not subsequent sessions.",
+    "live_execution": "Offline synthetic CPU engine and local HTTP/subprocess fixtures only. Native MLX unavailable and explicitly skipped. No real Studio workload, GM or provider calls."
+  },
+  "submission_account_diagnostic_fences_validation": {
+    "date": "2026-10-13",
+    "scope": "Discovered compute identity at initialization/release submission; immutable sampling acquisition fences after cleanup/reacquisition; command-backed file credential identity; startup-exit readiness and live smoke control restore.",
+    "passed": 2689,
+    "skipped": 20,
+    "subtests_passed": 592,
+    "failed": 0,
+    "seconds": 314.65,
+    "corrected_namespace_fixtures": "Generic token APIs now run inside the campaign acquisition; their stable receipt, independent RNG and output namespace checks remain intact. Three previous fixtures deliberately called them after cleanup and correctly hit the new fence.",
+    "final_focused": {
+      "passed": 22,
+      "skipped": 0,
+      "seconds": 6.98,
+      "scope": "Final namespace lifecycle, submission fences and file/registry credential guards."
+    },
+    "initial_focused": {
+      "passed": 66,
+      "skipped": 0,
+      "seconds": 9.99,
+      "scope": "Initial focused source; actual credential-provider subprocess case added before the full suite."
+    },
+    "evidence": "Two actual HTTP services reject create/restore/release after endpoint retargeting before durable intent or allocation, preserving another client gradient. A live two-pass Player handler blocked after thinking cannot continue sampling following endpoint/backend cleanup, including after reacquisition; no RNG growth, client reallocation, records or pins remain. Actual command-provider subprocess accepts original file-backed credentials and rejects an account switch with empty stdout/no token disclosure; same-account refresh and read-time replacement races also tested. Real watchdog children exiting zero/nonzero before readiness fail with startup_exit; fast ready success remains accepted. Smoke control helper releases a live isolation client and restores its independent state through the actual CPU service.",
+    "credential_refresh": "Selected file/registry login remains refresh owner; pinned providers reread and validate access-token identity on fetch, never use refresh tokens and fail closed on expiry. Real credentials were not read or changed.",
+    "live_execution": "Only synthetic CPU, local HTTP and subprocess fixtures. Native MLX unavailable and explicitly skipped; no real Studio smoke/qualification, GM, provider or training run launched."
+  }
+}

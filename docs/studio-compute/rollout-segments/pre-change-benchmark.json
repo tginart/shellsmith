@@ -1,0 +1,136 @@
+{
+  "schema": "shellsmith.segment_benchmark.v1",
+  "reference_replay_sha256": "8fcfcdd1c49a0c5e0754ee0e03e2b764c8994acaca346b0a7c71445d02cebf22",
+  "host": "Mac",
+  "model": "tiny-4-layer-hybrid-8bit",
+  "precision": "BF16 execution/LoRA; FP32 gradients/master/Adam",
+  "optimizer": {
+    "learning_rate": 5e-05,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "epsilon": 1e-08,
+    "steps_per_trial": 1
+  },
+  "context_window": 4096,
+  "warmups": 1,
+  "trials": [
+    {
+      "trial": 0,
+      "warmup": true,
+      "gradient_relative_l2": 0.01823822408914566,
+      "gradient_cosine": 0.9998337626457214,
+      "adapter_max_abs_error": 0.00010013580322265625,
+      "responses": {
+        "loss": -0.009991634171456099,
+        "backward_seconds": 2.2187830000184476,
+        "whole_update_seconds": 2.3120620830450207,
+        "peak_memory_bytes": 5929004,
+        "phase_seconds": {
+          "replay_shared_forward": 1.0136096666101366,
+          "replay_branch_forward": 0.13339366600848734,
+          "head": 0.001900749048218131,
+          "head_backward": 0.004400749923661351,
+          "replay_branch_backward": 0.8428459169808775,
+          "replay_shared_backward": 0.20671045896597207
+        },
+        "optimizer_committed": true
+      },
+      "packed": {
+        "loss": -0.009979668073356152,
+        "backward_seconds": 0.13742229202762246,
+        "whole_update_seconds": 0.21592895896174014,
+        "peak_memory_bytes": 5642920,
+        "phase_seconds": {
+          "replay_shared_forward": 0.023453125031664968,
+          "replay_branch_forward": 0.020066251046955585,
+          "head": 0.0021490000654011965,
+          "head_backward": 0.0020712080877274275,
+          "replay_branch_backward": 0.04684183397330344,
+          "replay_shared_backward": 0.030778042040765285
+        },
+        "optimizer_committed": true
+      }
+    },
+    {
+      "trial": 1,
+      "warmup": false,
+      "gradient_relative_l2": 0.01823822408914566,
+      "gradient_cosine": 0.9998337626457214,
+      "adapter_max_abs_error": 0.00010013580322265625,
+      "packed": {
+        "loss": -0.009979668073356152,
+        "backward_seconds": 0.10704962501768023,
+        "whole_update_seconds": 0.1994468750199303,
+        "peak_memory_bytes": 6568212,
+        "phase_seconds": {
+          "replay_shared_forward": 0.012711041024886072,
+          "replay_branch_forward": 0.010922457906417549,
+          "head": 0.0009943739278241992,
+          "head_backward": 0.0017226238269358873,
+          "replay_branch_backward": 0.03324483195319772,
+          "replay_shared_backward": 0.03512374986894429
+        },
+        "optimizer_committed": true
+      },
+      "responses": {
+        "loss": -0.009991634171456099,
+        "backward_seconds": 0.32122079096734524,
+        "whole_update_seconds": 0.39947983296588063,
+        "peak_memory_bytes": 6241412,
+        "phase_seconds": {
+          "replay_shared_forward": 0.06628262298181653,
+          "replay_branch_forward": 0.023409539833664894,
+          "head": 0.0010457091266289353,
+          "head_backward": 0.002274499973282218,
+          "replay_branch_backward": 0.05910795787349343,
+          "replay_shared_backward": 0.15592441312037408
+        },
+        "optimizer_committed": true
+      }
+    },
+    {
+      "trial": 2,
+      "warmup": false,
+      "gradient_relative_l2": 0.01823822408914566,
+      "gradient_cosine": 0.9998337626457214,
+      "adapter_max_abs_error": 0.00010013580322265625,
+      "responses": {
+        "loss": -0.009991634171456099,
+        "backward_seconds": 0.3870294999796897,
+        "whole_update_seconds": 0.47775866696611047,
+        "peak_memory_bytes": 7299928,
+        "phase_seconds": {
+          "replay_shared_forward": 0.07150200405158103,
+          "replay_branch_forward": 0.021635874873027205,
+          "head": 0.000999376061372459,
+          "head_backward": 0.002365374006330967,
+          "replay_branch_backward": 0.06396970979403704,
+          "replay_shared_backward": 0.21208850108087063
+        },
+        "optimizer_committed": true
+      },
+      "packed": {
+        "loss": -0.009979668073356152,
+        "backward_seconds": 0.1278213340556249,
+        "whole_update_seconds": 0.2046441670972854,
+        "peak_memory_bytes": 6207774,
+        "phase_seconds": {
+          "replay_shared_forward": 0.021304956870153546,
+          "replay_branch_forward": 0.019707668107002974,
+          "head": 0.0013573749456554651,
+          "head_backward": 0.0019181659445166588,
+          "replay_branch_backward": 0.0419649169780314,
+          "replay_shared_backward": 0.02980995795223862
+        },
+        "optimizer_committed": true
+      }
+    }
+  ],
+  "supervised_tokens": 28,
+  "responses": 4,
+  "packed_segments": 1,
+  "old_replay_tokens": 1190,
+  "packed_replay_tokens": 332,
+  "frozen_base_unchanged": true,
+  "status": "passed"
+}

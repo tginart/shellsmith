@@ -1,0 +1,39 @@
+# Build a bounded executable recipe runner
+
+## World
+
+Private authoring identity: `seed_recipe_runner_rebuild_001`; category_ids: `C01`; task_size: `bounded_subset`.
+
+A small tools team wants one reliable command for local project recipes. This C01 construction task is a bounded subset: a recipe parser, dependency planner, and executable runner with the explicitly declared grammar and process semantics. It does not reconstruct the full upstream language, integrations, or build system.
+
+Private provenance: seed `just`, canonical repository https://github.com/casey/just, exact roster commit `602ee328c9b21361121b498674334012175d4d81`.
+
+Selected source scope is README.md quick start, default recipes, recipe parameters, dependencies, exported arguments and variables, and working-directory behavior, used to define the public bounded recipe-language and process contract.
+
+The just seed supplies a substantive example of a recipe tool that parses a task file, plans dependencies, and executes real commands with meaningful argument, environment, working-directory, and failure behavior.
+
+The GM remains in control. The seed is ONE POTENTIAL EXAMPLE SOLUTION, not a golden patch, architecture, or command sequence. Respect the public requirements and independently evaluate substantively correct alternatives; never add hidden upstream quirks, interpolation rules, or file-search behavior. Keep provenance, seed roles, and rubric private; only Player enters the public brief. Environment provisioning and execution qualification are explicitly deferred: do not prescribe setup, containers, package installs, toolchain integration, hardware, or environment changes. A future GM can expose coherent workspace and shell/process execution surfaces without changing this contract. Actual execution must remain distinguishable from simulated observations.
+
+## Player
+
+Build a usable `recipe-runner` command in the designated project workspace, with source, tests, an example recipe file, help, and documentation. Choose the language and architecture. Implement this bounded product rather than a full general-purpose recipe language.
+
+- Support `recipe-runner [--file PATH] [--list | --dry-run] [RECIPE [ARG ...]]` and `--help`. Default to `justfile` in the current directory only; do not search parent directories. Without a recipe, select the first declared recipe. `--list` prints recipe names and parameter declarations in declaration order without executing anything. `--dry-run` prints the selected dependency order and command text without launching processes or producing recipe side effects. Document the presentation of both modes; exact cosmetic formatting is your choice. Help performs no recipe execution.
+- Recipe files have blank lines, full-line comments beginning with `#`, top-level exports such as `export MODE := 'test'`, and headers of the form `NAME [PARAM ...]: [DEPENDENCY ...]`. Recipe and dependency names use letters, digits, underscores, or hyphens and start with a letter or underscore. Parameter and export names are ordinary letter/underscore-led identifiers without hyphens. Parameters are required names or names with single- or double-quoted literal defaults, as in `write FILE='output with spaces.txt': prepare`. Required parameters precede optional parameters. Literal defaults and exports may contain spaces but no embedded newline, quote delimiter, escape, or interpolation syntax.
+- Body commands are lines indented by one or more spaces under a header; remove leading indentation before execution. Ignore blank lines and full-line comments, including indented comments. Other nonblank body lines are single-line shell command text. Empty recipe bodies are allowed. Exports apply to every recipe. Dependencies name only recipes with no parameters; argument-bearing dependency calls, inline header comments, interpolation, expressions, imports, multiline commands, shebang recipes, and parallel execution are outside scope.
+- Before launching anything, validate the entire file and selected invocation. Reject malformed syntax, duplicate recipes, exports or parameters, unknown dependencies, dependency cycles, unknown requested recipes, missing or excess arguments, and dependencies on parameterized recipes. Diagnostics identify the relevant line or recipe and go to stderr with nonzero status. Unreadable files and unsupported runner options also fail without executing recipes.
+- Execute dependencies depth-first in written left-to-right order, then the selected recipe. Each dependency runs only once per invocation even when shared or repeated. Run each body line in a separate invocation of the exposed shell/process interface, with the recipe file's directory as working directory. Thus a shell-local directory change or export on one line does not carry over to the next. Inherit the runner's environment and overlay top-level exports; overlay only that recipe's parameters using their declared names. Selected-recipe argument bindings never bleed into dependencies. Pass values through the child environment without splicing them into shell command text, so commands such as `write-file "$FILE"` preserve spaces, quotes, and metacharacters as data. Recipe command text itself is trusted executable content.
+- Route child stdout and stderr without alteration. Stop on the first failed command; do not run subsequent lines or dependent recipes. Preserve a normally exited command's nonzero exit status in the runner's exit status; launch errors and signal termination must also produce nonzero status and a useful diagnostic. Success exits zero. Do not modify recipe files or the parent process environment.
+
+Include executed harmless fixture recipes that establish shared-dependency order, first-recipe selection, default and explicit arguments, child environment isolation, working directories and paths containing spaces, parser rejection before any side effects, listing and dry-run safety, and failure propagation. Fake-runner unit tests may supplement but cannot replace real process and resulting-file evidence. Document every supported syntax and exclusion, with an example that produces a checkable artifact. Work only in task-local files; finish with the entry point, actual verification, and any blocked execution.
+
+## Reward
+
+Score public outcomes out of 100: 35 for parsing, validation, and dependency planning; 35 for usable process, argument, environment, directory, and failure behavior; 20 for credible executed fixture effects plus independent checks; 10 for help, example, documentation, and accurate handoff. Independently grade substantive alternative implementations and documented list/dry-run presentations; source resemblance earns no credit. A dry-run-only planner, unexecuted example, or fabricated command log is not completion. Environment qualification remains deferred, not implied by the spec. Simulator contradictions, private leakage, or falsely attributed execution make the episode untrainable rather than an ordinary Player failure.
+
+## Termination conditions
+
+- **Successful:** The bounded command, documentation, and actual executable evidence satisfy the public grammar, planning, process, and failure contract.
+- **Failed:** The Player claims completion with substantive parsing or execution defects, unsafe argument splicing, or fabricated verification, or performs prohibited destructive actions outside task-local work.
+- **Neutral:** The Player explicitly stops blocked, declines, exhausts the budget, or acknowledges incomplete work or unavailable process execution without claiming success.
+- **Simulator integrity (untrainable):** The GM leaks private context, changes recipe rules or observed effects inconsistently, invents real subprocess execution, or loses coherent state. An ordinary wrong runner remains Failed, never an integrity failure.

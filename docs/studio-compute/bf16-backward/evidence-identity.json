@@ -1,0 +1,92 @@
+{
+  "schema": "shellsmith.bf16_evidence_identity.v1",
+  "source_archives": [
+    {
+      "source_archive": "/private/tmp/shellsmith-source-v45.tar.gz",
+      "sha256": "d38d83e9d8c96b506222f4f3dd5688b1665bf43be11b7310fa06cf0786291543"
+    },
+    {
+      "source_archive": "/private/tmp/shellsmith-source-v48.tar.gz",
+      "sha256": "9bb1fb81e1186ae297c67b25e11afac1cb3e6d596f6d6dbf4d7cfbe39043ce62"
+    },
+    {
+      "source_archive": "/private/tmp/shellsmith-source-v49.tar.gz",
+      "sha256": "4fbfa557932f2981afc4c1c7763e3a70595e6fff44699cc7a2df95ef640e91c0"
+    },
+    {
+      "source_archive": "/private/tmp/shellsmith-source-v50.tar.gz",
+      "source_head": "1116103",
+      "sha256": "e837666977f0d564ddb0912dc1ce89207da71ce6669ef89327c8b5530a3f499b"
+    }
+  ],
+  "timed_final_source": "source-v48; source-v49 adds benchmark reporting only",
+  "release_source": "source-v50; default configuration, complete logical counters, and additional tests; tensor arithmetic matches the timed final implementation",
+  "model_identity": "46e540f1bef19dfe99a4941e2e3f8651fc5b6551a72838757bb2e80d1687cada",
+  "preserved_batch_sha256": "7621071b492b91be50e5f37bee6f3e618aefc9cf707f79853fd539fb70710d9d",
+  "runtime_identity": {
+    "model": "46e540f1bef19dfe99a4941e2e3f8651fc5b6551a72838757bb2e80d1687cada",
+    "model_files": {
+      "model-00001-of-00006.safetensors": "c7921fe72af5c961c3c4230ea25068ed6d1e502d5ecb2b4a53b7c9c213effa0c",
+      "model-00002-of-00006.safetensors": "e9d93d15495354045da281f102649b99793e5b6ed0e05852c58f46e6616b54a0",
+      "model-00003-of-00006.safetensors": "7015f40310c86a18230e28644832b624532333d5dfbf7584e6c62341dbd8975e",
+      "model-00004-of-00006.safetensors": "7dc8ae53ed51d153e6b59499cdf004bf6ef15aab6757c7604ed4834774abc2c2",
+      "model-00005-of-00006.safetensors": "8817c22c01aebdcde54eac315e9766f705eb512ba7ba84ac47501c663f930ac5",
+      "model-00006-of-00006.safetensors": "fce51843fc07e1c67c5ec6d19edb46e4fa8d2b51a1cb6c8316b0a7cc069c0eb4",
+      "config.json": "8f80874ac3ad8fa386d3f6dc0ea85377f703376e009a03dee0360e08e289a25d"
+    },
+    "tokenizer": "ba6a5aa2899296ea59aa9a1e95b5f1255fc99eda05a263ec1adbb4af1a851728",
+    "numerics": "bd8a0f9141c0c54ce57d7f98507df9df9f5c4e14ac8e446070b0d9bac744ff3b",
+    "versions": {
+      "mlx": "0.32.3",
+      "mlx-lm": "0.32.0",
+      "mlx-vlm": "0.7.4",
+      "transformers": "5.17.0"
+    },
+    "kernel_build": {
+      "numerical_sources": "bd8a0f9141c0c54ce57d7f98507df9df9f5c4e14ac8e446070b0d9bac744ff3b",
+      "runtime_versions": {
+        "mlx": "0.32.3",
+        "mlx-lm": "0.32.0",
+        "mlx-vlm": "0.7.4",
+        "transformers": "5.17.0"
+      },
+      "architecture": "applegpu_g17d",
+      "os_build": "26A425",
+      "mlx_library_sha256": "ebc8a5f5465afb79d3d9c8f5b0929de1a9b277b7179db8672f92da77ae110a1e",
+      "mlx_enable_tf32": "0"
+    },
+    "kernel_build_id": "162857f36a1a0d6be2da53884fe189fcccdd3cc7bd840cfa98db49478805c006",
+    "execution": {
+      "execution_profile": "bf16-fast",
+      "segment_tokens": 2048,
+      "head_rows": 128,
+      "checkpoint_layers": "auto",
+      "activation_budget_gib": null,
+      "prefill_tokens": 2048
+    },
+    "runtime_source_sha256": {
+      "runtime.py": "24f5831404a3e2bd067d96f07a3fe376414c9aa23c9a3fc603e95e7790dd1059",
+      "cache.py": "4ad0f14aa1037adcbbe798ea12922ac2c437590c7bf5959e2f3e119a7ec2ac35",
+      "service.py": "fef8167bf948c5dd10d691123685c418e4cf482c2d4bd8bbaa28d841bb74f7ac",
+      "cli.py": "c2be21a53976d388589264fe61fcb009ecdf01d91124721f1eccb1171faccef0",
+      "storage.py": "3cca6b97d257b5fe68f10efcb06fe354d4ff94878beeddadf2bb6936a6cfda5a",
+      "protocol.py": "f2750b1ac1fe6ce00eab3de0be4f649e75bd88af3aa070d1a27eadafbe3c59e5",
+      "http.py": "f371735b00789eb49fb96ee452afd50345fe474918a947fb47586824beaceb0e",
+      "inference_metrics.py": "44b5f16a2b8233256b1bdcfa718b32b336400e14bf26ec0c752fb4cc997ee17e"
+    }
+  },
+  "artifact_sha256": {
+    "evidence/longest-ablations.json.gz": "2d45e908103c7b776c0bbfbd9190ff412d9c4b76d1d321b5377c6379627a24b8",
+    "evidence/longest-final.json.gz": "c3bd6cd8441851075e9b105461f854694243f875ea9b5a2cfb7ef54d161489c2",
+    "evidence/full-batch.json.gz": "482f642387076612d5c143035e5da60a55cd01be9165eb0cd7f6ea28a0176fe9",
+    "evidence/release-counters-longest.json.gz": "6b1a2ff7d792170ae43edf0cd7ad5660a61f0106582d08a1e4e24f86e742d925",
+    "evidence/release-qualification.json.gz": "a459b11adae107fb36549fcf79e0c78d3312d7d52eb4a761767f9c71a454b332",
+    "memorization-default.json": "91a767be74a82aeb7faef5d75d5d3a219ba71294f07e7d1fb482f334fcb8e015",
+    "dtype-default.json": "6526b2f7f8ad46467c5740ed117fe15f0a108be175f3e975371426b5306327c6",
+    "long-context-default.json": "f398b57ba69f627da7ad0971e87c0b96803df54471fd32d6ca17378c91a494e8",
+    "legacy-diagnostics.json": "3488c9fca945ff66867afa6da393215d8680ab692cb4ef39e843ae1fca0f7e4e",
+    "ablation-diagnostics.json": "284bc680bea4caae49a583e0133a7875ead4730d9457aa51cc1d6c3a4d1482f2",
+    "performance.json": "90917d07e8fdc8196185348498c0dcbebf1064692119017e70886ff404cc5f33",
+    "final-validation.json": "289b42ce40221199cf9c0021000f5ec8388cceb39b6acde10f5a0ea341c5049d"
+  }
+}

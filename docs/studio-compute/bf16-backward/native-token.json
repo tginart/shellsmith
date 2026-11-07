@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "returncode": 0,
+  "tests": [
+    "test_bf16_token_decode.py",
+    "test_bf16_rotary.py",
+    "test_bf16_inference_cache.py",
+    "test_gdn_sequential.py",
+    "test_saved_layers.py",
+    "test_attention_metal.py",
+    "test_gdn_metal.py",
+    "test_bf16_profile.py",
+    "test_studio_numerics.py"
+  ],
+  "started_at": 1792385640.59411,
+  "finished_at": 1792385653.513164
+}

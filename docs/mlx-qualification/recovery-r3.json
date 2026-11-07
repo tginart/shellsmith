@@ -1,0 +1,34 @@
+{
+  "bitwise_bf16_adapters": true,
+  "bitwise_fp32_masters_moments": true,
+  "exact_rng": true,
+  "exact_sample_ids_and_behavior_probabilities": true,
+  "expected_next_state": "~/.local/share/shellsmith/qualification-numeric/final-r3/checkpoints/first-state",
+  "format": "shellsmith-mlx-fresh-process-recovery-v1",
+  "metrics": {
+    "forward_metrics": {
+      "cispo_loss": 0.00015131014515645802,
+      "loss": 0.00015131014515645802,
+      "loss_tokens": 2,
+      "reduction": "sum",
+      "sequences": 1
+    },
+    "mlx_metrics": {
+      "peak_memory_bytes": 33395723444,
+      "policy_version": 1,
+      "replay_seconds": 0.6122108339914121,
+      "update_seconds": 2.321260374999838
+    },
+    "optim_metrics": {
+      "gradient_norm": 0.014478158972891963,
+      "learning_rate": 5e-05,
+      "optimizer_steps": 1
+    }
+  },
+  "origin_state": "~/.local/share/shellsmith/qualification-numeric/final-r3/checkpoints/origin-state",
+  "peak_memory_bytes": 33395723444,
+  "python_pid": 10104,
+  "seconds": 19.615689458005363,
+  "source": "~/.local/share/shellsmith/qualification-numeric/final-r3/studio.json",
+  "status": "passed"
+}

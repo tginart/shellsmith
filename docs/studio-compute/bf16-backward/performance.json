@@ -1,0 +1,533 @@
+{
+  "schema": "shellsmith.bf16_qualification.v1",
+  "diagnostics": {
+    "status": "passed",
+    "started_at": 1792396959.595583,
+    "scope": "CPU diagnostics after GPU timing; agreement is not a correctness gate.",
+    "helper_sha256": "8b7c143938fd010de0c4e8e53e0fee0d049c1a5943e1d03cdafeddab17a9eb1b",
+    "results": {
+      "longest-gradients": {
+        "tensor_count": 992,
+        "both_zero_count": 496,
+        "reference_l2": 0.05555228784663287,
+        "candidate_l2": 0.05179318117039925,
+        "relative_l2": 1.1388584485271915,
+        "cosine": 0.3068888106049211,
+        "scope": "Accumulated adapter gradients",
+        "correctness_gate": false,
+        "interpretation": "Agreement with legacy is diagnostic; the old update is not a numerical oracle."
+      },
+      "longest-update-delta": {
+        "tensor_count": 992,
+        "both_zero_count": 496,
+        "reference_l2": 0.3884208277891616,
+        "candidate_l2": 0.3912628895241067,
+        "relative_l2": 1.0860966337577356,
+        "cosine": 0.4145078458606645,
+        "scope": "In-memory master-weight delta",
+        "correctness_gate": false,
+        "interpretation": "Agreement with legacy is diagnostic; the old update is not a numerical oracle."
+      },
+      "batch-gradients": {
+        "tensor_count": 992,
+        "both_zero_count": 496,
+        "reference_l2": 0.4503387254781358,
+        "candidate_l2": 0.412745016304274,
+        "relative_l2": 1.2140524722146273,
+        "cosine": 0.19971594296973086,
+        "scope": "Accumulated adapter gradients",
+        "correctness_gate": false,
+        "interpretation": "Agreement with legacy is diagnostic; the old update is not a numerical oracle."
+      },
+      "batch-update-delta": {
+        "tensor_count": 992,
+        "both_zero_count": 496,
+        "reference_l2": 0.3939265728417159,
+        "candidate_l2": 0.3967802266261196,
+        "relative_l2": 1.0918620748475791,
+        "cosine": 0.4082316877374988,
+        "scope": "In-memory master-weight delta",
+        "correctness_gate": false,
+        "interpretation": "Agreement with legacy is diagnostic; the old update is not a numerical oracle."
+      }
+    },
+    "finished_at": 1792396965.4847832
+  },
+  "ablation_diagnostics": {
+    "status": "passed",
+    "cases": {
+      "legacy-reference": {
+        "tensor_count": 992,
+        "both_zero_count": 496,
+        "reference_l2": 0.05555228784663287,
+        "candidate_l2": 0.06741724647929394,
+        "relative_l2": 1.37939520579072,
+        "cosine": 0.2348624900183558,
+        "scope": "Accumulated adapter gradients",
+        "correctness_gate": false,
+        "interpretation": "Agreement with legacy is diagnostic; the old update is not a numerical oracle."
+      },
+      "reference-gdn": {
+        "tensor_count": 992,
+        "both_zero_count": 496,
+        "reference_l2": 0.06741724647929394,
+        "candidate_l2": 0.0606508673095241,
+        "relative_l2": 1.0861996850040208,
+        "cosine": 0.3498711184455983,
+        "scope": "Accumulated adapter gradients",
+        "correctness_gate": false,
+        "interpretation": "Agreement with legacy is diagnostic; the old update is not a numerical oracle."
+      },
+      "gdn-attention": {
+        "tensor_count": 992,
+        "both_zero_count": 496,
+        "reference_l2": 0.0606508673095241,
+        "candidate_l2": 0.05050497278306868,
+        "relative_l2": 0.9598459288088627,
+        "cosine": 0.46361066428788916,
+        "scope": "Accumulated adapter gradients",
+        "correctness_gate": false,
+        "interpretation": "Agreement with legacy is diagnostic; the old update is not a numerical oracle."
+      },
+      "attention-saved": {
+        "tensor_count": 992,
+        "both_zero_count": 496,
+        "reference_l2": 0.05050497278306868,
+        "candidate_l2": 0.05053287203387997,
+        "relative_l2": 0.020821956333874417,
+        "cosine": 0.9997834952419516,
+        "scope": "Accumulated adapter gradients",
+        "correctness_gate": false,
+        "interpretation": "Agreement with legacy is diagnostic; the old update is not a numerical oracle."
+      },
+      "saved-statistics": {
+        "tensor_count": 992,
+        "both_zero_count": 496,
+        "reference_l2": 0.05053287203387997,
+        "candidate_l2": 0.05179318117039925,
+        "relative_l2": 0.9588046892934364,
+        "cosine": 0.5518351966574712,
+        "scope": "Accumulated adapter gradients",
+        "correctness_gate": false,
+        "interpretation": "Agreement with legacy is diagnostic; the old update is not a numerical oracle."
+      }
+    }
+  },
+  "longest_path": {
+    "Legacy": {
+      "trial_seconds": [
+        324.46687925001606,
+        322.5654410829302,
+        322.51421145896893
+      ],
+      "median_update_seconds": 322.5654410829302,
+      "median_first_ready_seconds": 349.97313866601326,
+      "component_seconds": {
+        "forward:gdn": 42.34616303676739,
+        "forward:attention": 39.53277299704496,
+        "vjp_total:gdn": 103.9090505768545,
+        "vjp_total:attention": 130.20694254199043
+      },
+      "median_layer_forward_seconds": 81.93338553258218,
+      "median_layer_backward_seconds": 233.96815679979045,
+      "median_total_backward_seconds": 236.54446087870747,
+      "paths": 1,
+      "decoder_rows": 57538,
+      "supervised_tokens": 21675.0,
+      "median_head_backward_seconds": 2.5750129596563056,
+      "median_representative_warmup_seconds": 6.323102166992612,
+      "maximum_mlx_bytes": 100314561214,
+      "maximum_physical_footprint_bytes": 100150273488,
+      "maximum_swap_growth_bytes": 0,
+      "repeated_gradients_exact": true,
+      "repeated_updated_adapters_exact": true,
+      "kernel_build_ids": [
+        "df3ace33c83a08c0df76a43769c7d538674f0e820dc607237272060d68214e21"
+      ],
+      "initial_adapter_hash": "1a53a58be2ce188ae1f3eac30a3acce1288fff2468313619cf724f5ee83fd160",
+      "packed_sequences_sha256": "93a56508376f2004bfb3ff43472e416cc2f4ddef633d783e178da3a28fda0ef2"
+    },
+    "BF16 reference": {
+      "trial_seconds": [
+        306.121544499998,
+        306.2922499170527,
+        305.9682577919448
+      ],
+      "median_update_seconds": 306.121544499998,
+      "median_first_ready_seconds": 332.92321641603485,
+      "component_seconds": {
+        "forward:gdn": 39.923134311218746,
+        "forward:attention": 38.83505291736219,
+        "vjp_total:gdn": 90.48241363361012,
+        "vjp_total:attention": 130.27064908028115
+      },
+      "median_layer_forward_seconds": 78.75818722858094,
+      "median_layer_backward_seconds": 220.87683666404337,
+      "median_total_backward_seconds": 223.29604740906507,
+      "paths": 1,
+      "decoder_rows": 57538,
+      "supervised_tokens": 21675.0,
+      "median_head_backward_seconds": 2.416311338543892,
+      "median_representative_warmup_seconds": 5.792545958072878,
+      "maximum_mlx_bytes": 101990008362,
+      "maximum_physical_footprint_bytes": 102323411816,
+      "maximum_swap_growth_bytes": 0,
+      "repeated_gradients_exact": true,
+      "repeated_updated_adapters_exact": true,
+      "kernel_build_ids": [
+        "df3ace33c83a08c0df76a43769c7d538674f0e820dc607237272060d68214e21"
+      ],
+      "initial_adapter_hash": "1a53a58be2ce188ae1f3eac30a3acce1288fff2468313619cf724f5ee83fd160",
+      "packed_sequences_sha256": "93a56508376f2004bfb3ff43472e416cc2f4ddef633d783e178da3a28fda0ef2"
+    },
+    "BF16 + GDN": {
+      "trial_seconds": [
+        291.67712191690225,
+        292.36199400003534,
+        292.10895533300936
+      ],
+      "median_update_seconds": 292.10895533300936,
+      "median_first_ready_seconds": 318.68970375007484,
+      "component_seconds": {
+        "forward:gdn": 38.14689381432254,
+        "forward:attention": 38.19743816868868,
+        "vjp_total:gdn": 79.30500026594382,
+        "vjp_total:attention": 129.6069617079338
+      },
+      "median_layer_forward_seconds": 76.315905020223,
+      "median_layer_backward_seconds": 208.92949573451187,
+      "median_total_backward_seconds": 211.34043205797207,
+      "paths": 1,
+      "decoder_rows": 57538,
+      "supervised_tokens": 21675.0,
+      "median_head_backward_seconds": 2.4109363234601915,
+      "median_representative_warmup_seconds": 5.547841541003436,
+      "maximum_mlx_bytes": 101990041130,
+      "maximum_physical_footprint_bytes": 102294903536,
+      "maximum_swap_growth_bytes": 0,
+      "repeated_gradients_exact": true,
+      "repeated_updated_adapters_exact": true,
+      "kernel_build_ids": [
+        "df3ace33c83a08c0df76a43769c7d538674f0e820dc607237272060d68214e21"
+      ],
+      "initial_adapter_hash": "1a53a58be2ce188ae1f3eac30a3acce1288fff2468313619cf724f5ee83fd160",
+      "packed_sequences_sha256": "93a56508376f2004bfb3ff43472e416cc2f4ddef633d783e178da3a28fda0ef2"
+    },
+    "BF16 + fused attention": {
+      "trial_seconds": [
+        211.089381583035,
+        211.65350649994798,
+        211.69771570898592
+      ],
+      "median_update_seconds": 211.65350649994798,
+      "median_first_ready_seconds": 238.042176707997,
+      "component_seconds": {
+        "forward:gdn": 34.38205898622982,
+        "forward:attention": 22.864745876053348,
+        "vjp_total:gdn": 78.51950791734271,
+        "vjp_total:attention": 68.3008784565609
+      },
+      "median_layer_forward_seconds": 57.24680486228317,
+      "median_layer_backward_seconds": 146.82340388279408,
+      "median_total_backward_seconds": 149.23808142112102,
+      "paths": 1,
+      "decoder_rows": 57538,
+      "supervised_tokens": 21675.0,
+      "median_head_backward_seconds": 2.4146775383269414,
+      "median_representative_warmup_seconds": 5.290047459071502,
+      "maximum_mlx_bytes": 86201919810,
+      "maximum_physical_footprint_bytes": 88079456936,
+      "maximum_swap_growth_bytes": 0,
+      "repeated_gradients_exact": true,
+      "repeated_updated_adapters_exact": true,
+      "kernel_build_ids": [
+        "df3ace33c83a08c0df76a43769c7d538674f0e820dc607237272060d68214e21"
+      ],
+      "initial_adapter_hash": "1a53a58be2ce188ae1f3eac30a3acce1288fff2468313619cf724f5ee83fd160",
+      "packed_sequences_sha256": "93a56508376f2004bfb3ff43472e416cc2f4ddef633d783e178da3a28fda0ef2"
+    },
+    "Saved projections": {
+      "trial_seconds": [
+        198.64529808307998,
+        196.48974379198626,
+        198.12953179201577
+      ],
+      "median_update_seconds": 198.12953179201577,
+      "median_first_ready_seconds": 223.8308733329177,
+      "component_seconds": {
+        "forward:gdn": 34.75049588212278,
+        "forward:attention": 22.786696417839266,
+        "vjp_total:gdn": 74.93800498603377,
+        "vjp_total:attention": 57.4452906656079
+      },
+      "median_layer_forward_seconds": 57.54619183228351,
+      "median_layer_backward_seconds": 132.38329565164167,
+      "median_total_backward_seconds": 134.80825789808296,
+      "paths": 1,
+      "decoder_rows": 57538,
+      "supervised_tokens": 21675.0,
+      "median_head_backward_seconds": 2.4197548421798274,
+      "median_representative_warmup_seconds": 4.6584885410266,
+      "maximum_mlx_bytes": 207532335710,
+      "maximum_physical_footprint_bytes": 210283798048,
+      "maximum_swap_growth_bytes": 0,
+      "repeated_gradients_exact": true,
+      "repeated_updated_adapters_exact": true,
+      "kernel_build_ids": [
+        "df3ace33c83a08c0df76a43769c7d538674f0e820dc607237272060d68214e21"
+      ],
+      "initial_adapter_hash": "1a53a58be2ce188ae1f3eac30a3acce1288fff2468313619cf724f5ee83fd160",
+      "packed_sequences_sha256": "93a56508376f2004bfb3ff43472e416cc2f4ddef633d783e178da3a28fda0ef2"
+    },
+    "Saved statistics (final)": {
+      "trial_seconds": [
+        197.5362351660151,
+        195.76317362498958,
+        196.49075962498318
+      ],
+      "median_update_seconds": 196.49075962498318,
+      "median_first_ready_seconds": 222.3080616670195,
+      "component_seconds": {
+        "forward:gdn": 34.9738870941801,
+        "forward:attention": 22.859104298520833,
+        "vjp_total:gdn": 74.10419817944057,
+        "vjp_total:attention": 56.69112605054397
+      },
+      "median_layer_forward_seconds": 57.797430393868126,
+      "median_layer_backward_seconds": 130.79532422998454,
+      "median_total_backward_seconds": 133.2184746004641,
+      "paths": 1,
+      "decoder_rows": 57538,
+      "supervised_tokens": 21675.0,
+      "median_head_backward_seconds": 2.4197052812669426,
+      "median_representative_warmup_seconds": 4.659093457972631,
+      "maximum_mlx_bytes": 207536766410,
+      "maximum_physical_footprint_bytes": 210288599016,
+      "maximum_swap_growth_bytes": 0,
+      "repeated_gradients_exact": true,
+      "repeated_updated_adapters_exact": true,
+      "kernel_build_ids": [
+        "cdeb7ffa3d3790a02cb61a728f69a35726279d760160e5956e94854c38c1a308"
+      ],
+      "initial_adapter_hash": "1a53a58be2ce188ae1f3eac30a3acce1288fff2468313619cf724f5ee83fd160",
+      "packed_sequences_sha256": "93a56508376f2004bfb3ff43472e416cc2f4ddef633d783e178da3a28fda0ef2"
+    }
+  },
+  "full_batch": {
+    "Legacy": {
+      "trial_seconds": [
+        1818.3289869580185,
+        1822.1324551659636
+      ],
+      "median_update_seconds": 1820.230721061991,
+      "median_first_ready_seconds": 1848.1016125835013,
+      "component_seconds": {
+        "forward:gdn": 304.08333465328906,
+        "forward:attention": 158.68579569348367,
+        "vjp_total:gdn": 810.64183373173,
+        "vjp_total:attention": 505.58084153884556
+      },
+      "median_layer_forward_seconds": 462.7691303467727,
+      "median_layer_backward_seconds": 1316.2226752705756,
+      "median_total_backward_seconds": 1335.0793413804495,
+      "paths": 22,
+      "decoder_rows": 444145,
+      "supervised_tokens": 156208.0,
+      "median_head_backward_seconds": 18.856666109873913,
+      "median_representative_warmup_seconds": 6.321622791525442,
+      "maximum_mlx_bytes": 100781494630,
+      "maximum_physical_footprint_bytes": 100601226872,
+      "maximum_swap_growth_bytes": 0,
+      "repeated_gradients_exact": true,
+      "repeated_updated_adapters_exact": true,
+      "kernel_build_ids": [
+        "cdeb7ffa3d3790a02cb61a728f69a35726279d760160e5956e94854c38c1a308"
+      ],
+      "initial_adapter_hash": "1a53a58be2ce188ae1f3eac30a3acce1288fff2468313619cf724f5ee83fd160",
+      "packed_sequences_sha256": "8abaa59bc1ce43846114d7af7362e1eefd8d014d292d0a9e45e17f7734ffc718"
+    },
+    "BF16 final": {
+      "trial_seconds": [
+        1214.696608584025,
+        1213.7347743330756
+      ],
+      "median_update_seconds": 1214.2156914585503,
+      "median_first_ready_seconds": 1240.3640137499897,
+      "component_seconds": {
+        "forward:gdn": 276.97222766507184,
+        "forward:attention": 126.23852388589876,
+        "vjp_total:gdn": 496.1275058002793,
+        "vjp_total:attention": 258.85585558775347
+      },
+      "median_layer_forward_seconds": 403.2107515509706,
+      "median_layer_backward_seconds": 754.9833613880328,
+      "median_total_backward_seconds": 772.7832884929958,
+      "paths": 22,
+      "decoder_rows": 444145,
+      "supervised_tokens": 156208.0,
+      "median_head_backward_seconds": 17.79992710496299,
+      "median_representative_warmup_seconds": 4.645460437517613,
+      "maximum_mlx_bytes": 214683372034,
+      "maximum_physical_footprint_bytes": 217384624728,
+      "maximum_swap_growth_bytes": 0,
+      "repeated_gradients_exact": true,
+      "repeated_updated_adapters_exact": true,
+      "kernel_build_ids": [
+        "cdeb7ffa3d3790a02cb61a728f69a35726279d760160e5956e94854c38c1a308"
+      ],
+      "initial_adapter_hash": "1a53a58be2ce188ae1f3eac30a3acce1288fff2468313619cf724f5ee83fd160",
+      "packed_sequences_sha256": "8abaa59bc1ce43846114d7af7362e1eefd8d014d292d0a9e45e17f7734ffc718"
+    }
+  },
+  "coverage": {
+    "paths": 22,
+    "decoder_rows": 444145,
+    "supervised_tokens": 156208,
+    "source_responses": 329,
+    "rollouts": 15
+  },
+  "longest_complete_update_speedup": 1.6416316049597939,
+  "longest_layer_backward_speedup": 1.7888113216370907,
+  "longest_total_backward_speedup": 1.7756130415704625,
+  "full_batch_total_backward_speedup": 1.727624498692236,
+  "attention_primitives": [
+    {
+      "queries": 2048,
+      "keys": 57344,
+      "cached_backward_speedup": 1.8080943465278272,
+      "complete_vjp_speedup": 2.1776826458826015,
+      "twofold_backward_target_met": false
+    },
+    {
+      "queries": 2048,
+      "keys": 262144,
+      "cached_backward_speedup": 2.5609672483331,
+      "complete_vjp_speedup": 2.5650230801298175,
+      "twofold_backward_target_met": true
+    }
+  ],
+  "full_batch_complete_update_speedup": 1.4990999818784077,
+  "targets": {
+    "longest_210_seconds_met": true,
+    "full_batch_1200_seconds_met": false,
+    "longest_1_5x_update_met": true,
+    "full_batch_1_5x_update_met": false,
+    "longest_2x_backward_met": false,
+    "full_batch_2x_backward_met": false,
+    "all_attention_primitives_2x_backward_met": false
+  },
+  "counter_trial": {
+    "update_seconds": 199.13378420914523,
+    "build_matches_timed_trials": false,
+    "release_equivalence_report": "docs/studio-compute/bf16-backward/evidence/release-qualification.json.gz",
+    "kernel_build_id": "162857f36a1a0d6be2da53884fe189fcccdd3cc7bd840cfa98db49478805c006",
+    "optional_retained_activation_bytes_peak": 116422625280,
+    "mandatory_saved_activation_bytes_peak": 12343512064,
+    "projection_counts": {
+      "forward.input_norm_statistics": 1856,
+      "forward.linear_attn.in_proj_qkv": 1392,
+      "forward.linear_attn.in_proj_z": 1392,
+      "forward.linear_attn.in_proj_a": 1392,
+      "forward.linear_attn.in_proj_b": 1392,
+      "forward.gdn_inner": 1392,
+      "forward.linear_attn.out_proj": 1392,
+      "forward.middle_norm_statistics": 1856,
+      "forward.mlp.gate_proj": 1856,
+      "forward.mlp.up_proj": 1856,
+      "forward.mlp_swiglu": 1856,
+      "forward.mlp.down_proj": 1856,
+      "forward.self_attn.q_proj": 464,
+      "forward.self_attn.k_proj": 464,
+      "forward.self_attn.v_proj": 464,
+      "forward.attention_prepare": 464,
+      "forward.attention_gate": 464,
+      "forward.self_attn.o_proj": 464,
+      "forward.vocabulary_head": 177,
+      "forward.head_norm_statistics": 177,
+      "forward.head_softmax": 177,
+      "reconstructed.vocabulary_head": 177,
+      "reconstructed.head_norm_statistics": 177,
+      "reconstructed.head_softmax": 177,
+      "reconstructed.middle_norm_output": 1842,
+      "retained.mlp.gate_proj": 64,
+      "retained.mlp.up_proj": 64,
+      "backward.mlp.down_proj": 1842,
+      "reconstructed.mlp_swiglu": 1842,
+      "backward.mlp.gate_proj": 1842,
+      "backward.mlp.up_proj": 1842,
+      "retained.middle_norm_statistics": 1842,
+      "reconstructed.input_norm_output": 1856,
+      "retained.self_attn.q_proj": 16,
+      "retained.self_attn.k_proj": 464,
+      "reconstructed.attention_prepare": 464,
+      "backward.self_attn.o_proj": 450,
+      "reconstructed.attention_gate_vjp_primal": 450,
+      "reconstructed.attention_prepare_vjp_primal": 464,
+      "backward.self_attn.q_proj": 450,
+      "backward.self_attn.k_proj": 464,
+      "backward.self_attn.v_proj": 464,
+      "retained.input_norm_statistics": 1856,
+      "retained.linear_attn.in_proj_qkv": 1031,
+      "retained.linear_attn.in_proj_z": 1392,
+      "retained.linear_attn.in_proj_a": 1392,
+      "retained.linear_attn.in_proj_b": 1392,
+      "backward.linear_attn.out_proj": 1392,
+      "reconstructed.gdn_inner_vjp_primal": 1392,
+      "backward.linear_attn.in_proj_qkv": 1392,
+      "backward.linear_attn.in_proj_z": 1392,
+      "backward.linear_attn.in_proj_a": 1392,
+      "backward.linear_attn.in_proj_b": 1392,
+      "reconstructed.mlp.gate_proj": 1778,
+      "reconstructed.mlp.up_proj": 1778,
+      "reconstructed.self_attn.q_proj": 434,
+      "reconstructed.linear_attn.in_proj_qkv": 361,
+      "backward.vocabulary_head": 177
+    },
+    "count_scope": "Logical frozen-projection and nonlinear reconstruction calls; compiler pruning and fusion are not hardware counters.",
+    "activation_plans": [
+      {
+        "budget_bytes": 116451777048,
+        "retained_bytes": 116422625280,
+        "estimated_recomputation_ns_saved": 13658227719,
+        "calibration_and_plan_seconds": 0.10888887499459088,
+        "projection_costs_ns": {
+          "(194, -1, 6144)": 696625,
+          "(194, 5120, 48)": 259333,
+          "(194, 5120, 1024)": 295000,
+          "(194, 5120, 6144)": 733709,
+          "(194, 5120, 10240)": 1195834,
+          "(194, 5120, 12288)": 728375,
+          "(194, 5120, 17408)": 1083750,
+          "(194, 6144, 5120)": 692083,
+          "(194, 17408, 5120)": 1013167,
+          "(2048, -1, 6144)": 2951125,
+          "(2048, 5120, 48)": 250083,
+          "(2048, 5120, 1024)": 520958,
+          "(2048, 5120, 6144)": 1804292,
+          "(2048, 5120, 10240)": 2798625,
+          "(2048, 5120, 12288)": 3306958,
+          "(2048, 5120, 17408)": 4665041,
+          "(2048, 6144, 5120)": 1819167,
+          "(2048, 17408, 5120)": 5201125
+        },
+        "selection": "Measured projection nanoseconds per unique BF16 output byte; stable identity breaks ties.",
+        "middle_cost_scope": "Measured output projection plus the GDN inner forward; raw input projections remain needed for derivatives.",
+        "selected_groups": 7671
+      }
+    ]
+  },
+  "limitations": [
+    "Representative 2048-row warmup is separate; new shape compilation can remain in complete-update times.",
+    "Compiler wall time is not independently isolated. OS compiler caches are retained; warm component distributions describe steady-state primitives.",
+    "Projection counters describe logical calls; compiler pruning/fusion and hardware instructions are separate.",
+    "First ready means an in-memory Adam commit. Benchmark diagnostics and durable service-checkpoint I/O follow that boundary.",
+    "Legacy gradient agreement is diagnostic. Independent derivatives and ten-update real-model learning define correctness."
+  ],
+  "input_matrices": [
+    "docs/studio-compute/bf16-backward/evidence/longest-ablations.json.gz",
+    "docs/studio-compute/bf16-backward/evidence/longest-final.json.gz",
+    "docs/studio-compute/bf16-backward/evidence/full-batch.json.gz"
+  ],
+  "counter_report": "docs/studio-compute/bf16-backward/evidence/release-counters-longest.json.gz",
+  "attention_report": "docs/studio-compute/bf16-backward/attention-joint.json"
+}

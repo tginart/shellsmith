@@ -1,0 +1,26 @@
+# Prepared catalog epoch service: cap optional saved activations for interleaved inference.
+# studio-compute serve --config examples/studio-catalog-epoch-service.toml
+# Explicit command-line flags override this file. Paths use the working directory.
+[service]
+execution_profile = "bf16-fast"
+model = "~/models/Qwen3.8-27B-8bit"
+state_root = "~/.local/state/shellsmith/catalog-epoch-v1/service"
+host = "127.0.0.1"
+port = 8766
+gpu_lease_root = "~/.local/state/shellsmith/gpu-lease"
+
+# 32 GiB: perf4 hung the Studio at 240 GiB of 256 GiB during trie replay.
+headroom_gib = 32.0
+allocator_gib = "auto" # physical memory minus host/GM headroom: 224 GiB on Studio
+prefix_cache_gib = "auto" # remaining allocator capacity; evicts for active work
+metal_cache_gib = 2.0 # freed-buffer cache, separate from the prefix KV pool
+
+segment_tokens = 2048
+checkpoint_layers = "auto"
+activation_budget_gib = 16.0
+head_rows = 128
+prefill_tokens = 2048 # currently 1..2048, matching the scratch admission estimate
+# BF16 activations, LoRA, recurrent state, gradients, and stochastic-rounding Adam.
+# Use execution_profile = "legacy" for the previous FP32 state/optimizer implementation.
+# Inference KV precision is selected by the client: [studio].cache_precision.
+# One GPU execution owner; up to four compatible requests per inference batch.

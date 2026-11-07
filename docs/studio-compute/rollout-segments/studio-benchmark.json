@@ -1,0 +1,58 @@
+{
+  "schema": "shellsmith.segment_benchmark.v1",
+  "reference_replay_sha256": "8fcfcdd1c49a0c5e0754ee0e03e2b764c8994acaca346b0a7c71445d02cebf22",
+  "host": "studio-host.local",
+  "model": "~/models/Qwen3.8-27B-8bit",
+  "precision": "BF16 execution/LoRA; FP32 gradients/master/Adam",
+  "optimizer": {
+    "learning_rate": 5e-05,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "epsilon": 1e-08,
+    "steps_per_trial": 1
+  },
+  "context_window": 262144,
+  "warmups": 0,
+  "trials": [
+    {
+      "trial": 0,
+      "warmup": false,
+      "gradient_relative_l2": 0.03645201399922371,
+      "gradient_cosine": 0.9993616938591003,
+      "adapter_max_abs_error": 0.00010013580322265625,
+      "responses": {
+        "loss": -0.007347743026912212,
+        "backward_seconds": 7.363427290925756,
+        "whole_update_seconds": 9.068219374981709,
+        "peak_memory_bytes": 33940563934,
+        "phase_seconds": {
+          "replay_branch_forward": 1.8304768751841038,
+          "head": 0.03433324897196144,
+          "head_backward": 0.0442969580180943,
+          "replay_branch_backward": 5.399755086400546
+        },
+        "optimizer_committed": true
+      },
+      "packed": {
+        "loss": -0.007274600677192211,
+        "backward_seconds": 2.278640207950957,
+        "whole_update_seconds": 3.9739114169497043,
+        "peak_memory_bytes": 34642116574,
+        "phase_seconds": {
+          "replay_branch_forward": 0.47453920904081315,
+          "head": 0.18046904099173844,
+          "head_backward": 0.014798250049352646,
+          "replay_branch_backward": 1.5881981247803196
+        },
+        "optimizer_committed": true
+      }
+    }
+  ],
+  "supervised_tokens": 28,
+  "responses": 4,
+  "packed_segments": 1,
+  "old_replay_tokens": 1190,
+  "packed_replay_tokens": 332,
+  "frozen_base_unchanged": true,
+  "status": "passed"
+}
